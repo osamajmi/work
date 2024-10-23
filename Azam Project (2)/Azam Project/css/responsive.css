@@ -1,0 +1,121 @@
+@media (min-width: 320px) and (max-width: 778px) {
+    ul.nav-ul.nav-list-items.d-flex li.nav-li {
+        width: 20%;
+        padding: 0px 0px 10px 8px;
+    }
+
+    .header-section-silk {
+        padding: 2px 15px !important;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+
+    div#navbarSupportedContent ul.navbar-nav.ms-auto.mb-2.mb-lg-0.right-side-nav li {
+        padding-bottom: 30px;
+    }
+
+    .login-btns {
+        border: 0px;
+        background-color: #F8EFED;
+        color: #3A424C;
+        text-decoration: none;
+        padding: 10px 24px !important;
+        border-radius: 50px;
+    }
+
+    .count {
+        position: absolute;
+        background-color: red;
+        border-radius: 50%;
+        padding: 0px 4px;
+        font-size: 9px;
+        top: -2px;
+        right: -7px;
+        color: white;
+        width: 15px;
+    }
+
+    .left-slide-part p {
+        width: 100%;
+    }
+
+    .left-slide-part {
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    .owl-carousel.owl-theme.banner-sec-top.owl-loaded.owl-drag .owl-nav button.owl-prev {
+        margin-top: -17% !important;
+        margin-left: -6px;
+    }
+
+    .left-slide-part h2:after {
+        position: absolute;
+        content: "";
+        height: 2px;
+        background-color: #FFC0CB;
+        width: 151px;
+        margin-left: 15px;
+        top: 8%;
+        left: 59%;
+    }
+
+    .pills-section {
+        margin: 0 15px;
+    }
+
+    .content-mid-sec-off {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    .owl-carousel.owl-theme.banner-sec-top.owl-loaded.owl-drag .owl-nav button.owl-next {
+        margin-top: -17% !important;
+        margin-right: 6px;
+    }
+
+    .col-md-4.right-slide-part {
+        margin-top: 50px;
+    }
+
+    .left-slide-part h2 {
+        margin-bottom: 15px;
+        font-size: 50px;
+        margin-top: -10px;
+    }
+
+    ul.nav-ul.nav-list-items.d-flex {
+        flex-wrap: wrap;
+    }
+
+    .nav-ul {
+
+        flex-wrap: wrap;
+    }
+
+    .mobil-view-section {
+        display: block !important;
+        height: 100%;
+    }
+
+    .large-screen-view {
+        display: none !important;
+    }
+
+    .model-img-cards img {
+        width: 100%;
+        padding: 10px 30px 20px 30px !important;
+    }
+}
+
+@media (min-width:778px) and (max-width: 1200px) {
+    .dropdown-menu.px-3.rounded-3.border-0.shadow .row {
+        width: 410px;
+        flex-wrap: wrap;
+    }
+
+    .mega-menu-dropdown {
+        position: absolute !important;
+        left: -70px !important;
+    }
+}
