@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Horizontal Scroll Carousel</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Carousel Styles */
+        .nav_Slide {
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none; /* For Firefox */
+        }
+        .nav_Slide::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        .categories-sec {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .nav-img_data {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .nav-img_data img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .nav-img_data img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="nav_Slide mt-4">
+            <ul class="nav-Data categories-sec d-flex">
+              
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+                <li class="nav-img_data"><img src="../Azam Project (2)/Azam Project/img/dummy.jpg" alt=""></li>
+               
+               
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Optional: You can add auto-scroll functionality if needed
+        const slider = document.querySelector('.nav_Slide');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
