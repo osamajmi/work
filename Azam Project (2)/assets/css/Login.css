@@ -1,19 +1,62 @@
-.login{
 
+body {
+    background-color: #f8f9fa;
+}
+.login-container {
+    /* max-width: 400px; */
+    /* margin: 50px auto; */
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+.container {
     width: 100%;
     height: 100vh;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.login_box{
-    border-color: #f0f0f0;
-    box-shadow: 1px 0 13px 0 #efefef; ;
+.btn-custom {
+    /* background-color: #000;
+    color: #fff; */
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+}
+.alternative-login .btn {
+    width: 48%;
+    margin: 5px 1%;
+    border: 1px solid #ddd;
+}
+.terms {
+    font-size: 12px;
+    color: #6c757d;
     text-align: center;
-   padding: 30px 70px 70px 70px;
+}
+.terms a {
+    text-decoration: none;
+    color: #000;
+}
+.country-dropdown {
+    width: 70px;
+    padding-right: 0;
 }
 
-.login button{
-    
-        box-shadow: 0 0 13px 0 #efefef;
-        border: solid 1px #f0f0f0;
-        padding: 5px 20px 5px 20px;
-}
+.card {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 5px;
+  }
+  
+  .otp-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
