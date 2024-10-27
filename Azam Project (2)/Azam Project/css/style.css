@@ -26,31 +26,69 @@ body {
  main.content-section.mt-5{
   margin-top: 80px !important;
  }
- @media (min-width:768px){
-     .mobile-view{
-         display: none;
-         
-     }
-     .cat_cardslid{
-      display: none;
-     }
-     .main-slider{
-      margin-top: 172px !important;
-    }
- }
- @media (max-width:768px){
-     .desktop-view{
-         display: none;
-     }
-     .nav-list .nav-ul .nav-item{
-      display: none !important;
-     }
-     header {
-      height: 150px;
-    }
-    
-    
- }
+
+ /* mobile nav csss */
+
+/* Styling the navigation bar */
+.nav-bar {
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Styling individual nav links */
+.nav-mb-link {
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  padding: 10px 0;
+  border-radius: 0;
+  transition: color 0.3s ease;
+}
+
+/* Active state styling */
+.nav-mb-link.active {
+  color: #ff9dae !important;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #ffffff;
+  top: -25px;
+}
+.mt-3.d-flex.gap-4 a :hover{
+  color: #ff9dae !important;
+}
+
+/* Icon styling */
+.nav-mb-link i {
+  font-size: 20px;
+  margin-bottom: 3px;
+  display: block;
+}
+
+/* Hover effect */
+.nav-mb-link:hover,.nav-link:hover {
+  color: #ff9dae !important;
+}
+a.nav-mb-link {
+  text-decoration: none;
+}
+
+.form-control:focus {
+  color: #212529 !important;
+  background-color: #fff !important;
+  border-color: #ff9dae8a !important;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem #ff9dae6e !important;
+}
+
  .bi-search{
   cursor:pointer
  }
@@ -1270,3 +1308,249 @@ li.nav-item.dropdown a.nav-link.dropdown-toggle {
 .mega-menu-dropdown {
   right: 0;
 }
+
+
+
+/* our featured product */
+
+
+/* Custom styles for filter buttons */
+.filter-buttons {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.filter-buttons button {
+    margin: 18px 10px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.filter-buttons button:hover {
+    background-color: #343a40;
+}
+
+/* Styling for the Owl Carousel */
+.owl-carousel .item {
+    /* display: flex; */
+    justify-content: center;
+    padding: 10px; /* Space around each card-viewMore */
+}
+
+.card-viewMore {
+    position: relative;
+    width: 300px; /* Fixed width for cards */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card-viewMore img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.card-viewMore:hover img {
+    transform: scale(1.1);
+}
+
+.card-viewMore-body {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-viewMore-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.btn-viewMore {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: lighter;
+    border: 1px solid gray;
+    font-size: 14px; /* Default font size */
+}
+
+.btn-viewMore:hover {
+    background-color: pink;
+}
+.btn-viewMore:focus{
+    border-color: pink !important;
+    outline: none;
+    border: none;
+}
+
+/* Heart icon styling */
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.heart-icon:hover {
+    color: #ff6666;
+}
+
+.ourFeature {
+    width: 100%;
+    height: auto;
+}
+
+
+/* our featured end */
+
+
+/* model start */
+
+       
+
+.modelCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    flex-wrap: wrap;
+}
+
+.custom-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* height: 200px; */
+}
+
+.custom-card {
+    position: relative;
+    width: 120px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, width 0.5s ease;
+}
+
+.custom-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.custom-card-title {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+    width: 230px; /* Expand width on hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Change the image on hover by hiding the original and showing the background image */
+.custom-card:hover img {
+    opacity: 0;
+}
+
+.custom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.custom-card:hover::before {
+    opacity: 1;
+}
+
+/* Specific card hover images */
+#custom-card1::before {
+    background-image: url('https://via.placeholder.com/180x400/FFB6C1/000000?text=Bras+Hover');
+}
+
+#custom-card2::before {
+    background-image: url('https://via.placeholder.com/180x400/87CEFA/000000?text=Nightwear+Hover');
+}
+
+#custom-card3::before {
+    background-image: url('https://via.placeholder.com/180x400/FFDEAD/000000?text=Activewear+Hover');
+}
+
+#custom-card4::before {
+    background-image: url('https://via.placeholder.com/180x400/98FB98/000000?text=Lingerie+Sets+Hover');
+}
+
+#custom-card5::before {
+    background-image: url('https://via.placeholder.com/180x400/DDA0DD/000000?text=Panties+Hover');
+}
+
+#custom-card6::before {
+    background-image: url('https://via.placeholder.com/180x400/B0C4DE/000000?text=Shapewear+Hover');
+}
+
+    
+/* model end */
+/* ser */
+
+ .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+ .fade-in {
+  animation: fadeInAnimation 2s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.search_r {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.search-I{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+/* search 
+ */
