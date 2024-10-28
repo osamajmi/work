@@ -186,6 +186,15 @@
             font-size: 35px !important;
             margin-top: 5px;
             position: absolute !important;
+            display: none;
+        }
+        .left-slide-part {
+            padding-top: 25px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 425px;
         }
         /* .left-slide-part p {
             width: 100%;
@@ -199,6 +208,7 @@
         width: 100%;
         margin-top: 47px;
         text-align: justify;
+        display: none;
     }
     .left-slide-part h2:after {
         position: absolute;
