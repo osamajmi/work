@@ -178,6 +178,12 @@
         margin-top: 10px;
         display: none;
     }
+    .modal-header{
+        padding: 0px !important;
+    }
+    .login-container{
+      border-top-left-radius: 50px;
+    }
 }
 
 
