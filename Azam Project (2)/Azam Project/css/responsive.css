@@ -171,6 +171,9 @@
     .card-viewMore-body{
         padding: 13px;
     }
+    .login_img{
+        display: none;
+    }
 }
 
 

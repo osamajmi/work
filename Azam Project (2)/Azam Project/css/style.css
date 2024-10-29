@@ -96,8 +96,7 @@ a.nav-mb-link {
   margin-top: 60px;
   position: fixed;
   width: 100%;
-  z-index: 9999;
-        
+  z-index: 999;
 }
 .bg_desk{
   /* background-color: #FFF1F2; */
@@ -635,7 +634,6 @@ button.disabled {
 
 .model-img-cards {
   position: relative;
-
 }
 
 .models-row-sec {
@@ -1010,7 +1008,8 @@ button.carousel-control-next {
   background-image: url('../img/low_poly_banner_design_1711.jpg');
   padding: 60px 0px;
   background-size: cover;
-  height: 100%;
+  height: auto;
+  margin-top: 30px;
 }
 
 .owl-theme .owl-dots .owl-dot {
@@ -1117,8 +1116,8 @@ button.carousel-control-next {
 
 
 .mobil-view-section {
-  display: none;
-  height: 100%;
+  /* display: none; */
+  /* height: 100%; */
 }
 
 .content-mid-sec-off {
@@ -1670,3 +1669,46 @@ button:focus{
   box-shadow: 0px 0px 2px 2px pink !important;
 }
  /* login css end  */
+
+ /* model  css start */
+
+ .Subcard {
+  width: 300px;
+  height: 400px;
+  overflow: hidden; /* Hide overflow to prevent image overflow during zoom */
+  position: relative;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+.Subcard img {
+  width: 100%;
+  transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+.Subcard:hover img {
+  transform: scale(1.2); /* Scale the image to 1.2 times its size */
+}
+.Subcard p {
+  align-items: center;
+  text-align: center;
+  margin-top: 99px;
+  color: white;
+  font-size: 30px;
+  text-shadow: -2px 1px 1px pink;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ModelCard {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* border-radius: 30px; */
+  margin-bottom: 30px;
+  width: 100%;
+  /* background-image: url('../img/low_poly_banner_design_1711.jpg'); */
+}
+ /* model   css end */
+
