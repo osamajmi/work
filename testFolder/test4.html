@@ -152,14 +152,70 @@
                 padding: 13px;
             }
         }
+
+        
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Additional styling for navigation icons and dots */
+        .owl-nav button.owl-prev, .owl-nav button.owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #000;
+            cursor: pointer;
+        }
+    
+        .owl-nav button.owl-prev {
+            left: -25px; /* Position the left arrow */
+        }
+    
+        .owl-nav button.owl-next {
+            right: -25px; /* Position the right arrow */
+        }
+    
+        .owl-nav button.owl-prev:hover, .owl-nav button.owl-next:hover {
+            color: #ff6666;
+        }
+    
+        .owl-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+    
+        .owl-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+    
+        .owl-dot.active {
+            background-color: #ff6666;
+        }
+        i.far.fa-heart.heart-icon {
+    z-index: 9999;
+}
+    </style>
+    
+    <!-- Your existing HTML structure remains the same -->
+    
 </head>
 <body>
 
     <div class="ourFeature">
         <div class="container-fluid">
             <!-- Filter Buttons -->
-            <div class="filter-buttons d-none">
+            <div class="filter-buttons ">
                 <button onclick="showCarousel('Bra')">Bra</button>
                 <button onclick="showCarousel('Nightwear')">Nightwear</button>
                 <button onclick="showCarousel('Sleepwear')">Sleepwear</button>
@@ -234,19 +290,31 @@
                     </div>
                 </div>
             </div>
+            <div class="custom-nav">
+                <button id="prevBtn" class="btn btn-secondary">Previous</button>
+                <button id="nextBtn" class="btn btn-secondary">Next</button>
+              </div>
         </div>
     </div>
     
     <script>
         $(document).ready(function(){
-            // Initialize all Owl Carousels
+            // Initialize all Owl Carousels with auto-slide, indicators, and custom navigation icons
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                nav: true, // Enable navigation
+                dots: true, // Enable dots for indicators
+                autoplay: true, // Enable auto-slide
+                autoplayTimeout: 3000, // 3 seconds interval for each slide
+                autoplayHoverPause: true, // Pause on hover
+                navText: [
+                    '<i class="fas fa-chevron-left"></i>', // Left arrow icon
+                    '<i class="fas fa-chevron-right"></i>' // Right arrow icon
+                ],
                 responsive: {
                     0: {
-                        items: 2
+                        items: 1.5
                     },
                     600: {
                         items: 3
@@ -255,16 +323,24 @@
                         items: 4
                     },
                     1200: {
-
-                        items: 6 
+                        items: 6
                     }
                 }
+                
             });
+            // Custom navigation buttons
+  $('#nextBtn').click(function() {
+    owl.trigger('next.owl.carousel');
+  });
 
+  $('#prevBtn').click(function() {
+    owl.trigger('prev.owl.carousel');
+  });
+    
             // Hide all carousels initially
             $('.owl-carousel').hide();
             $('.bra-carousel').show(); 
-
+    
             // Function to show the selected carousel
             window.showCarousel = function(category) {
                 $('.owl-carousel').hide(); // Hide all carousels
@@ -272,5 +348,7 @@
             };
         });
     </script>
+    
+    
 </body>
 </html>
