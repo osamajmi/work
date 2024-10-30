@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card_recmd Slider using Swiper.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            /* padding: 20px 0; */
+        }
+
+        .swiper-slide {
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card_recmd {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+        }
+
+        .card_recmd img {
+            width: 100%;
+            background-size: cover;
+            height: 200px;
+            /* border-radius: 10px; */
+            /* padding-left: 10px; */
+            /* padding-right: 10px; */
+        }
+
+        .card_recmd-title {
+            font-size: 20px;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+        }
+
+        .card_recmd-description {
+            color: #555;
+            text-align: center;
+            font-size: 14px;
+        }
+        span.bi.bi-cart {
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+    border-radius: 100%;
+    padding: 1px;
+    position: absolute;
+    right: 3px;
+    top:3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.btn_card_recmd{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(221, 184, 160);
+  width: 100%;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+
+  bottom: 392px !important;
+}
+.swiper-button-next,.swiper-button-prev{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: pink;
+  border-radius: 100%;
+  top: 22%;
+
+}
+.swiper-button-next:focus, .swiper-button-prev:focus{
+  border: 2px solid pink;
+  outline: pink;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+
+  font-size: 20px !important;
+}
+.swiper-pagination-bullet{
+ background-color: pink !important;
+}
+span.bi.bi-arrow-right {
+    font-size: 25px;
+    /* font-weight: bold; */
+}
+    </style>
+</head>
+<body>
+
+     <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card_recmd">
+                  <span class="bi bi-cart"></span>
+                    <img src="https://via.placeholder.com/300x200" alt="card_recmd 1">
+                    <div class="btn_card_recmd">
+                      <h3 class="card_recmd-title">card_recmd 1</h3>
+                       <span class="bi bi-arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card_recmd">
+                <span class="bi bi-cart"></span>
+                  <img src="https://via.placeholder.com/300x200" alt="card_recmd 1">
+                  <div class="btn_card_recmd">
+                    <h3 class="card_recmd-title">card_recmd 1</h3>
+                     <span class="bi bi-arrow-right"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card_recmd">
+              <span class="bi bi-cart"></span>
+                <img src="https://via.placeholder.com/300x200" alt="card_recmd 1">
+                <div class="btn_card_recmd">
+                  <h3 class="card_recmd-title">card_recmd 1</h3>
+                   <span class="bi bi-arrow-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card_recmd">
+            <span class="bi bi-cart"></span>
+              <img src="https://via.placeholder.com/300x200" alt="card_recmd 1">
+              <div class="btn_card_recmd">
+                <h3 class="card_recmd-title">card_recmd 1</h3>
+                 <span class="bi bi-arrow-right"></span>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card_recmd">
+          <span class="bi bi-cart"></span>
+            <img src="https://via.placeholder.com/300x200" alt="card_recmd 1">
+            <div class="btn_card_recmd">
+              <h3 class="card_recmd-title">card_recmd 1</h3>
+               <span class="bi bi-arrow-right"></span>
+            </div>
+        </div>
+    </div>
+           
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Add Pagination and Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 seconds delay between slides
+                disableOnInteraction: false, // Auto slide will not stop on user interactions
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                1024: {
+                    slidesPerView: 6,
+                }
+            }
+        });
+    </script> 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

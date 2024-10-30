@@ -259,6 +259,13 @@
     .carousel-indicators {
         margin-bottom: -2rem !important;
     }
+    .owl-item {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-left:30px !important;
+        
+    }
 }
 
 
