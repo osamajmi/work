@@ -5,7 +5,11 @@
 
 body {
   background-color: rgb(255, 241, 242);
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, sans-serif !important;
+}
+body,span,div,p,h1,h2,h3,h4,h5,h6 {
+ 
+  font-family: Poppins, sans-serif !important;
 }
 
 .input-group .form-control {
@@ -1650,8 +1654,11 @@ button.btn.btn-primary {
 }
 .btn:hover{
 
-  background-color: white !important;
-  color: pink !important;
+background-color: white !important;
+
+color: pink !important;
+
+font-weight: 600;
 }
 .btn-primary:hover{
 
@@ -1722,16 +1729,18 @@ button.btn.btn-primary {
 }
 
 .btn-viewMore {
-  background-color: white;
+  background-color: pink;
+  outline: pink;
   border: none;
-  color: black;
+  color: #fff;
   padding: 5px 15px;
   text-decoration: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: lighter;
-  border: 1px solid gray;
+  font-weight: 500;
+  border: 1px solid pink;
   font-size: 14px;
+  box-shadow: 0px 1px 1px 1px #80808045;
 }
 
 .btn-viewMore:hover {
@@ -1814,10 +1823,8 @@ button.btn.btn-primary {
   }
 }
 
-button.owl-prev,button.owl-next {position: absolute;top: 29%;z-index: 999;width: 39px;height: 39px;border-radius: 100%;background-color: pink;border: 1px;color: white;}
-button.owl-next{
-right: 16px !important
-}
+button.owl-prev,button.owl-next {position: absolute;top: 35%;z-index: 999;width: 39px;height: 39px;border-radius: 100%;background-color: pink;border: 1px;color: white;}
+button.owl-next{right: 0;}
 a.bi.bi-arrow-right {
   font-size: 29px;
   color: pink;
@@ -1841,5 +1848,29 @@ a.bi.bi-arrow-right {
 .cursor.active {
   background-color: rgba(255, 105, 180, 0.7);
   transform: translate(-50%, -50%) scale(1.3);
+}
+.card-viewMore{
+  background-color: white;
+}
+img.card-viewMore-img-top {
+  padding:10px
+  
+}
+button.owl-prev.owl-prev-1 {left: -4px;}
+button.rec_next,button.rec_pre {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 100%;
+  background-color: pink;
+  position:absolute;
+  top: 20%;
+}
+button.rec_next {
+  left: 0;
+}
+
+button.rec_pre {
+  right: 0;
 }
 /* for mouse  */
