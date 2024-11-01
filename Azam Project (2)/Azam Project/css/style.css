@@ -1718,7 +1718,7 @@ font-weight: 600;
 .card-viewMore-body {
   padding: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -1826,7 +1826,7 @@ font-weight: 600;
 button.owl-prev,button.owl-next {position: absolute;top: 35%;z-index: 999;width: 39px;height: 39px;border-radius: 100%;background-color: pink;border: 1px;color: white;}
 button.owl-next{right: 0;}
 a.bi.bi-arrow-right {
-  font-size: 29px;
+  font-size: 21px;
   color: pink;
 }
 
@@ -1865,6 +1865,7 @@ button.rec_next,button.rec_pre {
   background-color: pink;
   position:absolute;
   top: 20%;
+  z-index: 9999;
 }
 button.rec_next {
   left: 0;
