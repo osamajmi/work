@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Slider</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            background-color: #ff6f91;
+            padding: 20px 0;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            touch-action: pan-y;
+        }
+        .card {
+            flex: 0 0 37%; /* Base size for mobile */
+            max-width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 5px;
+            border-radius: 15px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+        .card-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1.2em;
+        }
+        button.slider-btn.slider-btn-left {
+    left: 10px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+        button.slider-btn.slider-btn-right {
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    background: pink;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        .frstcard {
+    margin-left: -209px;
+}
+.card img{
+    transition: all ease-in 800ms;
+}
+.card img:hover{
+   transform: scale(1.2)
+
+}
+        /* Mobile View */
+        @media (max-width: 460px) {
+            .slider {
+                transform: translateX(-25%); /* Initial position */
+            }
+            .card {
+                flex: 0 0 65%; /* Base size for mobile */
+            }
+            .card-content {
+    position: absolute;
+    bottom: 92px;
+    left: 10px;
+    color: white;
+    font-size: 1.2em;
+}
+button.slider-btn.slider-btn-left, button.slider-btn.slider-btn-right{
+    display: none;
+
+}
+        }
+
+        /* Desktop View */
+        @media (min-width: 426px) {
+            .slider {
+                transform: translateX(0);
+            }
+            .slider-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(255, 255, 255, 0.7);
+                border: none;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .slider-btn-left {
+                left: 10px;
+                z-index: 9999;
+                width: 30px;
+                height: 30px;
+                background: pink;
+            }
+            .slider-btn-right {
+                right: 10px;
+                z-index: 9999;
+                width: 30px;
+                height: 30px;
+                background: pink;
+            }
+           
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <button class="slider-btn slider-btn-left" onclick="prevSlide()">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="slider-btn slider-btn-right" onclick="nextSlide()">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="slider" id="slider" 
+         onmousedown="startDrag(event)" 
+         onmouseup="endDrag()" 
+         onmousemove="drag(event)" 
+         onmouseleave="endDrag()" 
+         ontouchstart="startDrag(event)" 
+         ontouchend="endDrag()" 
+         ontouchmove="drag(event)">
+        <div class="card frstcard"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 1"><div class="card-content">Card 1</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 2"><div class="card-content">Card 2</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 3"><div class="card-content">Card 3</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 4"><div class="card-content">Card 4</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 5"><div class="card-content">Card 5</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 1"><div class="card-content">Card 1</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 2"><div class="card-content">Card 2</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 3"><div class="card-content">Card 3</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 4"><div class="card-content">Card 4</div></div>
+        <div class="card"><img src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896" alt="Card 5"><div class="card-content">Card 5</div></div>
+   
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0; // Start at the first card
+    const slider = document.getElementById('slider');
+    const totalCards = slider.children.length;
+    let isDragging = false;
+    let startX = 0;
+
+    function updateSliderPosition() {
+        if (window.innerWidth <= 425) {
+            // Mobile View
+            slider.style.transform = `translateX(calc(-${currentIndex * 50}% + 25%))`;
+        } else {
+            // Desktop View (if needed)
+            slider.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+        }
+    }
+
+    function nextSlide() {
+        if (currentIndex < totalCards - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateSliderPosition();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalCards - 1;
+        }
+        updateSliderPosition();
+    }
+
+    function startDrag(event) {
+        isDragging = true;
+        startX = event.clientX || event.touches[0].clientX;
+    }
+
+    function endDrag() {
+        isDragging = false;
+    }
+
+    function drag(event) {
+        if (!isDragging) return;
+
+        const x = event.clientX || event.touches[0].clientX;
+        const walk = x - startX; // Calculate distance moved
+
+        if (walk > 100) { // Dragging right
+            prevSlide();
+            startX = x; // Reset start position
+        } else if (walk < -100) { // Dragging left
+            nextSlide();
+            startX = x; // Reset start position
+        }
+    }
+</script>
+
+
+</body>
+</html>

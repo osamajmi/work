@@ -127,20 +127,23 @@ span.bi {
 }
 
 .nav-img_data {
-  display: inline-block;
+  display: flex;
   margin-right: 15px;
   margin-bottom: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-img_data img {
   margin-top: 35px;
-  width: 80px;
-  height: 80px;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  width: 120px;
+  height: 139px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   /* border-radius: 8px; */
   transition: transform 0.3s;
-  box-shadow: pink 0px 0px 2px 2px;
+  /* box-shadow: pink 0px 0px 2px 2px; */
 }
 
 .nav-img_data img:hover {
@@ -1873,5 +1876,9 @@ button.rec_next {
 
 button.rec_pre {
   right: 0;
+}
+.nav-img_data span {
+  margin-top: 5px;
+  font-weight: 300;
 }
 /* for mouse  */

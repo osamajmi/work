@@ -224,7 +224,7 @@
            
        }
        .cat_cardslid{
-        display: none;
+        /* display: none; */
        }
        .main-slider{
         margin-top: 172px !important;
