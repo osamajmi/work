@@ -1882,3 +1882,99 @@ button.rec_pre {
   font-weight: 300;
 }
 /* for mouse  */
+
+/* in focus  css*/
+
+
+/* Add your custom styles here */
+.in_focus-slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    /* background-color: #d6d6d6; */
+    padding: 20px 0;
+    margin-top: 25px;
+}
+.in_focus-card {
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    box-shadow: none; /* Remove default shadow */
+    margin-top: 30px;
+}
+.in_focus-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   /* Match card radius */
+    box-shadow: inset 10px -20px 20px -10px rgba(0, 0, 0, 0.5);
+    pointer-events: none; /* Prevent interactions */
+}
+.in_focus-card img {
+    width: 100%;
+    height: 100%;
+    transition: all ease-in 0.5s;
+}
+.in_focus-card img:hover {
+    transform: scale(1.2);
+}
+.in_focus-card-content {
+    position: absolute;
+    bottom: 10px;
+    /* left: 10px; */
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.in_focus-heading {
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    justify-content: center;
+}
+.in_focus-underline {
+    position: relative;
+    display: inline-block;
+}
+.in_focus-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: pink;
+}
+.nav-icons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+.nav-icons i {
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+div#sliderfocus {
+  display: block !important;
+  
+  
+  
+}
+
+/* infocsu end  */

@@ -229,6 +229,17 @@
        .main-slider{
         margin-top: 172px !important;
       }
+      .in_focus-card-content {
+        position: absolute;
+        bottom: 40px;
+        left: 0px;
+        color: white;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        }
       
       
    }
@@ -325,13 +336,16 @@
         margin-top: 41px;
         padding: 0px 24px;
     }
- */
+ */.main-slider{
+    margin-top: 135px;
+ }
  button.owl-prev, button.owl-next{
     top: 21% !important;
     
  }
  button.rec_next, button.rec_pre{
     top: 12% !important;
+    display: none;
  }
  button.owl-next{
     right: -3px !important
@@ -367,5 +381,19 @@
     margin-left:30px !important;
     
 }
+.in_focus-card-content{
+ font-size: 1.2em;
+ bottom: 35px;
+}
+.nav-icons {
+    display: none;
+}
 }
 /* slider   end */
+/* in focus css */
+@media (max-width: 770px) {
+   
+    
+}
+
+/* in focus ned  css */
