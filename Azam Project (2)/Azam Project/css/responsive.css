@@ -1,7 +1,29 @@
+
+/* in focus ned  css */
+@media (max-width:800px) {
+    .custom-nav {
+     display: none;
+    }
+    .shopSab{
+        justify-content: center;
+    }
+    div#owlCom {
+        display: none !important;
+       
+    }
+    }
+    
+
+
+
 @media (min-width: 320px) and (max-width: 778px) {
     ul.nav-ul.nav-list-items.d-flex li.nav-li {
         width: 20%;
         padding: 0px 0px 10px 8px;
+    }
+    div#owlCom {
+        display: block !important;
+       
     }
 
     .header-section-silk {
@@ -203,6 +225,9 @@
         margin-top: 40px;
         height: 480px;
     }
+    .owl-carousel.owl-theme.owl-loaded.owl-drag {
+        /* display: block !important; */
+    }
 }
 
 
@@ -215,7 +240,9 @@
     .mb-nav{
         display: none;
     }
-    
+    .owl-carousel.owl-theme.owl-loaded.owl-drag {
+        /* display: block !important; */
+    }
   }
    /* mobile nav css end */
    @media (min-width:770px){
@@ -240,7 +267,9 @@
         align-items: center;
         width: 100%;
         }
-      
+        .owl-carousel.owl-theme.owl-loaded.owl-drag {
+            /* display: block !important; */
+        }
       
    }
    @media (max-width:768px){
@@ -336,7 +365,12 @@
         margin-top: 41px;
         padding: 0px 24px;
     }
- */.main-slider{
+        
+ */
+ .card_filter{
+    height: 475px;
+ }
+ .main-slider{
     margin-top: 135px;
  }
  button.owl-prev, button.owl-next{
@@ -393,7 +427,11 @@
 /* in focus css */
 @media (max-width: 770px) {
    
-    
+    .owl-carousel.owl-theme.owl-loaded.owl-drag {
+        /* display: block !important; */
+    }
+    .recText{
+        right: 6px;
+    }
 }
 
-/* in focus ned  css */
