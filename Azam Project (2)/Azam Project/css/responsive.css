@@ -5,7 +5,7 @@
      display: none;
     }
     .shopSab{
-        justify-content: center;
+        /* justify-content: center; */
     }
     div#owlCom {
         display: none !important;
@@ -168,12 +168,12 @@
 
 @media (max-width: 576px) {
     .owl-carousel .item {
-        padding: 5px; /* Reduce padding on mobile */
-        width: 258px;
+        /* padding: 5px; */ /* Reduce padding on mobile */
+        /* width: 258px; */
     }
     
     .card-viewMore {
-        width: 95%; /* Take 95% of the width on mobile */
+        width: 100%; /* Take 95% of the width on mobile */
         background-color: white;
     }
 }
@@ -300,7 +300,8 @@
         color: white;
     }
     button.rec_next, button.rec_pre{
-        top: 19% !important;
+        top: 29% !important;
+        z-index: 9999;
     }
     button.rec_pre {
         
@@ -432,6 +433,9 @@
     }
     .recText{
         right: 6px;
+    }
+    .nav-icons {
+        display: none;
     }
 }
 

@@ -7,6 +7,9 @@ body {
   background-color: rgb(255, 241, 242);
   font-family: Poppins, sans-serif !important;
 }
+/* html {
+  font-size: 10px;
+} */
 body,span,div,p,h1,h2,h3,h4,h5,h6 {
  
   font-family: Poppins, sans-serif !important;
@@ -1243,7 +1246,7 @@ li.nav-item.dropdown a.nav-link.dropdown-toggle {
 }
 
 .filter-buttons {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   text-align: left;
 }
 
@@ -1258,7 +1261,6 @@ li.nav-item.dropdown a.nav-link.dropdown-toggle {
 }
 
 .filter-buttons button:hover {
-  background-color: rgb(52, 58, 64);
 }
 
 .owl-carousel .item {
@@ -1284,7 +1286,7 @@ li.nav-item.dropdown a.nav-link.dropdown-toggle {
 }
 
 .card-viewMore:hover img {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .card-viewMore-body {
@@ -1672,30 +1674,28 @@ font-weight: 600;
 /* main  slider changes css end  */
 /* recmd card start */
 .filter-buttons {
-  margin-bottom: 20px;
   text-align: left;
-  display: flex;
 }
 
 .filter-buttons button {
-  margin: 18px 10px;
-  border-radius: 8px;
+  border-radius: 20px;
+  text-align: center;
   padding: 10px 20px;
+  font-size: 14px;
+  background-color: #f9f9f9;
   cursor: pointer;
-  background-color: #000;
-  color: #fff;
-  border: none;
+  color: black;
+  font-weight: 300;
 }
 
 .filter-buttons button:hover {
-  background-color: #343a40;
 }
 
 .owl-carousel .item {
   /* display: flex; */
   justify-content: center;
   padding: 10px;
-  margin-bottom: 44px;
+  margin-bottom: 25px;
 }
 
 .card-viewMore {
@@ -1711,12 +1711,12 @@ font-weight: 600;
 
 .card-viewMore img {
   width: 100%;
-  height: auto;
+  /* height: 295px; */
   transition: transform 0.3s ease;
 }
 
 .card-viewMore:hover img {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .card-viewMore-body {
@@ -1761,7 +1761,7 @@ font-weight: 600;
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #000;
+  color: white;
   font-size: 24px;
   cursor: pointer;
   transition: color 0.2s;
@@ -1900,8 +1900,8 @@ button.rec_pre {
     height: 340px;
     position: relative;
     overflow: hidden;
-    border-top-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
     box-shadow: none; /* Remove default shadow */
     margin-top: 30px;
 }
@@ -1958,7 +1958,7 @@ button.rec_pre {
 }
 .nav-icons {
     position: absolute;
-    top: 50%;
+    top: 58%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -2084,9 +2084,7 @@ margin-bottom: 20px;
  /* Filter Buttons */
  .filter-buttons {
      display: flex;
-     gap: 10px;
-     padding: 10px;
-     margin-left: 11px;
+     margin-left: -10px;
      overflow-x: auto;
      white-space: nowrap;
      scrollbar-width: none;
@@ -2104,25 +2102,25 @@ margin-bottom: 20px;
  }
 
  .filter-btn.active {
-     background: #f57c00;
-     color: white;
+     background: #fff;
+     color: black;
+     box-shadow: 2px 5px 10px 0 rgba(219,219,219,.39);
+     font-weight: 500;
  }
 
  /* Owl Carousel */
- .all {
+ /* .all {
      background: white;
      border-radius: 10px;
-     /* padding: 10px; */
-     margin-bottom: 10px;
-     margin-top: 20px;
+     margin-top: 1px;
      margin-left: 10px;
      text-align: center;
      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
- }
+ } */
 
  .owl-carousel .item img {
      width: 100%;
-     border-radius: 10px;
+     /* border-radius: 10px; */
  }
 
  .owl-carousel .item p {
@@ -2142,10 +2140,12 @@ margin-bottom: 20px;
      margin-top: 30px;
      border-radius: 20px;
      margin-left: 10px;
+     padding: 20px;
+     background-color: white;
  }
  
  .owl-stage-outer {
-     margin-top: 20px;
+     /* margin-top: 20px; */
  }
 
  /* Custom navigation buttons */
@@ -2174,19 +2174,19 @@ right: 3px;
 button#prevBtn {
 left: 17px;
 }
-.owl-carousel .owl-item img{
-  /* height: 250px !important; */
+card-viewMore img{
+  height: 250px !important;
 }
 
 .price {
   position: absolute;
   /* top: 0; */
-  bottom: 102px;
-  right: 5px;
+  bottom: 55px;
+  right: -1px;
   color: white;
   width: 130px;
   height: 36px;
-  border-bottom-right-radius: 10px;
+  /* border-bottom-right-radius: 10px; */
   background: #808080bd;
   border-top-left-radius: 46px;
   display: flex;
@@ -2216,7 +2216,7 @@ left: 17px;
     border-radius: 11px;
 }
 .shopimgtxt img {
-    width: 91%;
+    width: 200px;
     height: 150px;
     border-top-right-radius: 20px;
     margin-left: 20px;
@@ -2387,7 +2387,7 @@ left: 17px;
   margin-bottom: 30px;
 }
 .card_blog {
-  width: 300px;
+  width: 270px;
   height: 250px;
   box-shadow: 0px 0px 4px 2px gray;
   border-radius: 10px;
@@ -2421,11 +2421,46 @@ left: 17px;
   font-size: 14px;
   margin-left: 5px;
 }
+.card_filter-container {
+  display: flex; /* Use flexbox for horizontal layout */
+   /* Allow horizontal scrolling */
+  gap: 20px; /* Space between carousels */
+   /* Padding around the container */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.float-start.ms-2 {
+  margin-top: 10px;
+}
 /* Hide carousel on larger screens */
 @media (min-width: 1000px) {
   .custom-carousel {
       display: none !important;
   }
+  button.rec_next, button.rec_pre{
+    top:27%
+  }
+
+.item .trending {
+  height: 300px;
+}
+
+.trending img {
+  height: 225px;
+}
+.price{
+  bottom: 73px;
+}
+.shopimgtxt img{
+  width: 91%;
+}
+.Our-Comfort,.Athleisure{
+  display: none !important;
+}
+.mainInfo{
+  padding: 0% 20%;
+}
 }
 /* Hide grid layout on smaller screens */
 @media (max-width: 1000px) {

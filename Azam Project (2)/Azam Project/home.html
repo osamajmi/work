@@ -1534,29 +1534,33 @@
     <!-- ---------------------------------------------------------------------------------------------------- -->
     <!-- infocus -->
     <div class="in_focus-slider-container">
-      <h1 class="in_focus-heading">
-        in <span class="in_focus-underline">focus</span>
-      </h1>
+      <div class="section-heading mb-4 pt-3">
+        <span>In Focus</span>
 
-      <div class="owl-carousel" id="sliderfocus">
-        <div class="in_focus-card"><img
-            src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
-            alt="Vanish Shaper Panty">
-          <div class="in_focus-card-content">
-            <span>Vanish Shaper Panty</span>
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-        <div class="in_focus-card"><img
-            src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
-            alt="Vanish Shaper Panty">
-          <div class="in_focus-card-content">
-            <span>Vanish Shaper Panty</span>
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-        <!-- Repeat additional cards here -->
       </div>
+    
+<div class="mainInfo">
+  <div class="owl-carousel" id="sliderfocus">
+    <div class="in_focus-card"><img
+        src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
+        alt="Vanish Shaper Panty">
+      <div class="in_focus-card-content">
+        <span>Vanish Shaper Panty</span>
+        <i class="bi bi-arrow-right"></i>
+      </div>
+    </div>
+    <div class="in_focus-card"><img
+        src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
+        alt="Vanish Shaper Panty">
+      <div class="in_focus-card-content">
+        <span>Vanish Shaper Panty</span>
+        <i class="bi bi-arrow-right"></i>
+      </div>
+    </div>
+    <!-- Repeat additional cards here -->
+  </div>
+</div>
+     
 
       <div class="nav-icons">
         <i class="bi bi-chevron-left" id="prev"></i>
@@ -1621,95 +1625,68 @@
 
 
       <div class="card_filter">
-        <div class="filter-buttons">
-          <button class="filter-btn active" onclick="filterItems('all')">All</button>
-          <button class="filter-btn" onclick="filterItems('bras')">Bras</button>
-          <button class="filter-btn" onclick="filterItems('panties')">Panties</button>
-          <button class="filter-btn" onclick="filterItems('nightwear')">Nightwear</button>
-          <button class="filter-btn" onclick="filterItems('activewear')">Activewear</button>
+        <span>Trending now</span>
+        <img src="../Azam Project/img/fire.webp" width="20px" alt="">
+        <!-- Filter Buttons -->
+        <div class="filter-buttons mb-3">
+            <button class="filter-btn active" data-carousel="all">All</button>
+            <button class="filter-btn" data-carousel="bra-carousel">Bra</button>
+            <button class="filter-btn" data-carousel="nightwear-carousel">Nightwear</button>
+            <button class="filter-btn" data-carousel="sleepwear-carousel">Sleepwear</button>
         </div>
-
-        <!-- Owl Carousel -->
-        <div class="owl-carousel" id="products">
-          <!-- Carousel Items -->
-          <div class="item all bras">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
+        
+        <!-- Carousel Container -->
+        <div class="card_filter-container">
+            <!-- Owl Carousels -->
+            <div class="owl-carousel owl-theme bra-carousel main">
+                <div class="item">
+                    <div class="card-viewMore trending">
+                        <i class="bi bi-heart heart-icon"></i>
+                        <img src="img/product.webp" alt="Bra Item 1">
+                        <div class="price">
+                            <p>₹8 <del>₹1495</del></p>
+                        </div>
+                        <div class="float-start ms-2">
+                            <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                            <p>Jockey Medium Rise...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-center">Zivame<br><span>12 Hour Shapewear</span></p>
 
-          </div>
-          <div class="item all panties">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
+            <div class="owl-carousel owl-theme nightwear-carousel main">
+                <div class="item">
+                    <div class="card-viewMore trending">
+                        <i class="bi bi-heart heart-icon"></i>
+                        <img src="../Azam Project/img/product.webp" alt="Nightwear Item 1">
+                        <div class="price">
+                            <p>₹8 <del>₹1495</del></p>
+                        </div>
+                        <div class="float-start ms-2">
+                            <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                            <p>Jockey Medium Rise...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
 
-
-          </div>
-          <div class="item all nightwear">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
+            <div class="owl-carousel owl-theme sleepwear-carousel main">
+                <div class="item">
+                    <div class="card-viewMore trending">
+                        <i class="bi bi-heart heart-icon"></i>
+                        <img src="../Azam Project/img/product.webp" alt="Sleepwear Item 1">
+                        <div class="price">
+                            <p>₹8 <del>₹1495</del></p>
+                        </div>
+                        <div class="float-start ms-2">
+                            <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                            <p>Jockey Medium Rise...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-
-          </div>
-          <div class="item all activewear">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
-            </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-
-          </div>
-          <div class="item all bras">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
-            </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-
-          </div>
-          <div class="item all panties">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
-            </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-          </div>
-          <div class="item all nightwear">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
-            </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-
-          </div>
-          <div class="item all activewear">
-            <img src="../Azam Project/img/product.webp" alt="Zivame">
-            <div class="price">
-              <p>₹8 <del>₹1495</del></p>
-            </div>
-            <p class="float-end">Zivame<br><span>12 Hour Shapewear</span></p>
-
-
-          </div>
         </div>
-
-        <!-- Custom Navigation Buttons -->
-        <div class="custom-nav">
-          <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-          <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
-        </div>
-      </div>
+    </div>
 
 
 
@@ -1856,7 +1833,7 @@
     
     <div class="containerRec">
       <!-- <h1>New <span class="in_focus-underline">Comfort</span></h1> -->
-      <div class="owl-carousel owl-theme owlCom" id="">
+      <div class="owl-carousel owl-theme Our-Comfort" id="">
         <div class="item recCard">
           <img src="./img/image 3.png" alt="">
           <div class="recText">
@@ -1960,7 +1937,10 @@
 <!-- Shop Athleisure -->
 
 <div class="AthleisureCarouselContainer">
-  <h1>Shop <span class="AthleisureUnderline">Athleisure</span></h1>
+  <div class="section-heading">
+   <span class=""> Shop Athleisure</span>
+  </div>
+  <h1></h1>
   <div class="owl-carousel owl-theme Athleisure my-recommended-owl ">
       <div class="AthleisureItem AthleisureCarouselItem">
           <img src="../Azam Project/img/pro.jpg" alt="">
@@ -2001,7 +1981,7 @@
           <div class="AthleisureItemText">
               <p>Hello </p>
               <p>World</p>
-              <h5>Data Warehouse</h5>
+              <h5>Data </h5>
           </div>
       </div>
       <div class="AthleisureCarouselItem">
@@ -2009,7 +1989,7 @@
           <div class="AthleisureItemText">
               <p>Hello </p>
               <p>World</p>
-              <h5>Data Warehouse</h5>
+              <h5>Data </h5>
           </div>
       </div>
       <div class="AthleisureCarouselItem">
@@ -2017,7 +1997,7 @@
           <div class="AthleisureItemText">
               <p>Hello </p>
               <p>World</p>
-              <h5>Data Warehouse</h5>
+              <h5>Data</h5>
           </div>
       </div>
       <div class="AthleisureCarouselItem">
@@ -2323,62 +2303,57 @@
 
 <!-- filter products -->
 <script>
-  $(document).ready(function () {
-    // Set display property for the carousel to block
-    $('#products').css('display', 'block');
-
-    // Initialize Owl Carousel
-    $('#products').owlCarousel({
-      loop: false,
-      margin: 10,
-      responsiveClass: true,
-      nav: false, // Disable default navigation buttons
-      responsive: {
-        0: {
-          items: 1.5
-        },
-        640: {
-          items: 3.5
-        },
-        1024: {
-          items: 5
-        }
-      }
-    });
-
-    // Custom navigation buttons functionality
-    $('#prevBtn').click(function () {
-      $('#products').trigger('prev.owl.carousel');
-    });
-    $('#nextBtn').click(function () {
-      $('#products').trigger('next.owl.carousel');
-      // alert()
-    });
-
-    // Filter function
-    window.filterItems = function (category) {
-      const items = $('.item');
-      const buttons = $('.filter-btn');
-
-      // Update active button style
-      buttons.removeClass('active');
-      $(`[onclick="filterItems('${category}')"]`).addClass('active');
-
-      // Show/hide items based on category
-      items.each(function () {
-        const item = $(this);
-        if (category === 'all' || item.hasClass(category)) {
-          item.removeClass('hide-item');
-        } else {
-          item.addClass('hide-item');
-        }
+  $(document).ready(function() {
+      // Initialize all Owl Carousels
+      $('.bra-carousel, .nightwear-carousel, .sleepwear-carousel').owlCarousel({
+          loop: true,
+          margin: -20,
+          nav: false,
+          center: true,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          autoplayHoverPause: true,
+          responsive: {
+              0: {
+                  items: 1.8
+              },
+              600: {
+                  items: 3
+              },
+              1000: {
+                  items: 4
+              },
+              1200: {
+                  items: 4.3
+              }
+          }
       });
 
-      // Refresh Owl Carousel after filtering
-      $('#products').trigger('refresh.owl.carousel');
-    };
+      // Hide all carousels except for the first one (Bra)
+      $('.main').hide();
+      $('.bra-carousel').show();
+
+      // Handle filter button clicks to show the relevant carousel
+      $('.filter-buttons button').on('click', function() {
+          var carouselClass = $(this).data('carousel');
+
+          // Remove active class from all buttons and add it to the clicked button
+          $('.filter-btn').removeClass('active');
+          $(this).addClass('active');
+
+          // Show all carousels when 'All' is clicked
+          if (carouselClass === 'all') {
+              $('.main').show(); // Show all carousels
+          } else {
+              $('.main').hide(); // Hide all carousels
+              $('.' + carouselClass).show(); // Show the selected carousel
+          }
+      });
   });
-</script>
+</script>s
+
+
+
 <!-- filter products js end  -->
 
 <script>
@@ -2416,6 +2391,7 @@
     const owl = $('#sliderfocus');
     owl.owlCarousel({
       loop: true,
+      // autoplay:5000,
       center: true,
       margin: 10,
       responsive: {
@@ -2450,10 +2426,10 @@
 <!-- focus slder end  -->
 <!-- our cumfort  zone -->
 
-<script>
+<!-- <script>
   function initializeCarousel() {
-    const owlCom = $('.owlCom');
-    $('.owlCom').css('display', 'block');
+    const owlCom = $('.Our-Comfort');
+    $('.Our-Comfort').css('display', 'block');
     if (window.innerWidth < 768) {
       // Initialize the carousel for mobile
       if (!owlCom.hasClass('owl-loaded')) {
@@ -2494,22 +2470,22 @@
     initializeCarousel();
   });
 
-</script>
+</script> -->
 <!-- our  cumfort  zone end js  -->
-
 <script>
   $(function () {
     // Owl Carousel
     var owl = $(".my-recommended-owl");
     owl.owlCarousel({
       // items: 6,
-      // margin: 10,
+      margin: -20,
       loop: true,
-      nav: true,
+      nav: false,
+      autoplay:3000,  
       resposive: true,
-      stagePadding: 15,
+      // stagePadding: 15,
       center: true,
-      dots: true,
+      dots: false,
       responsive: {
         0: {
           items: 1.3
@@ -2527,6 +2503,13 @@
           items: 4
         }
       }
+    });
+    $('.rec_next').click(function () {
+      owl.trigger('next.owl.carousel');
+    });
+
+    $('.rec_pre').click(function () {
+      owl.trigger('prev.owl.carousel');
     });
   });
 
@@ -2583,6 +2566,55 @@
 
 
 </script>
+<script>
+  $(function () {
+    // Owl Carousel
+    var owl = $(".Our-Comfort");
+    owl.owlCarousel({
+      // items: 6,
+      margin: -20,
+      loop: true,
+      nav: false,
+      autoplay:3000,  
+      resposive: true,
+      // stagePadding: 15,
+      center: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1.3
+        },
+
+        600: {
+          items: 2.5  
+        },
+
+        1024: {
+          items: 4
+        },
+
+        1366: {
+          items: 4
+        }
+      }
+    });
+    $('.rec_next').click(function () {
+      owl.trigger('next.owl.carousel');
+    });
+
+    $('.rec_pre').click(function () {
+      owl.trigger('prev.owl.carousel');
+    });
+  });
+
+  // our blog section code  start here
+
+ 
+
+
+
+
+</script>
 <!-- blog js  -->
 <script>
   function initializeCarousel() {
@@ -2592,15 +2624,13 @@
           if (!owl.hasClass('owl-loaded')) {
               owl.owlCarousel({
                   loop: true,
-                  // nav: true,
-                  dots:false,
                   center:true,
-                  // stagePadding:30,
-                  // margin: 10,
+                  dots:false,
+                  margin: -20,
                   resposive: true,
-                  stagePadding: 15,  
+                  // stagePadding: 15,  
                   responsive: {
-                      0: { items: 0.9},        // Mobile view
+                      0: { items: 1.2},        // Mobile view
                       600: { items: 2.3 }       // Tablet view
                   }
               });

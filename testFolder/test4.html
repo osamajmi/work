@@ -10,252 +10,81 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <style>
-        .filter-buttons {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .filter-buttons button {
-            margin: 18px 10px;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #000;
-            color: #fff;
-            border: none;
-        }
-
-        .filter-buttons button:hover {
-            background-color: #343a40;
-        }
-
-        .owl-carousel .item {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-        }
-
-        .card-viewMore {
-            position: relative;
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .card-viewMore img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .card-viewMore:hover img {
-            transform: scale(1.1);
-        }
-
-        .card-viewMore-body {
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-viewMore-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .btn-viewMore {
-            background-color: white;
-            border: none;
-            color: black;
-            padding: 5px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: lighter;
-            border: 1px solid gray;
-            font-size: 14px;
-        }
-
-        .btn-viewMore:hover {
-            background-color: pink;
-        }
-
-        .btn-viewMore:focus {
-            border-color: pink !important;
-            outline: none;
-            border: none;
-        }
-
-        .heart-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #000;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .heart-icon:hover {
-            color: #ff6666;
-        }
-
-        .owl-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: #000;
-            cursor: pointer;
-        }
-
-        .owl-nav button.owl-prev {
-            left: -25px;
-        }
-
-        .owl-nav button.owl-next {
-            right: -25px;
-        }
-
-        .owl-nav button.owl-prev:hover,
-        .owl-nav button.owl-next:hover {
-            color: #ff6666;
-        }
-
-        .owl-dots {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .owl-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            margin: 5px;
-            border-radius: 50%;
-            background-color: #ddd;
-            cursor: pointer;
-        }
-
-        .owl-dot.active {
-            background-color: #ff6666;
-        }
-
-        @media (max-width: 768px) {
-            .card-viewMore {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .card-viewMore {
-                width: 95%;
-            }
-        }
-
-        button.owl-prev,button.owl-next {
-    position: absolute;
-    top: 29%;
-    z-index: 999;
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    background-color: pink;
-    border: 1px;
-    color: white;
-}
-button.owl-next{
-    right: 16px !important
-}
-    </style>
+    <link rel="stylesheet" href="../Azam Project (2)/Azam Project/css/style.css">
+    <link rel="stylesheet" href="../Azam Project (2)/Azam Project/css/responsive.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="card_filter">
         <!-- Filter Buttons -->
-        <div class="filter-buttons">
-            <button data-carousel="bra-carousel">Bra</button>
-            <button data-carousel="nightwear-carousel">Nightwear</button>
-            <button data-carousel="sleepwear-carousel">Sleepwear</button>
+        <div class="filter-buttons mb-3">
+            <button class="filter-btn active" data-carousel="all">All</button>
+            <button class="filter-btn" data-carousel="bra">Bra</button>
+            <button class="filter-btn" data-carousel="nightwear">Nightwear</button>
+            <button class="filter-btn" data-carousel="sleepwear">Sleepwear</button>
         </div>
         
-        <!-- Owl Carousels -->
-        <div class="owl-carousel owl-theme bra-carousel">
-            <div class="item">
+        <!-- Main Carousel Div -->
+        <div class="owl-carousel owl-theme all-products">
+            <!-- Bra Items -->
+            <div class="item bra">
                 <div class="card-viewMore">
-                    <i class="far fa-heart heart-icon"></i>
-                    <img src="https://via.placeholder.com/300x200.png?text=Bra+Item+1" class="card-viewMore-img-top" alt="Bra Item 1">
-                    <div class="card-viewMore-body">
-                        <h5 class="card-viewMore-title">Bra Item 1</h5>
-                        <a href="#" class="btn btn-viewMore">View more</a>
+                    <i class="bi bi-heart heart-icon"></i>
+                    <img src="../Azam Project (2)/Azam Project/img/product.webp" alt="Bra Item 1">
+                    <div class="price">
+                        <p>₹8 <del>₹1495</del></p>
+                    </div>
+                    <div class="float-start ms-2">
+                        <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                        <p>Jockey Medium Rise...</p>
                     </div>
                 </div>
+                <!-- Add more Bra items here -->
             </div>
-            <div class="item">
+            <!-- Nightwear Items -->
+            <div class="item nightwear">
                 <div class="card-viewMore">
-                    <i class="far fa-heart heart-icon"></i>
-                    <img src="https://via.placeholder.com/300x200.png?text=Bra+Item+2" class="card-viewMore-img-top" alt="Bra Item 2">
-                    <div class="card-viewMore-body">
-                        <h5 class="card-viewMore-title">Bra Item 2</h5>
-                        <a href="#" class="btn btn-viewMore">View more</a>
+                    <i class="bi bi-heart heart-icon"></i>
+                    <img src="../Azam Project (2)/Azam Project/img/product.webp" alt="Nightwear Item 1">
+                    <div class="price">
+                        <p>₹8 <del>₹1495</del></p>
+                    </div>
+                    <div class="float-start ms-2">
+                        <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                        <p>Jockey Medium Rise...</p>
                     </div>
                 </div>
+                <!-- Add more Nightwear items here -->
+            </div>
+            <!-- Sleepwear Items -->
+            <div class="item sleepwear">
+                <div class="card-viewMore">
+                    <i class="bi bi-heart heart-icon"></i>
+                    <img src="../Azam Project (2)/Azam Project/img/product.webp" alt="Sleepwear Item 1">
+                    <div class="price">
+                        <p>₹8 <del>₹1495</del></p>
+                    </div>
+                    <div class="float-start ms-2">
+                        <h6 class="float-start ms-1">Silkluxuria</h6><br>
+                        <p>Jockey Medium Rise...</p>
+                    </div>
+                </div>
+                <!-- Add more Sleepwear items here -->
+            </div>
+            <!-- All Products (combine all categories) -->
+            <div class="item all">
+                <!-- This item can be empty as we show all categories with filter -->
             </div>
         </div>
-
-        <div class="owl-carousel owl-theme nightwear-carousel">
-            <div class="item">
-                <div class="card-viewMore">
-                    <i class="far fa-heart heart-icon"></i>
-                    <img src="https://via.placeholder.com/300x200.png?text=Nightwear+Item+1" class="card-viewMore-img-top" alt="Nightwear Item 1">
-                    <div class="card-viewMore-body">
-                        <h5 class="card-viewMore-title">Nightwear Item 1</h5>
-                        <a href="#" class="btn btn-viewMore">View more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="owl-carousel owl-theme sleepwear-carousel">
-            <div class="item">
-                <div class="card-viewMore">
-                    <i class="far fa-heart heart-icon"></i>
-                    <img src="https://via.placeholder.com/300x200.png?text=Sleepwear+Item+1" class="card-viewMore-img-top" alt="Sleepwear Item 1">
-                    <div class="card-viewMore-body">
-                        <h5 class="card-viewMore-title">Sleepwear Item 1</h5>
-                        <a href="#" class="btn btn-viewMore">View more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation Buttons -->
-        <button class="owl-prev">
-            <i class="bi bi-chevron-left"></i>
-        </button>
-        <button class="owl-next">
-            <i class="bi bi-chevron-right"></i>
-        </button>
     </div>
-<!-- second slider  -->
-
 
     <script>
         $(document).ready(function() {
-            // Initialize all Owl Carousels and store the reference
-            var owlBra = $('.bra-carousel').owlCarousel({
+            // Initialize Owl Carousel
+            $('.all-products').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: false, // Disable default navigation
-                dots: true,
+                nav: true,
+                center: true,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
@@ -268,81 +97,32 @@ button.owl-next{
                     },
                     1000: {
                         items: 4
-                    },
-                    1200: {
-                        items: 6
                     }
                 }
             });
 
-            var owlNightwear = $('.nightwear-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: false,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1.5
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    },
-                    1200: {
-                        items: 6
-                    }
-                }
-            });
+            // Initially show all items
+            $('.bra, .nightwear, .sleepwear').show();
+            $('.all').hide(); // Optional if you have a dedicated "All" item
 
-            var owlSleepwear = $('.sleepwear-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: false,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1.5
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    },
-                    1200: {
-                        items: 6
-                    }
-                }
-            });
-
-            // Hide all carousels except for the first one (Bra)
-            $('.owl-carousel').hide();
-            $('.bra-carousel').show();
-
-            // Handle filter button clicks to show the relevant carousel
+            // Handle filter button clicks to show relevant products
             $('.filter-buttons button').on('click', function() {
-                var carouselClass = $(this).data('carousel');
-                $('.owl-carousel').hide(); // Hide all carousels
-                $('.' + carouselClass).show(); // Show the selected carousel
-            });
+                var filter = $(this).data('carousel');
 
-            // Custom navigation for Owl Carousel
-            $('.owl-prev').click(function() {
-                var activeCarousel = $('.owl-carousel:visible');
-                activeCarousel.trigger('prev.owl.carousel');
-            });
+                // Remove active class from all buttons and add it to the clicked button
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
 
-            $('.owl-next').click(function() {
-                var activeCarousel = $('.owl-carousel:visible');
-                activeCarousel.trigger('next.owl.carousel');
+                // Show or hide items based on filter
+                if (filter === "all") {
+                    $('.bra, .nightwear, .sleepwear').show(); // Show all items
+                } else {
+                    $('.bra, .nightwear, .sleepwear').hide(); // Hide all items
+                    $('.' + filter).show(); // Show selected category items
+                }
+
+                // Refresh the Owl Carousel after showing/hiding items
+                $('.all-products').trigger('refresh.owl.carousel');
             });
         });
     </script>
