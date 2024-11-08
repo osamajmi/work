@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List page  </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- product list page start  -->
+     <main class="prodcutListMain">
+   <!---------------------------------------------------------------------------------->
+        <!-- cat slider  end -->
+        <div class="container-space ">
+
+
+            <div class="container cat_cardslid d-flex justify-content-center  ">
+              <div class="nav_Slide mt-4">
+                <ul class="nav-Data categories-sec d-flex">
+      
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+      
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+                  <li class="nav-img_data"><img src="../img/girl-1 (1).png" alt="">
+                    <span>Bra</span>
+                  </li>
+      
+                </ul>
+              </div>
+            </div>
+        </div>
+        <!-- cat slider  end -->
+   <!---------------------------------------------------------------------------------->
+        <!-- product list section -->
+          
+            <div class="container-fluid">
+                <!-- top filter  -->
+                <div class="row">
+                     <div class="col-12">
+                        <div class="ms-4">
+                            <button class="btn btn-primary filter" onclick="filterShow()">  <span class="prodFilter"> Filter   <i class="bi bi-filter "> </i></span></button> 
+                            <button class="btn btn-primary featured">     <span class="ms-1">Featured  <i class="bi bi-filter-left"></i></span></button>
+                         </div>
+                     </div>
+                </div>
+                <div class="row">
+                    <!-- for filter  -->
+                    <div class="col-4" id="filter">
+                        <div class="container mt-3">
+                            <div id="accordion">
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                                    Collapsible Group Item #1
+                                  </a>
+
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                                  Collapsible Group Item #2
+                                </a>
+                                </div>
+                                <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                                    Collapsible Group Item #3
+                                  </a>
+                                </div>
+                                <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                    </div>
+                    <!-- for products -->
+                    <div class="col-8">
+      
+    
+
+                    <div class="container my-5">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 d-flex justify-content-between w-100">
+                            <!-- Card 1 -->
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Additional cards can be added in a similar way -->
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <span class="bestseller-badge">BESTSELLER</span>
+                                        <img src="../img/girl-1 (3).png" class="card-img-top" alt="Product Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</h5>
+                                        <p class="text-muted">Fudge | <span class="card-price">Rs. 1,131.00</span> <span class="card-old-price">Rs. 1,190.00</span></p>
+                                        <div class="color-options">
+                                            <span style="background-color: #8B4513;"></span>
+                                            <span style="background-color: #D2B48C;"></span>
+                                            <span style="background-color: #87CEEB;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+                </div> 
+            </div>
+
+        <!-- produst list section edn  -->
+     </main>
+  
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script>
+     function filterShow (){
+        var filter = document.getElementById("filter");
+        filter.classList.toggle("active");
+        }
+     </script>
+</body>
+</html>
