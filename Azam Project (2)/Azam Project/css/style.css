@@ -1765,7 +1765,7 @@ font-weight: 600;
   font-size: 24px;
   cursor: pointer;
   transition: color 0.2s;
-  z-index: 99999;
+  z-index: 999;
 }
 
 .heart-icon:hover {
@@ -2486,6 +2486,7 @@ button.filter{
 #filter {
   position: relative;
   /* top: 0; */
+  display: none;
   left: -57px;
   height: 100vh;
   width: 0;
@@ -2583,6 +2584,7 @@ button.filter{
 
 .filterProduct {
   display: flex;
+  position: relative;
 }
 
 .ProductList {
@@ -2650,4 +2652,17 @@ border-color: pink;
 
 button.accordion-button.collapsed {
   background-color: #f8f9fa;
+}
+
+.box {
+  width: 100%;
+  height: 60px;
+  border: 1px solid black;
+  margin-bottom: 13px;
+}
+.filter {
+  margin-left: 35px;
+}
+#filter.active{
+  display: block;
 }
