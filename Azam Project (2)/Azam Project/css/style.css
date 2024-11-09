@@ -2482,54 +2482,172 @@ button.filter{
     border-bottom-right-radius: 0;
     box-shadow: 0px 1px 2px 2px white;
 }
-/* Filter initially hidden */
+
 #filter {
+  position: relative;
+  /* top: 0; */
+  left: -57px;
+  height: 100vh;
+  width: 0;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  padding: 20px;
+}
+
+/* Active state for sidebar */
+#filter.active {
+  width: 521px;
+  transition: width 0.5s ease; /* Smooth opening transition *//* Set desired width when open */
+  left: 0;
+}
+
+/* Close button inside the sidebar */
+#sidebar button {
+  margin-top: 20px;
+}
+
+.product-card {
+    width: 265px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+.product-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+}
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.save-percent {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #888;
+}
+.product-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.product-price {
+    color: #d9534f;
+    font-weight: bold;
+}
+.original-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+.color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.color-circle.fudge { background-color: #8b5e3c; }
+.color-circle.beige { background-color: #d3b09b; }
+.color-circle.black { background-color: #000; }
+.color-circle.blue { background-color: #b3e5fc; }
+.heart-icon {
+    font-size: 18px;
+    color: #888;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.filterProduct {
+  display: flex;
+}
+
+.ProductList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+a.btnFilter {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.price-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+.price-input {
+  width: 80px;
+  border: none;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  outline: none;
+}
+.currency-symbol {
+  font-weight: bold;
+}
+ /* Additional styling for the accordion */
+ .accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-body {
+  background-color: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) .bi-chevron-down {
   display: none;
 }
 
-/* Show filter when .active is added */
-#filter.active {
+.accordion-button:not(.collapsed) .bi-chevron-up {
   display: block;
 }
 
-                   
-.card-title {
-  font-size: 1rem;
-  font-weight: bold;
+.accordion-button.collapsed .bi-chevron-up {
+  display: none;
 }
-.card-price {
-  font-size: 0.9rem;
-  color: red;
+
+.accordion-button.collapsed .bi-chevron-down {
+  display: block;
 }
-.card-old-price {
-  font-size: 0.8rem;
-  text-decoration: line-through;
-  color: grey;
+form-check-input:checked {
+background-color: pink;
+border-color: pink;
 }
-.card-save {
-  font-size: 0.9rem;
-  color: green;
+.accordion-item {
+  background-color: #f8f9fa;
+  border: none;
 }
-.bestseller-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: black;
-  color: white;
-  padding: 2px 8px;
-  font-size: 0.75rem;
-  font-weight: bold;
+
+button.accordion-button.collapsed {
+  background-color: #f8f9fa;
 }
-.color-options span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-right: 5px;
-  border: 1px solid #ccc;
-}
-/* span.prodFilter {
-  border-right-width: 2px;
-  border-right-color: black;
-  border-right-style: solid;
-} */

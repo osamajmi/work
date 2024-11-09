@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Custom Mouse Pointer</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .cursor {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(255, 192, 203, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-        }
-
-        .cursor.active {
-            background-color: rgba(255, 105, 180, 0.7);
-            transform: translate(-50%, -50%) scale(1.3);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Range Slider</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .slider-container {
+      position: relative;
+      width: 100%;
+    }
+    .range-input {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      background: black;
+      outline: none;
+      opacity: 0.7;
+      border-radius: 5px;
+      position: relative;
+    }
+    .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+    .price-labels {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="container mt-5">
+    <div class="slider-container">
+      <input type="range" min="0" max="2880" value="0" step="5" id="priceRangeSlider" class="range-input" oninput="updatePrice()">
+    </div>
+    <div class="price-labels">
+      <span>₹ <span id="minPrice">0</span></span>
+      <span>₹ <span id="maxPrice">2880</span></span>
+    </div>
+  </div>
 
-    <script>
-        const cursor = document.getElementById('custom-cursor');
+  <script>
+    function updatePrice() {
+      const slider = document.getElementById("priceRangeSlider");
+      const minPrice = document.getElementById("minPrice");
+      const maxPrice = document.getElementById("maxPrice");
 
-        // Update cursor position based on mouse movements
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-        });
+      minPrice.textContent = slider.value;  // Display the selected value as the minimum price
+    }
+  </script>
 
-        // Add click and touch event listeners to add active class
-        const activateCursor = () => {
-            cursor.classList.add('active');
-            setTimeout(() => cursor.classList.remove('active'), 150);
-        };
-
-        document.addEventListener('mousedown', activateCursor);
-        document.addEventListener('touchstart', (e) => {
-            // Update position on touch
-            cursor.style.left = `${e.touches[0].clientX}px`;
-            cursor.style.top = `${e.touches[0].clientY}px`;
-            activateCursor();
-        });
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
