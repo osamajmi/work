@@ -1447,397 +1447,176 @@
          </div>
          <!-- cat slider  end -->
     <!---------------------------------------------------------------------------------->
-         <!-- product list section -->
-           
-             <div class="container-fluid">
-                 <!-- top filter  -->
-                 <div class="row desView">
-                      <div class="col-12">
-                         <div class=" box">
-                             <button class="btn btn-primary filter" onclick="filterShow()">  <span class="prodFilter"> Filter   <i class="bi bi-filter "> </i></span></button> 
-                           
-                               <button class="btn btn-primary featured dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   <span class="ms-1">Featured <i class="bi bi-filter-left"></i></span>
-                               </button>
-                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                   <li><a class="dropdown-item" href="#">Action</a></li>
-                                   <li><a class="dropdown-item" href="#">Another action</a></li>
-                                   <li><a class="dropdown-item" href="#">Something else here</a></li>
-                               </ul>
-                           </div>
-                         </div>
-                     
-                 </div>
-                 
-             </div>
-             <div class="container-fluid">
-               
-               <div class="filterProduct">
-                 <!-- for filter  -->
-                 <div  id="filter">
-                   <button class="btn btn-close" onclick="filterShow()"> </button>
-                   <div class="container mt-5">
-                     <div class="accordion " id="accordionExample">
-                         <!-- Accordion Item 1 -->
-                         <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingOne">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
-                                     Price
-                                   
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" >
-                                 <div class="accordion-body">
-                                     <div class="form">
-                                         <input type="range" class="form-range" name="" value="0" id="">
-                                         <div class="price-range">
-                                             <span class="currency-symbol">&#8377;</span>
-                                             <input type="number" class="price-input" id="minPrice" value="0" >
-                                             <span>-</span>
-                                             <span class="currency-symbol">&#8377;</span>
-                                             <input type="number" class="price-input" id="maxPrice" value="2880" >
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                 
-                         <!-- Accordion Item 2 -->
-                         <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingTwo">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
-                                      Product Type
-                                    
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                 
-                         <!-- Accordion Item 3 -->
-                         <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
-                                    Size 
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                 
-                         <!-- Accordion Item 4 -->
-                         <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree" >
-                                  fabric
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                          <!-- Accordion Item 5 -->
-                          <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree" >
-                                  Color
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                          <!-- Accordion Item 6 -->
-                          <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapseThree" >
-                                  padding
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                          <!-- Accordion Item 7 -->
-                          <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseThree" >
-                                  Coverage
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                          <!-- Accordion Item 8 -->
-                         <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="false" aria-controls="collapseThree" >
-                                  wiring
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                          <!-- Accordion Item 9 -->
-                          <div class="accordion-item">
-                             <h2 class="accordion-header" id="headingThree">
-                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsninet" aria-expanded="false" aria-controls="collapseThree" >
-                                  style
-                                  
-                                     <i class="bi bi-chevron-up" style="display: none;"></i>
-                                 </button>
-                             </h2>
-                             <div id="collapsenine" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                                 <div class="accordion-body">
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                     <div class="form-check">
-                                         <label class="form-check-label float-start" for="flexCheckDefault">
-                                             Default checkbox
-                                           </label>
-                                         <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault">
-                                        
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
- 
-                 </div>
-                 <!-- for products -->
-              
-   
-                     <div class="ProductList">
-                       <div class="product-card">
-                         <span class="badge">BESTSELLER</span>
-                         <span class="save-percent">Save 4%</span>
-                         <img src="../img/product.webp" alt="Product Image">
-                         <p class="product-name">Front Closure Full Coverage Non Padded Non Wired Bra-CB-334</p>
-                         <p><span>Fudge</span> | <span class="product-price">Rs. 1,131.00</span> <span class="original-price">Rs. 1,190.00</span></p>
-                         <div class="color-options">
-                             <div class="color-circle fudge"></div>
-                             <div class="color-circle beige"></div>
-                             <div class="color-circle black"></div>
-                             <div class="color-circle blue"></div>
-                             <button class="btn btn-primary"> Add To Cart</button>
-                         </div>
-                         <i class="fa fa-heart heart-icon"></i>
-                       </div>
-                      
-                     </div>
-               </div>
-                 
- 
- 
- 
- 
-                
-            
-             </div>
- 
-         <!-- produst list section edn  -->
-          <!-- divbtn -->
-           <div class="btn-container">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button class="btn btn-primary mbfilter" onclick="filterShow()">  <span class="prodFilter"> Filter   <i class="bi bi-filter "> </i></span></button> 
-              <!-- <button class="btn btn-primary ">     <span class="ms-1">Featured  <i class="bi bi-filter-left"></i></span></button> -->
-              <button class="btn btn-primary mbfeature dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="ms-1">Featured <i class="bi bi-filter-left"></i></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">A-Z </a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+         <!-- filter list section -->
+        <div class="filtercatsec"  id="navbarfilter">
+          <div class="filterContainer">
+            <div class="btnFilter">
+                   <button class="btn-filter" id="openButton"><span class="bi bi-funnel"></span>Filter</button>
+                   <button class="btn-size "><i class="fa-solid fa-ruler"></i>Size</button>
             </div>
+            <div class="BestSellers">
+              <button class="btn-bestSeller"><i class="bi bi-sort-down"></i>BestSellers</button>
+            </div>
+          </div>   
+          
+          <div class="full-width-container" id="container">
            
+           <div class="close">
+            <h5 class="mt-4 ms-5">FILTERED BY</h5>
+            <button class="btn-close" id="closeButton"></button>
            </div>
-      </main>
+           
+           <div class="filterpro-container">
+            <!-- Sidebar with filter options -->
+            <div class="filterpro-sidebar">
+              <div class="filterpro-item category activePro" data-filter="category">CATEGORY</div>
+              <div class="filterpro-item" data-filter="size">SIZE</div>
+              <div class="filterpro-item" data-filter="nightwear-style">NIGHTWEAR STYLE</div>
+              <div class="filterpro-item" data-filter="activewear-style">ACTIVEWEAR STYLE</div>
+              <div class="filterpro-item" data-filter="price">PRICE</div>
+              <div class="filterpro-item" data-filter="discount">DISCOUNT %</div>
+              <div class="filterpro-item" data-filter="colour">COLOUR</div>
+            </div>
+          
+            <!-- Main content area with sections for each filter -->
+            <div class="filterpro-main-content">
+              <div class="filterpro-section activePro" id="category">
+                <h3>CATEGORY</h3>
+                <button class="filterpro-btn">Nightwear (142)</button>
+                <button class="filterpro-btn">Activewear (25)</button>
+              </div>
+              <div class="filterpro-section" id="size">
+                <h3>SIZE</h3>
+                <button class="filterpro-btn">Small</button>
+                <button class="filterpro-btn">Medium</button>
+                <button class="filterpro-btn">Large</button>
+              </div>
+              <div class="filterpro-section" id="nightwear-style">
+                <h3>NIGHTWEAR STYLE</h3>
+                <button class="filterpro-btn">Casual</button>
+                <button class="filterpro-btn">Luxury</button>
+              </div>
+              <div class="filterpro-section" id="activewear-style">
+                <h3>ACTIVEWEAR STYLE</h3>
+                <button class="filterpro-btn">Yoga</button>
+                <button class="filterpro-btn">Running</button>
+              </div>
+              <div class="filterpro-section" id="price">
+                <h3>PRICE</h3>
+                <button class="filterpro-btn">Under $50</button>
+                <button class="filterpro-btn">$50 - $100</button>
+              </div>
+              <div class="filterpro-section" id="discount">
+                <h3>DISCOUNT %</h3>
+                <button class="filterpro-btn">10% - 20%</button>
+                <button class="filterpro-btn">20% - 30%</button>
+              </div>
+              <div class="filterpro-section" id="colour">
+                <h3>COLOUR</h3>
+                <button class="filterpro-btn">Red</button>
+                <button class="filterpro-btn">Blue</button>
+                <button class="filterpro-btn">Black</button>
+              </div>
+            </div>
+          </div>
+  
+          </div>
+  
+          <!-- slider filter  -->
+          <div class="filterrbtn">
+            <span class="ms-3 fs-5">Quick Filters</span>
+            <div class="navbarfilter owl-carousel">
+                <button class="navfilterbtn">data1</button>
+                <button class="navfilterbtn">data</button>
+                <!-- Add more buttons here as needed -->
+            </div>
+        </div>
+        </div>
+        <div class="product-container">
+          <div class="product-card-grid">
+              <!-- Card 1 -->
+              <div class="product-card">
+                  <span class="product-discount">55% OFF</span>
+                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+                  <div class="product-card-content">
+                     <div class="pricetxt">
+                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                     </div>
+                      <p>4.9 ⭐ (8)</p>
+                      <a href="#" class="product-cart-btn">ADD TO CART</a>
+                  </div>
+              </div>
+              <div class="product-card">
+                <span class="product-discount">55% OFF</span>
+                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+                <div class="product-card-content">
+                  <div class="pricetxt">
+                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                   </div>
+                   <p>4.9 ⭐ (8)</p>
+                    <a href="#" class="product-cart-btn">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="product-card">
+              <span class="product-discount">55% OFF</span>
+              <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+              <div class="product-card-content">
+                <div class="pricetxt">
+                  <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                  <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                 </div>
+                 <p>4.9 ⭐ (8)</p>
+                  <a href="#" class="product-cart-btn">ADD TO CART</a>
+              </div>
+          </div>
+  
+              <!-- Duplicate more cards as needed -->
+              <div class="product-card">
+                  <span class="product-discount">55% OFF</span>
+                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+                  <div class="product-card-content">
+                    <div class="pricetxt">
+                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                     </div>
+                     <p>4.9 ⭐ (8)</p>
+                      <a href="#" class="product-cart-btn">ADD TO CART</a>
+                  </div>
+              </div>
+  
+              <div class="product-card">
+                  <span class="product-discount">55% OFF</span>
+                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+                  <div class="product-card-content">
+                    <div class="pricetxt">
+                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                     </div>
+                      <p>4.9 ⭐ (8)</p>
+                      <a href="#" class="product-cart-btn">ADD TO CART</a>
+                  </div>
+              </div>
+  
+              <div class="product-card">
+                  <span class="product-discount">55% OFF</span>
+                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
+                  <div class="product-card-content">
+                    <div class="pricetxt">
+                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
+                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
+                     </div>
+                     <p>4.9 ⭐ (8)</p>
+                      <a href="#" class="product-cart-btn">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+
+
+
 
   <!-- Recommended products section -->
   <div class="container-fluid p-0">
@@ -1948,14 +1727,85 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- mouse  -->
 
-
-
 <script>
-  function filterShow (){
-     var filter = document.getElementById("filter");
-     filter.classList.toggle("active");
-
-     }
+  $(document).ready(function() {
+      $(".navbarfilter").owlCarousel({
+          loop: true,
+          margin: 10,
+          nav: true,
+          responsive: {
+              0: {
+                  items: 5,
+                  nav: false  // Hide navigation on mobile view
+              },
+              768: {
+                  items: 10,
+                  nav: false  // Hide navigation on tablet view
+              },
+              1024: {
+                  items: 12,
+                  nav: true   // Show navigation only on laptop view and above
+              }
+          }
+      });
+  });
   </script>
+
+ <script>
+  // Get elements
+  const openButton = document.getElementById('openButton');
+  const closeButton = document.getElementById('closeButton');
+  const container = document.getElementById('container');
+
+  // Event to open (slide up) the container
+  openButton.addEventListener('click', () => {
+    container.classList.add('slide-up');
+  });
+
+  // Event to close (slide down) the container
+  closeButton.addEventListener('click', () => {
+    container.classList.remove('slide-up');
+  });
+</script>
+<script>
+  // Get all filter items and content sections
+  const filterItems = document.querySelectorAll('.filterpro-item');
+  const contentSections = document.querySelectorAll('.filterpro-section');
+
+  // Add click event listener to each filter item
+  filterItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const filter = item.getAttribute('data-filter');
+
+      // Remove 'activePro' class from all content sections and filter items
+      contentSections.forEach(section => section.classList.remove('activePro'));
+      filterItems.forEach(i => i.classList.remove('activePro'));
+
+      // Add 'activePro' class to the clicked item and corresponding content section
+      item.classList.add('activePro');
+      document.getElementById(filter).classList.add('activePro');
+    });
+  });
+</script>
+<script>
+  // Get the navbar element
+  const navbar = document.getElementById("navbarfilter");
+
+  // Offset value for when to add the stkfilter effect
+  const stkfilterOffset = 60;
+
+  // Function to handle scroll and add/remove stkfilter class
+  function handleScroll() {
+    if (window.pageYOffset > stkfilterOffset) {
+      navbar.classList.add("stkfilter");
+    } else {
+      navbar.classList.remove("stkfilter");
+    }
+  }
+
+  // Attach the scroll event listener
+  window.addEventListener("scroll", handleScroll);
+</script>
+
 
 </html>

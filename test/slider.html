@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar with Scrollable Buttons</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      width: 100%;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      overflow-x: auto; /* Allows horizontal scrolling */
+      white-space: nowrap;
+      position: relative;
+      transition: top 0.3s;
+      padding: 0 10px; /* Add padding to prevent buttons from touching edges */
+    }
+
+    /* Button styling inside the navbar */
+    .navbar button {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s; /* Smooth hover effect */
+    }
+
+    /* Button hover effect */
+    .navbar button:hover {
+      background-color: #888;
+    }
+
+    /* Add sticky effect */
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Content to show scrolling effect */
+    .content {
+      padding: 20px;
+      height: 2000px; /* Increase this to allow scrolling */
+      background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    }
+
+    /* Smooth scrolling for the navbar buttons */
+    .navbar {
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar with scrollable buttons -->
+<div class="navbar" id="navbar">
+  <!-- 20 buttons inside the navbar -->
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+  <button>Button 4</button>
+  <button>Button 5</button>
+  <button>Button 6</button>
+  <button>Button 7</button>
+  <button>Button 8</button>
+  <button>Button 9</button>
+  <button>Button 10</button>
+  <button>Button 11</button>
+  <button>Button 12</button>
+  <button>Button 13</button>
+  <button>Button 14</button>
+  <button>Button 15</button>
+  <button>Button 16</button>
+  <button>Button 17</button>
+  <button>Button 18</button>
+  <button>Button 19</button>
+  <button>Button 20</button>
+</div>
+
+<!-- Content to Scroll -->
+<div class="content">
+  <h2>Scroll down to see the sticky effect</h2>
+  <p>This is some placeholder content. Keep scrolling to see the navigation bar stick to the top after 60px of scrolling.</p>
+</div>
+
+<script>
+  // Get the navbar element
+  const navbar = document.getElementById("navbar");
+
+  // Offset value for when to add the sticky effect
+  const stickyOffset = 60;
+
+  // Function to handle scroll and add/remove sticky class
+  function handleScroll() {
+    if (window.pageYOffset > stickyOffset) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+  // Attach the scroll event listener
+  window.addEventListener("scroll", handleScroll);
+</script>
+
+</body>
+</html>
