@@ -3,169 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Product Card Layout</title>
+    <title>Product Detail Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-        .product-container {
-          
-            padding: 20px;
-        }
-        .product-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
+        .thumbnail {
             position: relative;
+            margin-bottom: 10px;
+            cursor: pointer;
         }
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
-        }
-        .product-card-content {
-            padding: 15px;
-        }
-        .product-discount {
+
+        /* Add a vertical line to the left of each thumbnail */
+        .thumbnail::before {
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #4d90fe;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 12px;
+            top: 0;
+            left: -13px;
+            width: 5px;
+            height: 100%;
+            background-color: #000000e8; /* Initially transparent */
         }
+
+        /* Style the main image */
+        .main-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Active thumbnail has a pink vertical line */
+        .active-thumbnail::before {
+            background-color: pink;
+        }
+
+        /* Thumbnail image styles */
+        .thumbnail img {
+            width: 100%;
+            height: 60px; /* Thumbnail height */
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
         .product-price {
-            color: #ff5722;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .product-old-price {
-            text-decoration: line-through;
-            color: #9e9e9e;
-            margin-left: 10px;
-            font-size: 14px;
-        }
-        .product-cart-btn {
-            display: block;
-            text-align: center;
+            font-size: 20px;
+            color: #b12704;
             margin-top: 10px;
-            padding: 10px;
-            background-color: #ff5722;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
         }
 
-        /* Responsive Styles */
-        .product-card-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(350px, 2fr)); /* Each card will have a minimum width of 250px */
-            gap: 20px;
-        }
-        @media (max-width: 768px) {
-            .product-card-grid {
-                grid-template-columns: repeat(2, minmax(250px, 1fr));
-            }
+        .product-description {
+            font-size: 14px;
+            color: #555;
         }
 
-        /* Mobile view */
-        @media (max-width: 425px) {
-            .product-card-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
+        .features, .reviews {
+            margin-top: 20px;
         }
-
-        
     </style>
 </head>
 <body>
-    <div class="product-container">
-        <div class="product-card-grid">
-            <!-- Card 1 -->
-            <div class="product-card">
-                <span class="product-discount">55% OFF</span>
-                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                <div class="product-card-content">
-                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                    <p>4.9 ⭐ (8)</p>
-                    <a href="#" class="product-cart-btn">ADD TO CART</a>
-                </div>
+
+<div class="container-fluid my-5">
+    <div class="row">
+        <!-- Thumbnails Section -->
+        <div class="col-md-3">
+            <div class="thumbnail active-thumbnail" id="thumb1" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+1', this)">
+                <img src="https://via.placeholder.com/150x100?text=Dummy+1" alt="Dummy 1">
             </div>
-            <div class="product-card">
-              <span class="product-discount">55% OFF</span>
-              <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-              <div class="product-card-content">
-                  <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                  <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                  <p>4.9 ⭐ (8)</p>
-                  <a href="#" class="product-cart-btn">ADD TO CART</a>
-              </div>
-          </div>
-          <div class="product-card">
-            <span class="product-discount">55% OFF</span>
-            <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-            <div class="product-card-content">
-                <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                <p>4.9 ⭐ (8)</p>
-                <a href="#" class="product-cart-btn">ADD TO CART</a>
+            <div class="thumbnail" id="thumb2" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+2', this)">
+                <img src="https://via.placeholder.com/150x100?text=Dummy+2" alt="Dummy 2">
+            </div>
+            <div class="thumbnail" id="thumb3" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+3', this)">
+                <img src="https://via.placeholder.com/150x100?text=Dummy+3" alt="Dummy 3">
+            </div>
+            <div class="thumbnail" id="thumb4" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+4', this)">
+                <img src="https://via.placeholder.com/150x100?text=Dummy+4" alt="Dummy 4">
+            </div>
+            <div class="thumbnail" id="thumb5" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+5', this)">
+                <img src="https://via.placeholder.com/150x100?text=Dummy+5" alt="Dummy 5">
             </div>
         </div>
 
-            <!-- Duplicate more cards as needed -->
-            <div class="product-card">
-                <span class="product-discount">55% OFF</span>
-                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                <div class="product-card-content">
-                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                    <p>4.9 ⭐ (8)</p>
-                    <a href="#" class="product-cart-btn">ADD TO CART</a>
-                </div>
+        <!-- Main Image Section -->
+        <div class="col-md-3">
+            <div class="main-image mb-4">
+                <img id="mainProductImage" src="https://via.placeholder.com/400?text=Main+Dummy+1" alt="Main Product Image">
+            </div>
+        </div>
+
+        <!-- Product Description Section -->
+        <div class="col-md-6">
+            <h1 class="product-title">Product Title</h1>
+            <p class="product-price">₹ 349.99 <del class="">₹ 499.00</del> &nbsp;<span class="text-muted">(45% OFF)</span></p>
+
+            <!-- Features -->
+            <div class="features my-3">
+                <span class="badge badge-secondary">Cotton</span>
+                <span class="badge badge-secondary">Short-Length</span>
+                <span class="badge badge-secondary">Comfort Fit</span>
             </div>
 
-            <div class="product-card">
-                <span class="product-discount">55% OFF</span>
-                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                <div class="product-card-content">
-                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                    <p>4.9 ⭐ (8)</p>
-                    <a href="#" class="product-cart-btn">ADD TO CART</a>
-                </div>
+            <!-- Colors -->
+            <div class="colors mb-3">
+                <label>Colors:</label>
+                <span class="badge badge-pill" style="background-color: #f0a1c1;">&nbsp;</span>
+                <span class="badge badge-pill" style="background-color: #6e8cd5;">&nbsp;</span>
+                <span class="badge badge-pill" style="background-color: #5fb98f;">&nbsp;</span>
             </div>
 
-            <div class="product-card">
-                <span class="product-discount">55% OFF</span>
-                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                <div class="product-card-content">
-                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                    <p>4.9 ⭐ (8)</p>
-                    <a href="#" class="product-cart-btn">ADD TO CART</a>
-                </div>
+            <!-- Sizes -->
+            <div class="sizes mb-3">
+                <label>Sizes:</label>
+                <button class="btn btn-outline-secondary btn-sm">S</button>
+                <button class="btn btn-outline-secondary btn-sm">M</button>
+                <button class="btn btn-outline-secondary btn-sm">L</button>
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="quantity-selector mb-3">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button class="btn btn-primary btn-block">Add to Cart</button>
+
+            <!-- Product Description -->
+            <div class="product-description mt-4">
+                <h5>Description</h5>
+                <p>Enjoy a comfortable night's sleep with this short-length cotton nightdress. Lightweight and breathable fabric designed for ultimate comfort.</p>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript for Image Change and Quantity Validation -->
+<script>
+    // Function to change main product image and highlight the active thumbnail
+    function changeMainImage(imageSrc, clickedThumbnail) {
+        // Change the main product image
+        document.getElementById('mainProductImage').src = imageSrc;
+
+        // Remove 'active-thumbnail' class from all thumbnails
+        let thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.classList.remove('active-thumbnail');
+        });
+
+        // Add 'active-thumbnail' class to the clicked thumbnail
+        clickedThumbnail.classList.add('active-thumbnail');
+    }
+
+    // Ensure quantity is at least 1
+    document.getElementById('quantity').addEventListener('input', function() {
+        if (this.value < 1) {
+            this.value = 1;
+        }
+    });
+</script>
+
+
 </body>
 </html>

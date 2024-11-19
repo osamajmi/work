@@ -12,12 +12,1061 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../Azam Project (2)/Azam Project/css/style.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../Azam Project (2)/Azam Project/css/responsive.css">
+  <style>
+    .thumbnail {
+      position: relative;
+      margin-bottom: 10px;
+      cursor: pointer;
+      width: 97px;
+    }
+
+    /* Add a vertical line to the left of each thumbnail */
+    .thumbnail::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -13px;
+      width: 5px;
+      height: 88%;
+      background-color: #000000e8;
+      /* Initially transparent */
+    }
+
+    /* Style the main image */
+    .main-image img {
+      width: 100%;
+      height: 701px;
+      border-radius: 8px;
+      margin-left: -70px;
+    }
+
+    .main-image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Active thumbnail has a pink vertical line */
+    .active-thumbnail::before {
+      background-color: pink;
+    }
+
+    /* Thumbnail image styles */
+    .thumbnail img {
+      width: 100%;
+      height: 100px;
+      /* Thumbnail height */
+      border-radius: 4px;
+      /* margin-bottom: 10px; */
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: -10px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      color: pink;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .features,
+    .reviews {
+      margin-top: 20px;
+    }
+
+    main.productDetail {
+      margin-top: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .thumnailpic {
+      align-items: center;
+      display: flex;
+      /* justify-content: center; */
+      flex-direction: column;
+    }
+
+    del.del {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .product-price span {
+      font-weight: 600;
+    }
+
+    span.bi-star-fill {
+      font-size: 18px;
+      color: pink;
+
+    }
+
+    .product {
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+    }
+
+    header,
+    .footer-section {
+      height: 120px;
+      background-color: rgb(255, 241, 242) !important;
+    }
+
+    main.productDetail {
+      background-color: white;
+    }
+
+    span.tax {
+      font-size: 15px;
+      font-weight: 400;
+      color: gray;
+    }
+
+    .ptoductrating {
+      margin-top: -10px;
+    }
+
+    span.rate {
+      color: black;
+      font-size: 22px;
+      FONT-WEIGHT: 500;
+    }
+
+    /* Container styling */
+    .product-features-container {
+      width: 100%;
+      /* max-width: 600px; */
+      /* margin: auto; */
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .product-features-container h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Features list container styling */
+    .features-list-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .features-list {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+
+      border-radius: 8px;
+      flex: 1;
+      /* Space for scroll buttons */
+      scrollbar-width: none;
+    }
+
+    .feature-button {
+      padding: 8px 15px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #333;
+      background-color: #fff;
+      font-size: 14px;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .feature-button:hover {
+      border-color: pink;
+      color: white;
+    }
+
+    /* Active feature button */
+    .feature-button.active {
+      background-color: pink;
+      color: #fff;
+      border-color: pink;
+    }
+
+    /* Scroll buttons */
+    .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+      margin-right: -20px;
+    }
+
+    .scroll-button:hover {
+      border-color: pink;
+      color: pink;
+    }
+
+    .scroll-button.left {
+      left: 5px;
+    }
+
+    .scroll-button.right {
+      right: 5px;
+    }
+
+    /* Feature description box */
+    .feature-description {
+      background-color: #f4f7fc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .feature-description p {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    .feature-description a {
+      color: pink;
+      font-weight: 600;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+
+    .feature-description a:hover {
+      text-decoration: underline;
+    }
+
+    .productFeature {
+      border-top: 1px solid #e1dfdf;
+      border-bottom: 1px solid #e1dfdf;
+      padding: 20px;
+      margin-top: 36px;
+    }
+
+    .altProduc {
+      box-shadow: 0px 0px 15px #dddbdb;
+      padding: 31px;
+      width: 600px;
+      /* display: flex; */
+      height: 235px;
+      border-radius: 9px;
+    }
+
+
+    .product-features-container h3 {
+      font-size: 18px;
+      font-weight: 500;
+      padding-bottom: 15px;
+    }
+
+    .productSize {
+      width: 100%;
+      height: 120px;
+
+    }
+
+    .size {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .size-Chart {
+      color: pink;
+      cursor: pointer;
+    }
+
+    .AvailSize {
+      width: 50px;
+      height: 50px;
+      border: 2px solid pink;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 600ms;
+    }
+
+    .Avail {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .AvailSize:hover {
+      background-color: pink;
+      color: white;
+    }
+
+    .Stock {
+      color: pink;
+      cursor: pointer;
+    }
+
+    .orderBtn {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #e1dfdf;
+      padding-bottom: 20px;
+    }
+
+    .like {
+      background: #ffc0cb96;
+      padding: 5px 20px 5px 20px;
+      cursor: pointer;
+    }
+
+    .buyBtn {
+      background-color: rgb(246, 150, 166);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      color: white;
+      transition: all 600ms;
+    }
+
+    .buyBtn:hover {
+      background-color: pink;
+    }
+
+    .heading3 {
+      font-size: 18px;
+      font-weight: 500;
+
+    }
+
+    .description>ul>li,
+    span>li {
+      list-style: circle;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    li#toggle-btn {
+      color: pink;
+      list-style: none;
+      font-size: 16px;
+    }
+
+    .description {
+      border-bottom: 1px solid #e1dfdf;
+      padding-bottom: 20px;
+    }
+
+    .reviews-container {
+      display: flex;
+      /* Enables side-by-side layout */
+      justify-content: space-between;
+      gap: 20px;
+      /* Adds space between the columns */
+      max-width: 1200px;
+      margin: auto;
+      border-bottom: 1px solid #e1dfdf;
+      padding-bottom: 20px;
+    }
+
+    .rating-summary {
+      width: 30%;
+      /* Adjust width for the rating summary */
+    }
+
+    .review-list-container {
+      width: 65%;
+      /* Adjust width for the review list */
+    }
+
+    .rating-summary h2 {
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      font-size: 24px;
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .rating-bars {
+      margin-top: 10px;
+    }
+
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .bar {
+      background-color: #f0f0f0;
+      width: 70%;
+      height: 8px;
+      margin: 0 10px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar .filled {
+      background-color: orange;
+      height: 100%;
+    }
+
+    .review-filters {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .filter-btn {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background-color: pink;
+      color: white;
+    }
+
+    .review-list .review-item {
+      border-top: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .review-list .review-item:first-child {
+      border-top: none;
+    }
+
+    .review-item .stars {
+      color: orange;
+      font-size: 18px;
+    }
+
+    .review-time {
+      color: gray;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .helpful {
+      margin-top: 10px;
+    }
+
+    .helpful button {
+      background-color: pink;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .helpful button:hover {
+      background-color: rgb(228, 131, 147);
+    }
+
+    .see-all {
+      display: inline-block;
+      margin-top: 20px;
+      color: pink;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .see-all:hover {
+      text-decoration: underline;
+    }
+
+    .features-container {
+      display: flex;
+      gap: 20px;
+      /* Space between cards */
+      border-bottom: 1px solid #e1dfdf;
+      padding-bottom: 43px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 13px 0 #efefef;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      height: 75px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      color: pink;
+    }
+
+    .feature-text {
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Container styling */
+    .large-12 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .check-delivery-init {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Input container */
+    .small-11 {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      padding: 5px;
+      height: 50px;
+      /* max-width: 300px; */
+    }
+
+    /* Input styling */
+    .check-delivery-input {
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      color: #888;
+      outline: none;
+      flex: 1;
+      /* Takes up available space */
+    }
+
+    .check-delivery-input::placeholder {
+      color: #bbb;
+    }
+
+    /* "Check" button styling */
+    .check-delivery-submit {
+      font-size: 14px;
+      font-weight: bold;
+      color: pink;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0 5px;
+    }
+
+    .check-delivery-submit:hover {
+      text-decoration: underline;
+    }
+
+    img.flagicon {
+      width: 40px;
+      height: 40px;
+      padding: 3px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px #a89d9d6e;
+    }
+
+    .flag {
+      border-top: 1px solid #e1dfdf;
+      padding: 25px 0px;
+      border-bottom: 1px solid #e1dfdf;
+    }
+
+    .findBra {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgb(243, 246, 249);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .bratxt {
+      line-height: 8px;
+    }
+    .thumnailpic {
+    position: sticky;
+    top: 150px; /* Distance from the top of the viewport */
+    height: fit-content; /* Ensure the sticky behavior works */
+  }
+
+  /* Main Image Section */
+  .main-image {
+    position: sticky;
+    top: 150px; /* Distance from the top of the viewport */
+  }
+
+  /* Additional Styling for Thumbnail and Main Image */
+  .thumbnail {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .thumbnail img {
+    width: 100%; /* Adjust thumbnail size */
+    display: block;
+  }
+
+  .active-thumbnail {
+    border: 2px solid pink; /* Highlight active thumbnail */
+  }
+
+  .main-image img {
+    width: 100%; /* Ensure main image adapts to its container */
+    /* max-height: 400px; Set a maximum height */
+    object-fit: cover;
+  }
+  .related-top-buttons {
+      text-align: center;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .related-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #f2f2f2;
+      color: #333;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .related-btn:hover,
+    .related-btn.active {
+      background-color: pink;
+      color: #fff;
+    }
+
+    .related-card {
+      text-align: center;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .related-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .related-card-title {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .related-price {
+      color: pink;
+      font-weight: bold;
+    }
+
+    .owl-nav {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .owl-nav button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* .owl-nav button:hover {
+      background-color: #007bff;
+    } */
+
+    main.relatedProdcut {
+    background: white;
+    padding-bottom: 50px;
+}
+button.related-btn {
+    margin-top: 20px;
+}
+button.related-btn {
+    border: 1px solid pink;
+}
+
+@media( max-width:430px){
+  .product-features-container h3 {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+.altProduc {
+    box-shadow: 0px 0px 15px #dddbdb;
+    padding: 10px;
+    width: 600px;
+    /* display: flex
+; */
+    height: 179px;
+    border-radius: 9px;
+}
+.heading3 {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+span.fs-name{
+  font-size: 13px;
+}
+.mt-3 img {
+    width: 30px;
+}
+.size{
+  font-size: 13px;
+}
+.AvailSize {
+  width: 35px;
+  height: 35px;
+  font-size: 10px;
+}
+.Stock{
+  font-size: 13px;
+}
+.description>ul>li, span>li{
+  font-size: 13px;
+}
+.rating-summary{
+  font-size: 13px;
+}
+.review-list-container {
+        width: 100%;
+        display: flex
+;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .reviews-container.mt-4 {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 10px 10px 30px;
+        border-bottom: 10px solid pink;
+    }
+    .review-filters{
+      gap: 10px;
+    }
+    .filter-btn{
+      font-size: 13px;
+    }
+    .features-container{
+      flex-direction: column;
+    }
+    .bratxt {
+      line-height: 22px;
+    }
+    .description,.productFeature,.productColor,.reviews-container,.features-container,.description{
+      padding: 10px 20px !important;
+    }
+    button.related-btn{
+      font-size: 13px;
+    }
+}
+
+    @media (max-width: 768px) {
+      .owl-nav {
+        display: none; /* Hide buttons on tablet and mobile view */
+      }
+      .thumnailpic,.mainpro{
+        display: none;
+      }
+      .product {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    z-index: 999;
+    background: white;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: -4px -5px 15px gray;
+    padding: 15px;
+    /* margin-left: -11px; */
+    width: 100%;
+   
+}
+.product-title {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: -10px;
+}
+.product-price {
+    font-size: 14px;
+    color: pink;
+    margin-top: 10px;
+    font-weight: 400;
+    padding: 0px 10px 0px 10px;
+}
+span.bi-star-fill {
+  font-size: 14px;}
+  span.rate {
+    color: black;
+    font-size: 14px;
+    FONT-WEIGHT: 500;
+}
+.orderBtn {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #e1dfdf; */
+    /* padding-bottom: 20px; */
+    position: fixed;
+    bottom: -22px;
+    width: 100%;
+    /* margin-left: -11px; */
+    z-index: 9999;
+}
+.buyBtn {
+    background-color: rgb(246, 150, 166);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-radius: 0px;
+    color: white;
+    transition: all 600ms;
+    width: 100% !important;
+}
+main.productDetail{
+  margin-top: 80px;
+}
+.row>*{
+  /* padding: 0; */
+  padding-right:0 !important;
+  padding-left:0 !important;
+}
+.productFeature {
+    border-top: 10px solid pink;
+    border-bottom: 10px solid pink;
+    /* padding: 20px; */
+    margin-top: 5px;
+    width: 100%;
+  }
+.altProduc{
+  width: 100%;
+}
+.productColor.mt-4 {
+    padding: 0px 10px 10px 43px;
+    border-bottom: 10px solid pink;
+}
+.description {
+    border-bottom: 10px solid pink;
+    padding: 10px 10px 10px 43px;
+    margin-bottom: 30px;
+}
+.reviews-container.mt-4 {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px 10px 45px;
+    border-bottom: 10px solid pink;
+}
+
+.rating-summary {
+    width: 100%;
+}
+
+.review-list-container{
+  width: 100%;
+}
+.features-container{
+    padding: 10px 30px 40px 30px;
+    border-bottom: 10px solid pink;
+}
+.large-12 {
+    width: 100% !important;
+    padding: 20px 35px 10px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.flag.mt-4 {
+    text-align: center;
+    border-top: 10px solid pink;
+    border-bottom: 10px solid pink;
+}
+.prev,.next{
+  display: none;
+}
+    }
+    @media(min-width:770px){
+      .laptopview{
+        display: none;
+      }
+    }
+
+    
+
+  /* The slider container */
+  .size-slider {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden off-screen */
+    width: 400px; /* Default width for desktop */
+    height: 100%;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: right 0.3s ease-in-out; /* Smooth transition */
+    /* z-index: 1000; */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 99999;
+  }
+
+  /* Slider header */
+  .slider-header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .slider-header a {
+    color: #ff6f00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .slider-header a:hover {
+    text-decoration: underline;
+  }
+
+  /* Close button inside the slider */
+  .size-close-slider-btn {
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .size-close-slider-btn:hover {
+    color: #f44336;
+  }
+
+  /* Slider content area */
+  .size-slider-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  /* Footer styles */
+  .footer-bar {
+    background-color: #ff6f00;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .footer-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+
+  .footer-bar a:hover {
+    text-decoration: underline;
+  }
+  span.bi.bi-x{
+      font-size: 30px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .size-slider {
+      width: 100%; /* 100% width on mobile */
+      right: -100%; /* Keep it off-screen initially */
+    }
+   
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .size-slider {
+      width: 70%; /* 70% width on tablets */
+      right: -70%; /* Keep the slider off-screen with 70% width */
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .size-slider {
+      width: 400px; /* Fixed width for desktops */
+      right: -400px; /* Off-screen initially */
+    }
+  }
+</style>
+
 
 </head>
 
@@ -30,7 +1079,7 @@
       <div class="d-flex justify-content-between">
         <div class="">
           <a href="#">
-            <img src="../img/logo.svg" width="250px" alt="">
+            <img src="../Azam Project (2)/Azam Project/img/logo.svg" width="250px" alt="">
           </a>
         </div>
 
@@ -64,7 +1113,7 @@
     </div>
 
     <!-- mobile Nav -->
-    <nav class="nav mb-nav nav-fill nav-bar">
+    <!-- <nav class="nav mb-nav nav-fill nav-bar">
       <a class="nav-mb-link active" href="#" aria-current="page">
         <i class="bi bi-house-door-fill"></i>
         Home
@@ -81,7 +1130,7 @@
         <i class="bi bi-person-fill"></i>
         Profile
       </a>
-    </nav>
+    </nav> -->
     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
   Open modal
 </button> -->
@@ -111,12 +1160,12 @@
 
           <div class="login_img">
 
-            <img src="../Azam Project/img/loginimage.webp" alt="">
+            <img src="../Azam Project (2)/Azam Project/img/loginimage.webp" alt="">
           </div>
 
           <div class="login-container text-center">
 
-            <img src="../Azam Project/img/logo.svg" alt="" class=" mb-3">
+            <img src="../Azam Project (2)/Azam Project/img/logo.svg" alt="" class=" mb-3">
             <h4 class="mb-2">EASY LOGIN WITH OTP</h4>
             <p class="text-muted mb-4">Enter your log in details</p>
             <form>
@@ -1397,242 +2446,456 @@
     </main>
 
   </header>
+  <!-- main product detail  -->
+  <main class="productDetail">
+    <div class="container-fluid my-5">
+      <div class="row">
+        <!-- Thumbnails Section -->
+        <div class="col-md-2 thumnailpic">
+          <div class="thumbnail active-thumbnail" id="thumb1"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.1.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro1.webp" alt="Dummy 1">
+          </div>
+          <div class="thumbnail" id="thumb2"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.2.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro2.webp" alt="Dummy 2">
+          </div>
+          <div class="thumbnail" id="thumb3"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.3.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro3.webp" alt="Dummy 3">
+          </div>
+          <div class="thumbnail" id="thumb4"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.4.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro4.webp" alt="Dummy 4">
+          </div>
+          <div class="thumbnail" id="thumb5"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.5.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro5.webp" alt="Dummy 5">
+          </div>
+          <div class="thumbnail" id="thumb6"
+            onclick="changeMainImage('../Azam Project (2)/Azam Project/img/pro1.6.webp', this)">
+            <img src="../Azam Project (2)/Azam Project/img/pro6.webp" alt="Dummy 5">
+          </div>
+        </div>
 
-  <!-- product list page start  -->
-  <main class="prodcutListMain">
-    <!---------------------------------------------------------------------------------->
-         <!-- cat slider  end -->
-         <div class="container-space ">
- 
- 
-             <div class="container  d-flex justify-content-center  ">
-               <div class="nav_Slide mt-4">
-                 <ul class="nav-Data categories-sec d-flex">
-       
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-       
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-                   <li class="nav-img_data"><img src="../img/dummy.jpg" alt="">
-                     <span>Bra</span>
-                   </li>
-       
-                 </ul>
-               </div>
-             </div>
-         </div>
-         <!-- cat slider  end -->
-    <!---------------------------------------------------------------------------------->
-         <!-- filter list section -->
-        <div class="filtercatsec"  id="navbarfilter">
-          <div class="filterContainer">
-            <div class="btnFilter">
-                   <button class="btn-filter openButton"><span class="bi bi-funnel"></span>Filter</button>
-                   <button class="btn-size openButton" ><i class="fa-solid fa-ruler"></i>Size</button>
-            </div>
-            <div class="BestSellers">
-              
-              <div class="dropdown">
-                <button class="btn-bestSeller dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-sort-down"></i> BestSellers
-                </button>
-                
-                <!-- Dropdown Menu -->
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-sort-alpha-down"></i> A to Z</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-sort-alpha-up"></i> Z to A</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-sort-numeric-down"></i> Low to High</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-sort-numeric-up"></i> High to Low</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-star"></i> Best Rated</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>   
-          
-          <div class="full-width-container" id="container">
-           
-           <div class="close">
-            <h5 class="mt-4 ms-5">FILTERED BY</h5>
-            <button class="btn-close" id="closeButton"></button>
-           </div>
-           
-           <div class="filterpro-container">
-            <!-- Sidebar with filter options -->
-            <div class="filterpro-sidebar">
-              <div class="filterpro-item category activePro" data-filter="category">CATEGORY</div>
-              <div class="filterpro-item" data-filter="size">SIZE</div>
-              <div class="filterpro-item" data-filter="nightwear-style">NIGHTWEAR STYLE</div>
-              <div class="filterpro-item" data-filter="activewear-style">ACTIVEWEAR STYLE</div>
-              <div class="filterpro-item" data-filter="price">PRICE</div>
-              <div class="filterpro-item" data-filter="discount">DISCOUNT %</div>
-              <div class="filterpro-item" data-filter="colour">COLOUR</div>
-            </div>
-          
-            <!-- Main content area with sections for each filter -->
-            <div class="filterpro-main-content">
-              <div class="filterpro-section activePro" id="category">
-                <h3>CATEGORY</h3>
-                <button class="filterpro-btn">Nightwear (142)</button>
-                <button class="filterpro-btn">Activewear (25)</button>
-              </div>
-              <div class="filterpro-section" id="size">
-                <h3>SIZE</h3>
-                <button class="filterpro-btn">Small</button>
-                <button class="filterpro-btn">Medium</button>
-                <button class="filterpro-btn">Large</button>
-              </div>
-              <div class="filterpro-section" id="nightwear-style">
-                <h3>NIGHTWEAR STYLE</h3>
-                <button class="filterpro-btn">Casual</button>
-                <button class="filterpro-btn">Luxury</button>
-              </div>
-              <div class="filterpro-section" id="activewear-style">
-                <h3>ACTIVEWEAR STYLE</h3>
-                <button class="filterpro-btn">Yoga</button>
-                <button class="filterpro-btn">Running</button>
-              </div>
-              <div class="filterpro-section" id="price">
-                <h3>PRICE</h3>
-                <button class="filterpro-btn">Under $50</button>
-                <button class="filterpro-btn">$50 - $100</button>
-              </div>
-              <div class="filterpro-section" id="discount">
-                <h3>DISCOUNT %</h3>
-                <button class="filterpro-btn">10% - 20%</button>
-                <button class="filterpro-btn">20% - 30%</button>
-              </div>
-              <div class="filterpro-section" id="colour">
-                <h3>COLOUR</h3>
-                <button class="filterpro-btn">Red</button>
-                <button class="filterpro-btn">Blue</button>
-                <button class="filterpro-btn">Black</button>
-              </div>
-            </div>
+        <!-- Main Image Section -->
+        <div class="col-md-3 mainpro">
+          <div class="main-image mb-4">
+            <img id="mainProductImage" src="../Azam Project (2)/Azam Project/img/pro1.1.webp" alt="Main Product Image">
           </div>
-  
-          </div>
-  
-          <!-- slider filter  -->
-          <div class="filterrbtn">
-            <span class="ms-3 fs-5">Quick Filters</span>
-            <div class="navbarfilter owl-carousel">
-                <button class="navfilterbtn">data1</button>
-                <button class="navfilterbtn">data</button>
-                <!-- Add more buttons here as needed -->
-            </div>
         </div>
+      <!-- tab and mobile view slider  -->
+
+      <div id="carouselExampleFade" class="carousel slide carousel-fade laptopview" data-bs-ride="carousel" data-bs-interval="3000">
+        
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="product-container">
-          <div class="product-card-grid">
-              <!-- Card 1 -->
-              <div class="product-card">
-                  <span class="product-discount">55% OFF</span>
-                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                  <div class="product-card-content">
-                     <div class="pricetxt">
-                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                     </div>
-                      <p>4.9 ⭐ (8)</p>
-                      <a href="#" class="product-cart-btn">ADD TO CART</a>
-                  </div>
-              </div>
-              <div class="product-card">
-                <span class="product-discount">55% OFF</span>
-                <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                <div class="product-card-content">
-                  <div class="pricetxt">
-                    <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                    <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                   </div>
-                   <p>4.9 ⭐ (8)</p>
-                    <a href="#" class="product-cart-btn">ADD TO CART</a>
-                </div>
-            </div>
-            <div class="product-card">
-              <span class="product-discount">55% OFF</span>
-              <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-              <div class="product-card-content">
-                <div class="pricetxt">
-                  <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                  <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                 </div>
-                 <p>4.9 ⭐ (8)</p>
-                  <a href="#" class="product-cart-btn">ADD TO CART</a>
-              </div>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../Azam Project (2)/Azam Project/img/pro1.1.webp" class="d-block w-100" alt="...">
           </div>
-  
-              <!-- Duplicate more cards as needed -->
-              <div class="product-card">
-                  <span class="product-discount">55% OFF</span>
-                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                  <div class="product-card-content">
-                    <div class="pricetxt">
-                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                     </div>
-                     <p>4.9 ⭐ (8)</p>
-                      <a href="#" class="product-cart-btn">ADD TO CART</a>
-                  </div>
-              </div>
-  
-              <div class="product-card">
-                  <span class="product-discount">55% OFF</span>
-                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                  <div class="product-card-content">
-                    <div class="pricetxt">
-                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                     </div>
-                      <p>4.9 ⭐ (8)</p>
-                      <a href="#" class="product-cart-btn">ADD TO CART</a>
-                  </div>
-              </div>
-  
-              <div class="product-card">
-                  <span class="product-discount">55% OFF</span>
-                  <img src="https://cdn.zivame.com/ik-seo/media/zcmsimages/configimages/ZI62VM-Orchid%20Bouquet/1_medium/zivame-knit-poly-loungewear-dress-orchid-bouquet.JPG?t=1676523823" alt="Product">
-                  <div class="product-card-content">
-                    <div class="pricetxt">
-                      <p>Zivame Stacked Florals Knit Poly Loungewear</p>
-                      <p class="product-price">₹763 <span class="product-old-price">₹1695</span></p>
-                     </div>
-                     <p>4.9 ⭐ (8)</p>
-                      <a href="#" class="product-cart-btn">ADD TO CART</a>
-                  </div>
-              </div>
+          <div class="carousel-item">
+            <img src="../Azam Project (2)/Azam Project/img/pro1.2.webp" class="d-block w-100" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="../Azam Project (2)/Azam Project/img/pro1.3.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+      <!-- tab and mobile view slider end   -->
+        <!-- Product Description Section -->
+        <div class="col-md-7 col-sm-12">
+          <div class="product">
+            <p class="product-title">Zivame Embossed Mesh Padded Wired 3/4th Coverage Strapless Bra - Fuchsia Purple</p>
+            <p class="product-price">₹ 1,499.00 &nbsp;<del class="del">₹
+                1,499.00</del>&nbsp;&nbsp;<span>(45%of)<br></span>
+              <span class="tax">Inclusive of all taxes</span>
+            </p>
+
+            <div class="ptoductrating">
+              <span class="bi bi-star-fill"> &nbsp;<span class="rate">5.0</span> <span class="ProductrateCount">(8
+                  &nbsp; Reviews )</span></span>
+            </div>
+          </div>
+          <div class="productFeature">
+            <div class="product-features-container">
+              <h3>PRODUCT FEATURES</h3>
+              <div class="altProduc">
+                <div class="features-list-container">
+                  <!-- <button class="scroll-button left" onclick="scrollLeft()">&#8249;</button> -->
+                  <div class="features-list">
+                    <div class="feature-button active">Padded</div>
+                    <div class="feature-button">Wired</div>
+                    <div class="feature-button">3/4th Coverage</div>
+                    <div class="feature-button">Strapless Bra</div>
+                    <div class="feature-button">Lace Bra</div>
+                    <div class="feature-button">Gradient Straps</div>
+                  </div>
+                  <button class="scroll-button right" onclick="scrollRight()">&#8250;</button>
+                </div>
+                <div class="feature-description">
+                  <p>Medium padded cups that ensure no nipple show-through</p>
+                  <a href="#" class="learn-more">Learn More</a>
+                  <a href="#" class="see-products">See Matching Products</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="productColor mt-4">
+            <h3 class="heading3">Colour</h3>
+            <span class="fs-name">
+              <img
+                src="https://cdn.zivame.com/media/zcmsimages/configcolorimages/ZI10T0-Fuchsia%20Purple_colorswatches/ZI10T0-Fuchsia%20Purple_colorswatches.png?t=1627395363"
+                width="20px" alt="">
+              &nbsp; Fuchsia Purple &nbsp; | &nbsp; <span class=" Allsize">All Size</span>
+            </span>
+            <div class=" mt-3">
+              <img
+                src="https://cdn.zivame.com/media/zcmsimages/configcolorimages/ZI10T0-Fuchsia%20Purple_colorswatches/ZI10T0-Fuchsia%20Purple_colorswatches.png?t=1627395363"
+                width="50px" alt="">
+              &nbsp; <img
+                src="https://cdn.zivame.com/media/zcmsimages/configcolorimages/ZI10T0-Fuchsia%20Purple_colorswatches/ZI10T0-Fuchsia%20Purple_colorswatches.png?t=1627395363"
+                width="50px" alt="">
+              &nbsp; <img
+                src="https://cdn.zivame.com/media/zcmsimages/configcolorimages/ZI10T0-Fuchsia%20Purple_colorswatches/ZI10T0-Fuchsia%20Purple_colorswatches.png?t=1627395363"
+                width="50px" alt="">
+              &nbsp; <img
+                src="https://cdn.zivame.com/media/zcmsimages/configcolorimages/ZI10T0-Fuchsia%20Purple_colorswatches/ZI10T0-Fuchsia%20Purple_colorswatches.png?t=1627395363"
+                width="50px" alt="">
+
+            </div>
+
+            <div class="productSize mt-4">
+              <div class="size fs-name">
+                <span class="">size</span>
+                <span> Not sure about your size? &nbsp; &nbsp;<span class="size-Chart size-open-slider-btn" id="size">Size Chart &nbsp; |
+                    &nbsp;Find your fit</span>
+              </div>
+
+              <div class="Avail mt-3">
+                <div class="AvailSize">32 C</div>
+                <div class="AvailSize">32 C</div>
+                <div class="AvailSize">32 C</div>
+                <div class="AvailSize">32 C</div>
+                <div class="AvailSize">32 C</div> &nbsp; &nbsp;
+                <div class="Stock">+9 Sizes Out Of Stock</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="orderBtn">
+            <span class="bi bi-heart like"></span>
+            <button class="buyBtn w-50">BuyNow</button>
+          </div>
+          <div class="description">
+            <h3 class="mt-3 heading3"> DESCRIPTION</h3>
+
+            <ul>
+              <li>Medium padded cups for fine shaping & nipple coverage</li>
+              <li>High wired for increased support and enhanced shaping</li>
+              <li>3/4th coverage prevents spillage from armhole and sides</li>
+              <li>Low-stretch cups to fit better & reduce bounce</li>
+              <li>The bigger the bra size, the broader the back band</li>
+              <span id="more-text" class="hidden">
+                <h3 class="mt-2 heading3">Fabric</h3>
+                <li>Wide straps for added comfort and support</li>
+                <li>Made with breathable fabric for everyday wear</li>
+              </span>
+              <li id="toggle-btn">...more</li>
+            </ul>
+          </div>
+          <div class="reviews-container mt-4">
+
+            <div class="rating-summary">
+              <h3 class="heading3">REVIEWS</h3>
+              <p><strong>5.0</strong> (8 Reviews)</p>
+              <div class="stars">
+                ★★★★★
+              </div>
+              <div class="rating-bars">
+                <div class="rating-bar">
+                  <span>5 Stars</span>
+                  <div class="bar">
+                    <div class="filled" style="width: 100%;"></div>
+                  </div>
+                  <span>100%</span>
+                </div>
+                <div class="rating-bar">
+                  <span>4 Stars</span>
+                  <div class="bar"></div>
+                  <span>0%</span>
+                </div>
+                <div class="rating-bar">
+                  <span>3 Stars</span>
+                  <div class="bar"></div>
+                  <span>0%</span>
+                </div>
+                <div class="rating-bar">
+                  <span>2 Stars</span>
+                  <div class="bar"></div>
+                  <span>0%</span>
+                </div>
+                <div class="rating-bar">
+                  <span>1 Star</span>
+                  <div class="bar"></div>
+                  <span>0%</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="review-list-container">
+              <div class="review-filters">
+                <button class="filter-btn active" id="all-reviews-btn">See All Reviews ▼</button>
+                <button class="filter-btn" id="most-helpful-btn">Most Helpful ✅</button>
+              </div>
+              <div class="review-list">
+                <div class="review-item">
+                  <div class="stars">★★★★★</div>
+                  <strong>Anuradha Kumari</strong> <span class="review-time">3 years ago</span>
+                  <p>Comfortable and have 3 hooks on the back which give the good support and same as shown, and can
+                    wear for 10hr continuous without hurt. Material feels good on skin.</p>
+                  <div class="helpful">
+                    Helpful? <button>👍 6</button>
+                  </div>
+                </div>
+                <div class="review-item">
+                  <div class="stars">★★★★★</div>
+                  <strong>Anonymous</strong> <span class="review-time">2 years ago</span>
+                  <p>Products are really good as expected.</p>
+                  <div class="helpful">
+                    Helpful? <button>👍 1</button>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="see-all">SEE ALL REVIEWS</a>
+            </div>
+          </div>
+          <div class="features-container mt-5">
+            <!-- First Feature -->
+            <div class="feature-card">
+              <i class="fas fa-money-bill-wave feature-icon"></i>
+              <div class="feature-text">COD is available</div>
+            </div>
+            <!-- Second Feature -->
+            <div class="feature-card">
+              <i class="fas fa-sync-alt feature-icon"></i>
+              <div class="feature-text">15 days Easy Returns & Exchanges</div>
+            </div>
+          </div>
+          <div class="large-12 w-50 mt-4">
+            <span class="check-delivery-ini heading3">CHECK DELIVERY TIME</span>
+            <div class="small-11">
+              <input class="check-delivery-input check-delivery-pincode" pattern="^[^0][0-9]{5}$" placeholder="PINCODE"
+                type="tel" maxlength="6" name="pincode">
+              <button class="check-delivery-submit">Check</button>
+
+            </div>
+            <div>Dispatch in 24 hours</div>
+          </div>
+          <div class="flag  mt-4">
+
+            <img src="../Azam Project (2)/Azam Project/img/flag.png" alt="" class="flagicon">
+            <span>This product has been Designed in India</span>
+
+
+          </div>
+
+          <div class="findBra mt-4">
+
+            <img src="../Azam Project (2)/Azam Project/img/braico.svg" alt="">
+            <div class="bratxt">
+              <p>Find your bra size and the most suitable bra styles for your body in just 30 seconds!
+              </p>
+              <a href=""><span> Take the Fitcode Quiz ></span></a>
+            </div>
+          </div>
+
+          <div class="description">
+            <h3 class="mt-3 heading3"> SELLER INFORMATION</h3>
+
+            <ul>
+              <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+              <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+              <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+              <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+              <span id="dataTxt" class="hidden">
+                <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+                <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+                <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+                <div class="text"><span class="fw-bold">Manufacture Country :</span>India</div>
+              </span>
+              <span id="SELLER">...more</span>
+            </ul>
+          </div>
+        </div>
+
+
+  
+
+      </div>
+    </div>
   </main>
+<!-- size slider  -->
 
+<div class="size-slider">
+  <!-- Slider Header -->
+  <div class="slider-header">
+ <span class="bi bi-x  size-close-slider-btn"></span>
+    <span>Size Chart</span>
+    <!-- <a href="#">How to measure ></a> -->
+   
+  </div>
 
+  <!-- Slider Content -->
+  <div class="size-slider-content">
+      
+    <div class="container">
+      
+      <!-- Unit Toggler Switch -->
+      <div class="d-flex justify-content-between mb-3">
+          <a href="#">How to measure ></a>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="unit-switch">
+          <label class="form-check-label" for="unit-switch">
+            <span id="unit-label">IN</span>
+          </label>
+        </div>
+      </div>
 
+      <!-- Size Chart Table -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+          <thead class="table-light">
+            <tr>
+              <th>Size</th>
+              <th>Under Bust</th>
+              <th>Over Bust</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>28 A</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">28.3-29.1 in</td></tr>
+            <tr><td>28 B</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">29.1-29.9 in</td></tr>
+            <tr><td>28 C</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">29.9-30.7 in</td></tr>
+            <tr><td>28 D</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">30.7-31.5 in</td></tr>
+            <tr><td>28 DD</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">31.5-32.3 in</td></tr>
+            <tr><td>28 E</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">32.3-33.1 in</td></tr>
+            <tr><td>28 F</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">33.5-34.6 in</td></tr>
+            <tr><td>28 FF</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">35.0-36.2 in</td></tr>
+            <tr><td>28 G</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">36.6-37.8 in</td></tr>
+            <tr><td>28 H</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">38.2-39.4 in</td></tr>
+            <tr><td>30 A</td><td class="under-bust">24.8-26.4 in</td><td class="over-bust">30.3-31.1 in</td></tr>
+            <tr><td>30 B</td><td class="under-bust">24.8-26.4 in</td><td class="over-bust">31.1-31.9 in</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-  <!-- Recommended products section -->
+  <!-- Footer Bar -->
+  <div class="footer-bar">
+    Not sure about your size? <a href="tel:">Call 0000000000</a>
+  </div>
+</div>
+<!--sixe slider end  -->
+  <main class="relatedProdcut">
+    
+  <!-- Filter Buttons -->
+  <div class="related-top-buttons">
+    <button class="related-btn active" onclick="filterCards('all')">Similar Products</button>
+    <button class="related-btn" onclick="filterCards('padded')">More Padded Bras</button>
+    <button class="related-btn" onclick="filterCards('wired')">More Wired Bras</button>
+  </div>
+
+  <!-- Owl Carousel -->
+  <div class="owl-carousel owl-theme" id="related-slider">
+    <div class="related-card" data-category="padded">
+      <img src="https://via.placeholder.com/150" alt="Product 1">
+      <p class="related-card-title">Padded Bra - Brown</p>
+      <p class="related-price">₹1187</p>
+    </div>
+    <div class="related-card" data-category="wired">
+      <img src="https://via.placeholder.com/150" alt="Product 2">
+      <p class="related-card-title">Wired Bra - Black</p>
+      <p class="related-price">₹1178</p>
+    </div>
+    <div class="related-card" data-category="padded">
+      <img src="https://via.placeholder.com/150" alt="Product 3">
+      <p class="related-card-title">Padded Bra - Blue</p>
+      <p class="related-price">₹448</p>
+    </div>
+    <div class="related-card" data-category="wired">
+      <img src="https://via.placeholder.com/150" alt="Product 4">
+      <p class="related-card-title">Wired Bra - Pink</p>
+      <p class="related-price">₹448</p>
+    </div>
+    <div class="related-card" data-category="padded">
+        <img src="https://via.placeholder.com/150" alt="Product 1">
+        <p class="related-card-title">Padded Bra - Brown</p>
+        <p class="related-price">₹1187</p>
+      </div>
+      <div class="related-card" data-category="wired">
+        <img src="https://via.placeholder.com/150" alt="Product 2">
+        <p class="related-card-title">Wired Bra - Black</p>
+        <p class="related-price">₹1178</p>
+      </div>
+      <div class="related-card" data-category="padded">
+        <img src="https://via.placeholder.com/150" alt="Product 3">
+        <p class="related-card-title">Padded Bra - Blue</p>
+        <p class="related-price">₹448</p>
+      </div>
+      <div class="related-card" data-category="wired">
+        <img src="https://via.placeholder.com/150" alt="Product 4">
+        <p class="related-card-title">Wired Bra - Pink</p>
+        <p class="related-price">₹448</p>
+      </div>
+      <div class="related-card" data-category="padded">
+        <img src="https://via.placeholder.com/150" alt="Product 1">
+        <p class="related-card-title">Padded Bra - Brown</p>
+        <p class="related-price">₹1187</p>
+      </div>
+      <div class="related-card" data-category="wired">
+        <img src="https://via.placeholder.com/150" alt="Product 2">
+        <p class="related-card-title">Wired Bra - Black</p>
+        <p class="related-price">₹1178</p>
+      </div>
+      <div class="related-card" data-category="padded">
+        <img src="https://via.placeholder.com/150" alt="Product 3">
+        <p class="related-card-title">Padded Bra - Blue</p>
+        <p class="related-price">₹448</p>
+      </div>
+      <div class="related-card" data-category="wired">
+        <img src="https://via.placeholder.com/150" alt="Product 4">
+        <p class="related-card-title">Wired Bra - Pink</p>
+        <p class="related-price">₹448</p>
+      </div>
+      <div class="related-card" data-category="wired">
+        <img src="https://via.placeholder.com/150" alt="Product 4">
+        <p class="related-card-title">Wired Bra - Pink</p>
+        <p class="related-price">₹448</p>
+      </div>
+    <div class="related-card" data-category="padded">
+      <img src="https://via.placeholder.com/150" alt="Product 5">
+      <p class="related-card-title">Padded Bra - Red</p>
+      <p class="related-price">₹842</p>
+    </div>
+  </div>
+
+  </main>
+  <!-- main product detail  -->
+  <!-- footer -->
   <div class="container-fluid p-0">
     <div class="footer-section">
       <div class="container-space nav-ul">
@@ -1642,7 +2905,8 @@
             <div class="col-xl-4 col-lg-4 mb-50">
               <div class="footer-widget">
                 <div class="footer-logo">
-                  <a href="index.html"><img src="../img/logo.svg" class="img-fluid" alt="logo"></a>
+                  <a href="index.html"><img src="../Azam Project (2)/Azam Project/img/logo.svg" class="img-fluid"
+                      alt="logo"></a>
                 </div>
                 <div class="footer-text">
                   <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut
@@ -1721,124 +2985,523 @@
   </div>
 
 
-  <!-- <footer class="footer">
-        <span>
-          Copyright &copy; Company Name
-        </label>
-        <ul>
-          <li class="nav-item"><a href="#">Privacy Policy</a></li>
-          <li class="nav-item"><a href="#">Terms of use</a></li>
-        </ul>
-      </footer> -->
 
 
 
+ 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
-<div class="cursor" id="custom-cursor"></div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- mouse  -->
-
 <script>
-  $(document).ready(function() {
-      $(".navbarfilter").owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: true,
-          responsive: {
-              0: {
-                  items: 5,
-                  nav: false  // Hide navigation on mobile view
-              },
-              768: {
-                  items: 6,
-                  nav: false  // Hide navigation on tablet view
-              },
-              1024: {
-                  items: 12,
-                  nav: true   // Show navigation only on laptop view and above
-              }
-          }
-      });
-  });
-  </script>
+  // Function to change main product image and highlight the active thumbnail
+  function changeMainImage(imageSrc, clickedThumbnail) {
+    // Change the main product image
+    document.getElementById('mainProductImage').src = imageSrc;
 
-<script>
-  // Get elements
-  const openButtons = document.querySelectorAll('.openButton'); // Select both buttons
-  const container = document.getElementById('container');
-  const closeButton = document.getElementById('closeButton');
-
-  // Function to open the container and show the correct section
-  openButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-target');
-
-      // Slide up the container
-      container.classList.add('slide-up');
-
-      // Remove activePro class from all filterpro-items and filterpro-sections
-      document.querySelectorAll('.filterpro-item, .filterpro-section').forEach(el => {
-        el.classList.remove('activePro');
-      });
-
-      // Add activePro class to the targeted item and section
-      document.querySelector(`.filterpro-item[data-filter="${target}"]`).classList.add('activePro');
-      document.getElementById(target).classList.add('activePro');
+    // Remove 'active-thumbnail' class from all thumbnails
+    let thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(function (thumbnail) {
+      thumbnail.classList.remove('active-thumbnail');
     });
+
+    // Add 'active-thumbnail' class to the clicked thumbnail
+    clickedThumbnail.classList.add('active-thumbnail');
+  }
+
+  // Ensure quantity is at least 1
+  document.getElementById('quantity').addEventListener('input', function () {
+    if (this.value < 1) {
+      this.value = 1;
+    }
   });
 
-  // Close the container when the close button is clicked
-  closeButton.addEventListener('click', () => {
-    container.classList.remove('slide-up');
 
-    // Optionally remove active classes when closing the container
-    document.querySelectorAll('.filterpro-item, .filterpro-section').forEach(el => {
-      el.classList.remove('activePro');
-    });
-  });
+
 </script>
+
 <script>
-  // Get all filter items and content sections
-  const filterItems = document.querySelectorAll('.filterpro-item');
-  const contentSections = document.querySelectorAll('.filterpro-section');
+  const featureList = document.querySelector('.features-list');
 
-  // Add click event listener to each filter item
-  filterItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const filter = item.getAttribute('data-filter');
-
-      // Remove 'activePro' class from all content sections and filter items
-      contentSections.forEach(section => section.classList.remove('activePro'));
-      filterItems.forEach(i => i.classList.remove('activePro'));
-
-      // Add 'activePro' class to the clicked item and corresponding content section
-      item.classList.add('activePro');
-      document.getElementById(filter).classList.add('activePro');
+  function scrollLeft() {
+    featureList.scrollBy({
+      left: -150,
+      behavior: 'smooth'
     });
+  }
+
+  function scrollRight() {
+    featureList.scrollBy({
+      left: 150,
+      behavior: 'smooth'
+    });
+  }
+
+  // Variables to handle the mouse dragging
+  let isDown = false;
+  let startX;
+  let scrollLeftStart;
+
+  // Event listeners for dragging functionality
+  featureList.addEventListener('mousedown', (e) => {
+    isDown = true;
+    featureList.classList.add('active');
+    startX = e.pageX - featureList.offsetLeft;
+    scrollLeftStart = featureList.scrollLeft;
   });
-</script>
-<script>
-  // Get the navbar element
-  const navbar = document.getElementById("navbarfilter");
 
-  // Offset value for when to add the stkfilter effect
-  const stkfilterOffset = 60;
+  featureList.addEventListener('mouseleave', () => {
+    isDown = false;
+    featureList.classList.remove('active');
+  });
 
-  // Function to handle scroll and add/remove stkfilter class
-  function handleScroll() {
-    if (window.pageYOffset > stkfilterOffset) {
-      navbar.classList.add("stkfilter");
+  featureList.addEventListener('mouseup', () => {
+    isDown = false;
+    featureList.classList.remove('active');
+  });
+
+  featureList.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - featureList.offsetLeft;
+    const walk = (x - startX) * 1.5; // The multiplier controls the speed of scroll
+    featureList.scrollLeft = scrollLeftStart - walk;
+  });
+
+  document.getElementById('toggle-btn').addEventListener('click', function () {
+    const moreText = document.getElementById('more-text');
+    const button = this;
+
+    if (moreText.classList.contains('hidden')) {
+      moreText.classList.remove('hidden');
+      button.textContent = '...less';
     } else {
-      navbar.classList.remove("stkfilter");
+      moreText.classList.add('hidden');
+      button.textContent = '...more';
+    }
+  });
+
+
+  document.getElementById('SELLER').addEventListener('click', function () {
+    const moreText = document.getElementById('dataTxt');
+    const button = this;
+
+    if (moreText.classList.contains('hidden')) {
+      moreText.classList.remove('hidden');
+      button.textContent = '...less';
+    } else {
+      moreText.classList.add('hidden');
+      button.textContent = '...more';
+    }
+  });
+
+</script>
+<script>
+  // JavaScript for Review Filters
+  const allReviewsBtn = document.getElementById('all-reviews-btn');
+  const mostHelpfulBtn = document.getElementById('most-helpful-btn');
+  const reviewList = document.querySelector('.review-list');
+
+  allReviewsBtn.addEventListener('click', () => {
+    allReviewsBtn.classList.add('active');
+    mostHelpfulBtn.classList.remove('active');
+    reviewList.style.display = 'block'; // Show all reviews
+  });
+
+  mostHelpfulBtn.addEventListener('click', () => {
+    mostHelpfulBtn.classList.add('active');
+    allReviewsBtn.classList.remove('active');
+    reviewList.style.display = 'block'; // You can customize to show only "helpful" reviews if needed
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    // Initialize Owl Carousel
+    $('#related-slider').owlCarousel({
+      items: 5,
+      loop: true,
+      
+      dots:false,
+      nav: true,
+      // center:true,
+      navText: [
+        '<i class="bi bi-chevron-left"></i>',
+        '<i class="bi bi-chevron-right"></i>'
+      ],
+      responsive: {
+        0: { items: 1.9, nav: false, autoplay: true, autoplayTimeout: 3000,margin: -40, center:true },
+        768: { items: 4.5, nav: false, autoplay: true, autoplayTimeout: 3000 ,margin: -10,},
+        992: { items: 6, nav: true, autoplay: false,margin: -10, }
+      }
+    });
+
+    // Filter Functionality
+    window.filterCards = function(category) {
+      $('.related-btn').removeClass('active');
+      if (category === 'all') {
+        $('.related-btn:contains("Similar Products")').addClass('active');
+      } else if (category === 'padded') {
+        $('.related-btn:contains("More Padded Bras")').addClass('active');
+      } else if (category === 'wired') {
+        $('.related-btn:contains("More Wired Bras")').addClass('active');
+      }
+
+      if (category === 'all') {
+        $('.related-card').parent().show();
+      } else {
+        $('.related-card').parent().hide();
+        $(`.related-card[data-category="${category}"]`).parent().show();
+      }
+      $('#related-slider').trigger('refresh.owl.carousel'); // Refresh carousel
+    };
+  });
+</script>
+
+<!-- mobile view slider  -->
+<script>
+  const carousel = document.querySelector('#carouselExampleFade');
+  const carouselInner = document.querySelector('.carousel-inner');
+  let isDragging = false;
+  let starX = 0;
+  let moveDistance = 0;
+
+  const startDrag = (e) => {
+    isDragging = true;
+    starX = getPosition(e);
+    carouselInner.style.cursor = 'grabbing';
+  };
+
+  const moveDrag = (e) => {
+    if (!isDragging) return;
+    moveDistance = getPosition(e) - startX;
+  };
+
+  const endDrag = () => {
+    isDragging = false;
+    carouselInner.style.cursor = 'grab';
+
+    if (moveDistance < -100) {
+      // Swipe left, go to next slide
+      const carouselInstance = new bootstrap.Carousel(carousel);
+      carouselInstance.next();
+    } else if (moveDistance > 100) {
+      // Swipe right, go to previous slide
+      const carouselInstance = new bootstrap.Carousel(carousel);
+      carouselInstance.prev();
+    }
+    moveDistance = 0;
+  };
+
+  const getPosition = (e) => {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+  };
+
+  // Mouse Events
+  carouselInner.addEventListener('mousedown', startDrag);
+  carouselInner.addEventListener('mousemove', moveDrag);
+  carouselInner.addEventListener('mouseup', endDrag);
+  carouselInner.addEventListener('mouseleave', endDrag);
+
+  // Touch Events
+  carouselInner.addEventListener('touchstart', startDrag);
+  carouselInner.addEventListener('touchmove', moveDrag);
+  carouselInner.addEventListener('touchend', endDrag);
+</script>
+<!-- mobile view slider end -->
+<script>
+  function updatePosition() {
+    const scrollPosition = window.scrollY;
+    const screenWidth = window.innerWidth;
+    
+    let scrollThreshold;
+    let bottomPosition;
+
+    // Only adjust for mobile and tablet screens
+    if (screenWidth <= 426) {  // Mobile screens
+      scrollThreshold = 350;   // Scroll threshold for mobile
+      bottomPosition = '47px'; // Bottom margin for mobile
+    } else if (screenWidth <= 768) {  // Tablet screens
+      scrollThreshold = 800;  // Scroll threshold for tablet
+      bottomPosition = '46px'; // Bottom margin for tablet
+    } else {
+      return;  // For desktop screens, do nothing (CSS will handle positioning)
+    }
+
+    // If scrolled past the threshold, position the element as relative, otherwise keep it fixed
+    if (scrollPosition > scrollThreshold) {
+      product.style.position = 'relative';  // Change to relative once scrolled past threshold
+    } else {
+      product.style.position = 'fixed';    // Keep fixed at the bottom
+      product.style.bottom = bottomPosition;  // Apply the appropriate bottom margin
     }
   }
 
-  // Attach the scroll event listener
-  window.addEventListener("scroll", handleScroll);
+  const product = document.querySelector('.product');
+
+  // Listen for scroll events to trigger the updatePosition function
+  window.addEventListener('scroll', updatePosition);
+
+  // Also call the function on initial load to ensure proper positioning
+  updatePosition();
 </script>
 
+
+
+
+
+<script>
+
+function updatePositionorder() {
+    const scrollPosition = window.scrollY;
+    const screenWidth = window.innerWidth;
+
+    let scrollThreshold;
+    let bottomPosition;
+
+    // Only adjust for mobile and tablet screens
+    if (screenWidth <= 425) {  // Mobile screens
+      scrollThreshold = 350;   // Scroll threshold for mobile
+      bottomPosition = '10px'; // Bottom margin for mobile
+    } else if (screenWidth <= 768) {  // Tablet screens
+      scrollThreshold = 3600;  // Scroll threshold for tablet
+      // bottomPosition = '46px'; // Bottom margin for tablet
+    } else {
+      return;  // For desktop screens, do nothing (CSS will handle positioning)
+    }
+
+    // If scrolled past the threshold, position the element as relative, otherwise keep it fixed
+    if (scrollPosition > scrollThreshold) {
+      orderBtn.style.position = 'absolute';  // Change to relative once scrolled past threshold
+      orderBtn.style.marginTop = "60px"
+      orderBtn.style.marginBottom = "17px"
+      orderBtn.style.borderBottom = "0px"
+    } else {
+      orderBtn.style.position = 'fixed';    // Keep fixed at the bottom
+      orderBtn.style.bottom = bottomPosition;  // Apply the appropriate bottom margin
+    }
+  }
+
+  const orderBtn = document.querySelector('.orderBtn');
+
+  // Listen for scroll events to trigger the updatePosition function
+  window.addEventListener('scroll', updatePositionorder);
+
+  // Also call the function on initial load to ensure proper positioning
+  updatePositionorder();
+</script>
+<script>
+  const openSliderBtn = document.querySelector('.size-open-slider-btn');
+  const slider = document.querySelector('.size-slider');
+  const closeSliderBtn = document.querySelector('.size-close-slider-btn');
+  const unitSwitch = document.getElementById('unit-switch');
+  const unitLabel = document.getElementById('unit-label');
+  const underBustCells = document.querySelectorAll('.under-bust');
+  const overBustCells = document.querySelectorAll('.over-bust');
+
+  // Measurement data in cm and inches
+  const sizeData = {
+    'in': {
+      'underBust': [
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "23.2-24.4",
+        "24.8-26.4",
+        "24.8-26.4"
+      ],
+      'overBust': [
+        "28.3-29.1",
+        "29.1-29.9",
+        "29.9-30.7",
+        "30.7-31.5",
+        "31.5-32.3",
+        "32.3-33.1",
+        "33.5-34.6",
+        "35.0-36.2",
+        "36.6-37.8",
+        "38.2-39.4",
+        "30.3-31.1",
+        "31.1-31.9"
+      ]
+    },
+    'cm': {
+      'underBust': [
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "59-62",
+        "63-67",
+        "63-67"
+      ],
+      'overBust': [
+        "72-74",
+        "74-76",
+        "76-78",
+        "78-80",
+        "80-82",
+        "82-84",
+        "85-88",
+        "89-92",
+        "93-96",
+        "97-100",
+        "77-79",
+        "79-81"
+      ]
+    }
+  };
+
+  // Function to open the slider
+  function openSlider() {
+    slider.style.right = '0';
+  }
+
+  // Function to close the slider
+  function closeSlider() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) {
+      slider.style.right = '-100%';
+    } else if (screenWidth <= 1024) {
+      slider.style.right = '-70%';
+    } else {
+      slider.style.right = '-400px';
+    }
+  }
+
+  // Event listener to open the slider
+  openSliderBtn.addEventListener('click', openSlider);
+
+  // Event listener to close the slider
+  document.querySelector('.slider-header').addEventListener('click', closeSlider);
+  // Alternatively, you can add a close button inside the slider
+  // closeSliderBtn.addEventListener('click', closeSlider);
+
+  // Event listener for unit switch
+  unitSwitch.addEventListener('change', () => {
+    const unit = unitSwitch.checked ? 'cm' : 'in';
+    unitLabel.textContent = unit.toUpperCase();
+
+    // Update Under Bust measurements
+    underBustCells.forEach((cell, index) => {
+      cell.textContent = sizeData[unit].underBust[index] + ` ${unit}`;
+    });
+
+    // Update Over Bust measurements
+    overBustCells.forEach((cell, index) => {
+      cell.textContent = sizeData[unit].overBust[index] + ` ${unit}`;
+    });
+  });
+
+  // Initialize the table with default unit (in)
+  document.addEventListener('DOMContentLoaded', () => {
+    unitLabel.textContent = 'IN';
+    underBustCells.forEach((cell, index) => {
+      cell.textContent = sizeData['in'].underBust[index] + ' in';
+    });
+    overBustCells.forEach((cell, index) => {
+      cell.textContent = sizeData['in'].overBust[index] + ' in';
+    });
+  });
+
+  // Close the slider when clicking outside (optional)
+  window.addEventListener('click', (e) => {
+    if (e.target === slider) {
+      closeSlider();
+    }
+  });
+  closeSliderBtn.addEventListener('click', () => {
+    slider.style.right = '-100%';
+  });
+</script>
 
 </html>

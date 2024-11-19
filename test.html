@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Fixed to Relative</title>
+  <style>
+    /* Base styles for the .product element */
+    .product {
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      position: fixed;
+      bottom: 20px;
+      z-index: 999;
+      background: white;
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
+      box-shadow: -4px -5px 15px gray;
+      padding: 15px;
+      width: 100%;
+    }
+
+    .content {
+      height: 2000px; /* Just to create enough scroll */
+      background-color: lightgray;
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <!-- Content that will allow scrolling -->
+  <p>Scroll down to see the effect on the fixed element.</p>
+</div>
+
+<div class="product">
+  <p>This is the product element</p>
+  <button>Product Button</button>
+</div>
+
+<script>
+  const product = document.querySelector('.product');
+  const scrollThreshold = 300; // Scroll threshold after which the position changes
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > scrollThreshold) {
+      // If scrolled past the threshold, change to relative or static
+      product.style.position = 'relative';
+      product.style.bottom = 'auto'; // Remove the bottom offset
+    } else {
+      // Otherwise, keep it fixed at the bottom
+      product.style.position = 'fixed';
+      product.style.bottom = '20px';
+    }
+  });
+</script>
+
+</body>
+</html>

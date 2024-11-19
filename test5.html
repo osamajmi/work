@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zivame Size Chart Slider</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+ 
+  <style>
+    
+
+    /* The slider container */
+    .size-slider {
+      position: fixed;
+      top: 0;
+      right: -400px; /* Initially hidden off-screen */
+      width: 400px; /* Default width for desktop */
+      height: 100%;
+      background-color: #f8f9fa;
+      color: #333;
+      transition: right 0.3s ease-in-out; /* Smooth transition */
+      z-index: 1000;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Slider header */
+    .slider-header {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .slider-header a {
+      color: #ff6f00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .slider-header a:hover {
+      text-decoration: underline;
+    }
+
+    /* Close button inside the slider */
+    .size-close-slider-btn {
+      font-size: 30px;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .size-close-slider-btn:hover {
+      color: #f44336;
+    }
+
+    /* Slider content area */
+    .size-slider-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    /* Footer styles */
+    .footer-bar {
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .footer-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .footer-bar a:hover {
+      text-decoration: underline;
+    }
+    span.bi.bi-x{
+        font-size: 30px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .size-slider {
+        width: 100%; /* 100% width on mobile */
+        right: -100%; /* Keep it off-screen initially */
+      }
+     
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .size-slider {
+        width: 70%; /* 70% width on tablets */
+        right: -70%; /* Keep the slider off-screen with 70% width */
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .size-slider {
+        width: 400px; /* Fixed width for desktops */
+        right: -400px; /* Off-screen initially */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Open button to trigger the slider -->
+  <button class="size-open-slider-btn">☰ Open Size Chart</button>
+
+  <!-- The slider container -->
+  <div class="size-slider">
+    <!-- Slider Header -->
+    <div class="slider-header">
+   <span class="bi bi-x  size-close-slider-btn"></span>
+      <span>Size Chart</span>
+      <!-- <a href="#">How to measure ></a> -->
+     
+    </div>
+
+    <!-- Slider Content -->
+    <div class="size-slider-content">
+        
+      <div class="container">
+        
+        <!-- Unit Toggler Switch -->
+        <div class="d-flex justify-content-between mb-3">
+            <a href="#">How to measure ></a>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="unit-switch">
+            <label class="form-check-label" for="unit-switch">
+              <span id="unit-label">IN</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Size Chart Table -->
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped text-center">
+            <thead class="table-light">
+              <tr>
+                <th>Size</th>
+                <th>Under Bust</th>
+                <th>Over Bust</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>28 A</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">28.3-29.1 in</td></tr>
+              <tr><td>28 B</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">29.1-29.9 in</td></tr>
+              <tr><td>28 C</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">29.9-30.7 in</td></tr>
+              <tr><td>28 D</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">30.7-31.5 in</td></tr>
+              <tr><td>28 DD</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">31.5-32.3 in</td></tr>
+              <tr><td>28 E</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">32.3-33.1 in</td></tr>
+              <tr><td>28 F</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">33.5-34.6 in</td></tr>
+              <tr><td>28 FF</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">35.0-36.2 in</td></tr>
+              <tr><td>28 G</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">36.6-37.8 in</td></tr>
+              <tr><td>28 H</td><td class="under-bust">23.2-24.4 in</td><td class="over-bust">38.2-39.4 in</td></tr>
+              <tr><td>30 A</td><td class="under-bust">24.8-26.4 in</td><td class="over-bust">30.3-31.1 in</td></tr>
+              <tr><td>30 B</td><td class="under-bust">24.8-26.4 in</td><td class="over-bust">31.1-31.9 in</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bar -->
+    <div class="footer-bar">
+      Not sure about your size? <a href="tel:">Call 0000000000</a>
+    </div>
+  </div>
+
+  <!-- JavaScript for Slider and Unit Toggler -->
+  <script>
+    const openSliderBtn = document.querySelector('.size-open-slider-btn');
+    const slider = document.querySelector('.size-slider');
+    const closeSliderBtn = document.querySelector('.size-close-slider-btn');
+    const unitSwitch = document.getElementById('unit-switch');
+    const unitLabel = document.getElementById('unit-label');
+    const underBustCells = document.querySelectorAll('.under-bust');
+    const overBustCells = document.querySelectorAll('.over-bust');
+
+    // Measurement data in cm and inches
+    const sizeData = {
+      'in': {
+        'underBust': [
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "23.2-24.4",
+          "24.8-26.4",
+          "24.8-26.4"
+        ],
+        'overBust': [
+          "28.3-29.1",
+          "29.1-29.9",
+          "29.9-30.7",
+          "30.7-31.5",
+          "31.5-32.3",
+          "32.3-33.1",
+          "33.5-34.6",
+          "35.0-36.2",
+          "36.6-37.8",
+          "38.2-39.4",
+          "30.3-31.1",
+          "31.1-31.9"
+        ]
+      },
+      'cm': {
+        'underBust': [
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "59-62",
+          "63-67",
+          "63-67"
+        ],
+        'overBust': [
+          "72-74",
+          "74-76",
+          "76-78",
+          "78-80",
+          "80-82",
+          "82-84",
+          "85-88",
+          "89-92",
+          "93-96",
+          "97-100",
+          "77-79",
+          "79-81"
+        ]
+      }
+    };
+
+    // Function to open the slider
+    function openSlider() {
+      slider.style.right = '0';
+    }
+
+    // Function to close the slider
+    function closeSlider() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 768) {
+        slider.style.right = '-100%';
+      } else if (screenWidth <= 1024) {
+        slider.style.right = '-70%';
+      } else {
+        slider.style.right = '-400px';
+      }
+    }
+
+    // Event listener to open the slider
+    openSliderBtn.addEventListener('click', openSlider);
+
+    // Event listener to close the slider
+    document.querySelector('.slider-header').addEventListener('click', closeSlider);
+    // Alternatively, you can add a close button inside the slider
+    // closeSliderBtn.addEventListener('click', closeSlider);
+
+    // Event listener for unit switch
+    unitSwitch.addEventListener('change', () => {
+      const unit = unitSwitch.checked ? 'cm' : 'in';
+      unitLabel.textContent = unit.toUpperCase();
+
+      // Update Under Bust measurements
+      underBustCells.forEach((cell, index) => {
+        cell.textContent = sizeData[unit].underBust[index] + ` ${unit}`;
+      });
+
+      // Update Over Bust measurements
+      overBustCells.forEach((cell, index) => {
+        cell.textContent = sizeData[unit].overBust[index] + ` ${unit}`;
+      });
+    });
+
+    // Initialize the table with default unit (in)
+    document.addEventListener('DOMContentLoaded', () => {
+      unitLabel.textContent = 'IN';
+      underBustCells.forEach((cell, index) => {
+        cell.textContent = sizeData['in'].underBust[index] + ' in';
+      });
+      overBustCells.forEach((cell, index) => {
+        cell.textContent = sizeData['in'].overBust[index] + ' in';
+      });
+    });
+
+    // Close the slider when clicking outside (optional)
+    window.addEventListener('click', (e) => {
+      if (e.target === slider) {
+        closeSlider();
+      }
+    });
+    closeSliderBtn.addEventListener('click', () => {
+      slider.style.right = '-100%';
+    });
+  </script>
+
+  <!-- Bootstrap JS (Optional, for Bootstrap components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

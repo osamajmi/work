@@ -2790,10 +2790,13 @@ ul.listItem.mt-5 {
   display: inline-block;
   padding: 8px 15px;
   margin: 10px;
-  border: 1px solid #333;
+  border: 1px solid pink;
   border-radius: 20px;
+  background-color: pink;
   font-size: 16px;
   cursor: pointer;
+  color: white;
+  transition: all 1s;
 }
 .btnFilter {
   display: flex;
@@ -2942,3 +2945,10 @@ justify-content: center;
   border: 2px solid pink;
   border-radius: 5px;
 }
+button.filterpro-btn:hover {
+  color: pink;
+  background: white;
+  border: 2px solid pink;
+}
+
+ 
