@@ -1024,6 +1024,25 @@ button.btn-size {
 button.btn-filter, .btn-size, .btn-bestSeller{
     font-size: 14px;
 }
+
+#Cart ,#profile,#wishList,#About,#Order,#wish,#Savedcards,#Fitcode{
+    width: 100%;
+}
+.logo img {
+    width: 136px;
+    height: 55px;
+}
+span.bi.bi-person {
+   
+    display: none;
+}
+.profileData{
+    position: relative;
+    right: 130px;
+}
+span.bi{
+    font-size: 20px;
+}
 }
 /* slider   end */
 /* in focus css */

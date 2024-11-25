@@ -750,6 +750,7 @@ button.related-btn {
     border: 1px solid pink;
 }
 
+
 @media( max-width:430px){
   .product-features-container h3 {
     font-size: 14px;
@@ -1042,6 +1043,7 @@ main.productDetail{
   span.bi.bi-x{
       font-size: 30px;
   }
+  
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
@@ -1065,6 +1067,7 @@ main.productDetail{
       right: -400px; /* Off-screen initially */
     }
   }
+  
 </style>
 
 
@@ -1091,11 +1094,52 @@ main.productDetail{
             </div>
           </div>
         </div>
-        <div class=" mt-3 d-flex gap-4">
-          <span class="bi bi-person " data-bs-toggle="modal" data-bs-target="#myModal"></span>
-          <span class="bi bi-heart"></span>
-          <span class="bi bi-cart me-4"></span>
+        <div class=" mt-3 d-flex gap-2">
+          <span class="bi bi-person " data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile">
+            
+             <div class="profileData">
+              <span class="admin">Hey</span><br>
+              <span class="admin adminProfile">Admin</span>
+             </div>
+            
+          </span>
+          <!-- profile -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="profile" aria-labelledby="profile">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Profile</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              ...
+            </div>
+          </div>
+          <!-- profile -->
+          <span class="bi bi-heart" data-bs-toggle="offcanvas" data-bs-target="#wishList" aria-controls="wishList"> </span>
+          
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="wishList" aria-labelledby="wishList">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">wishlist</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              ...
+            </div>
+          </div>
 
+
+          <span class="bi bi-cart me-4 position-relative" data-bs-toggle="offcanvas" data-bs-target="#Cart"  aria-controls="Cart"><div class="cartCircl">4</div></span>
+       
+          <!-- cart  -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="Cart" aria-labelledby="Cart">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              ...
+            </div>
+          </div>
+          <!-- cart end  -->
         </div>
       </div>
     </div>
