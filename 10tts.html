@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Item Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .item-container {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .product-details {
+            display: flex;
+            align-items: center;
+        }
+        .product-details img {
+            width: 100px;
+            height: 150px;
+            border-radius: 8px;
+        }
+        .product-details .item-desc {
+            margin-left: 15px;
+        }
+        .price-details-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .plum {
+            color: #ff6347;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-end {
+            justify-content: flex-end;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .quantity-change {
+            cursor: pointer;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+        .total-section {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="item-container">
+    <div class="product-details">
+        <div>
+            <img src="https://cdn.zivame.com/media/zcmsimages/configimages/ZC40QA-Grey Melange/1_small.jpg?t=1720607610" alt="Product Image">
+        </div>
+        <div class="item-desc">
+            <p><strong>Product:</strong> Zelocity Quick Dry Gym Track pants - Grey Melange</p>
+            <p><strong>Size:</strong> Small</p>
+            <p><strong>Unit Price:</strong> <span class="old-price">₹1695</span> <span id="unit-price">₹848</span></p>
+            <div>
+                <span class="quantity-change" id="decrement">-</span>
+                <span id="quantity">1</span>
+                <span class="quantity-change" id="increment">+</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="total-section">
+    <p class="price-details-title">PRICE DETAILS</p>
+    <div>
+        <p>Total M.R.P: <span id="total-mrp">₹1695</span></p>
+        <p>Savings on M.R.P: <span id="savings">(-) ₹847</span></p>
+        <p>Saving %: <span id="saving-percentage">49.9% OFF</span></p>
+        <p>Sub-total: <span id="sub-total">₹848</span></p>
+        <p>Shipping: <span id="shipping">FREE</span></p>
+        <p>Convenience charges: <span id="convenience-charge">₹2</span></p>
+        <p>Order total: <span id="order-total">₹850</span></p>
+        <p>Net Payable: <span id="net-payable">₹850</span></p>
+    </div>
+</div>
+
+<script>
+    // Function to update the prices dynamically when quantity is changed
+    function updatePriceDetails() {
+        const unitPrice = parseFloat(document.getElementById('unit-price').innerText.replace('₹', '').trim());
+        const quantity = parseInt(document.getElementById('quantity').innerText.trim());
+        const convenienceCharge = 2; // As per the provided example
+        const totalMrp = 1695; // The original price for the item (unit price before any discount)
+
+        // Calculate the subtotal (actual price after discount)
+        const subTotal = unitPrice * quantity;
+        
+        // Update the Total M.R.P. and Savings on M.R.P.
+        const totalMrpPrice = totalMrp * quantity;
+        const savingsOnMrp = totalMrpPrice - subTotal;
+
+        // Update the displayed values
+        document.getElementById('total-mrp').innerText = "₹" + totalMrpPrice.toFixed(2);
+        document.getElementById('savings').innerText = "(-) ₹" + savingsOnMrp.toFixed(2);
+
+        // Update the subtotal, total price, and net payable on the page
+        document.getElementById('sub-total').innerText = "₹" + subTotal.toFixed(2);
+
+        // Update the total price and net payable
+        const orderTotal = subTotal + convenienceCharge;
+        document.getElementById('order-total').innerText = "₹" + orderTotal.toFixed(2);
+        document.getElementById('net-payable').innerText = "₹" + orderTotal.toFixed(2);
+    }
+
+    // Function to handle quantity increment and decrement
+    function handleQuantityChange() {
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const quantityElement = document.getElementById('quantity');
+
+        incrementButton.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityElement.innerText.trim());
+            quantityElement.innerText = currentQuantity + 1;
+            updatePriceDetails();
+        });
+
+        decrementButton.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityElement.innerText.trim());
+            if (currentQuantity > 1) {
+                quantityElement.innerText = currentQuantity - 1;
+                updatePriceDetails();
+            }
+        });
+    }
+
+    // Initialize all functionalities when the page loads
+    window.onload = function () {
+        updatePriceDetails(); // Initialize price calculations
+        handleQuantityChange(); // Handle quantity change
+    };
+</script>
+
+</body>
+</html>

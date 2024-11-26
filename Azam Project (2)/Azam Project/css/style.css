@@ -3130,3 +3130,385 @@ button#incrementButton ,button#decrementButton{
   bottom: 19px;
   right: 20px;
 }
+.cartFooter{
+  bottom: 0;
+  width: 92.5%;
+
+}
+
+button.btn.btn-primary.w-100.cartBtm{
+  border-radius: 0px;
+
+}
+.coupons {
+  width: 100%;
+  /* border: 2px solid; */
+  border-radius: 5px;
+  margin-top: 29px;
+}
+
+.coupon-container {
+  background-color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.coupon-header-content {
+  display: flex;
+  align-items: center;
+}
+
+.coupon-header-icon {
+  font-size: 14px;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.coupon-header-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.view-all-btn {
+  font-size: 14px;
+  color: pink;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.coupon-slider-coupons .coupon-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-item .coupon-content {
+  flex: 1;
+}
+
+.coupon-item .coupon-code {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.coupon-item .coupon-description {
+  font-size: 11px;
+  color: #666;
+}
+
+.coupon-item .coupon-action {
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  align-self: center;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.coupon-item .coupon-action.apply-btn {
+  color: pink;
+}
+
+.coupon-item .coupon-action.remove-btn {
+  color: pink;
+}
+
+.coupon-item .coupon-action.shop-btn {
+  color: pink;
+}
+
+.have-a-coupon-btn {
+  font-size: 14px;
+  color: #007bff;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.coupon-icon {
+  font-size: 24px;
+  color: #007bff;
+}
+.cart-summary {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 400px;
+}
+.cart-summary h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+.cart-summary .line-item {
+  font-size: 16px;
+}
+.cart-summary .line-item span {
+  font-weight: normal;
+  color: #555;
+}
+.cart-summary .line-item span.amount {
+  font-weight: bold;
+  color: #333;
+}
+.net-payable {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 12px;
+  border-top: 2px solid #ccc;
+}
+.net-payable .total {
+  color: #d9534f;
+}
+.total-section {
+  padding: 10px;
+  height: 300px;
+}
+
+/* Profile Section */
+.image-container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-details {
+  flex-grow: 1;
+}
+
+/* User Details */
+.js-user-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.user-email, .user-phone {
+  font-size: 14px;
+  color: #555;
+}
+
+.user-email .fs-12, .user-phone .fs-12 {
+  font-size: 12px;
+}
+
+.text-pink {
+  color: #d63384;
+  cursor: pointer;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+/* Kebab Menu */
+.kebab-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.kebab-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.kebab-container:hover ul {
+  display: block;
+}
+
+.kebab-container li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.kebab-container li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Edit Form Styles */
+#edit-user, #edit-phone, #edit-email {
+  display: none;
+  margin-top: 15px;
+}
+
+#edit-user input, #edit-phone input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#edit-phone button {
+  padding: 10px 20px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#edit-phone button:hover {
+  background-color: #c8235b;
+}
+
+.phone-number-error, .api-response-error {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
+.api-response-error {
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  /* For small screens (mobile) */
+  .image-container {
+      margin-bottom: 20px;
+  }
+
+  .profileImage {
+      width: 80px;
+      height: 80px;
+  }
+
+  .user-details {
+      /* text-align: center; */
+  }
+
+  .user-email, .user-phone {
+      font-size: 14px;
+  }
+
+  #edit-user input, #edit-phone input {
+      font-size: 14px;
+  }
+
+  #edit-phone button {
+      width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* For tablets (portrait/landscape) */
+  .row {
+      gap: 15px;
+  }
+
+  .user-details {
+      text-align: left;
+  }
+
+  .profileImage {
+      width: 90px;
+      height: 90px;
+  }
+
+  #edit-user input, #edit-phone input {
+      font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* For large screens (desktop) */
+  .row {
+      gap: 30px;
+  }
+
+  .profileImage {
+      width: 120px;
+      height: 120px;
+  }
+
+  .user-details {
+      text-align: left;
+  }
+
+  #edit-user input, #edit-phone input {
+      font-size: 16px;
+  }
+}
+
+/* Hide the dropdown by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px; /* Adjust based on layout */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Style for the dropdown items */
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown when the class "show" is added */
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Style the dots icon */
+.bi-three-dots-vertical {
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #333;
+}
+

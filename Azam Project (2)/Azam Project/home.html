@@ -262,16 +262,94 @@
               
                     <!-- Plus-Minus Buttons -->
                     <div class="d-flex align-items-center gap-2 mt-2 position-absolute">
-                      <button class="btn btn-outline-secondary rounded-circle p-1" id="decrementButton" style="width: 20px; height: 20px;">-</button>
-                      <span id="itemCount" class="fs-6">1</span>
-                      <button class="btn btn-outline-secondary rounded-circle p-1" id="incrementButton" style="width: 20px; height: 20px;">+</button>
-                      <span class=" ms-3 fw-bold">₹<span id="totalPrice">600</span></span>
+                      <div>
+                        <span class="quantity-change rounded-circle p-1" id="decrement">-</span>
+                        <span id="quantity">1</span>
+                        <span class="quantity-change rounded-circle p-1" id="increment">+</span>
                     </div>
+                     <!-- <button class="btn btn-outline-secondary rounded-circle p-1" id="decrementButton" style="width: 20px; height: 20px;">-</button>
+                      <span id="itemCount" class="fs-6">1</span>
+                      <button class="btn btn-outline-secondary rounded-circle p-1" id="incrementButton" style="width: 20px; height: 20px;">+</button> -->
+                      <span class=" ms-3 fw-bold">₹<span class="totalPrice" id="unit-price">848</span></span>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
               
               <div class="bottom-brd"></div>
+               <div class="coupons ">
+                <div class="container">
+                  <div class="coupon-container">
+                      <!-- Coupon List Header -->
+                      <div class="coupon-list-header">
+                          <div class="coupon-header-content">
+                              <!-- Font Awesome Icon for Coupons -->
+                              <i class="fas fa-gift coupon-header-icon"></i>
+                              <div class="coupon-header-title">COUPONS</div>
+                          </div>
+                          <div class="view-all-btn" data-link="viewall">View All</div>
+                      </div>
+          
+                      <!-- Coupons Applied/Not Applied Section -->
+                      <div class="coupon-slider-coupons">
+                          <!-- Not Applied Coupon -->
+                          <div class="coupon-item not-applied" data-ruleid="643506" data-discountvalue="50">
+                              <div class="coupon-content">
+                                  <div class="coupon-code">ZEXTRA50</div>
+                                  <div class="coupon-description">Apply to save ₹50</div>
+                              </div>
+                              <div class="coupon-action apply-btn" data-coupon="ZEXTRA50">Apply&nbsp;</div>
+                          </div>
+          
+                          <!-- Applied Coupon (Initially hidden) -->
+                          <div class="coupon-item applied hide">
+                              <div class="coupon-content">
+                                  <div class="coupon-code applied-coupon">ZEXTRA50</div>
+                                  <div class="coupon-description applied-description">Coupon Applied!</div>
+                              </div>
+                              <div class="coupon-action remove-btn" data-coupon="ZEXTRA50">Remove</div>
+                          </div>
+          
+                          <!-- Upsell Coupon -->
+                          <div class="coupon-item upsell" data-ruleid="639159" data-discountvalue="10">
+                              <div class="coupon-content">
+                                  <div class="coupon-code upsell-code">ZIVAME10</div>
+                                  <div class="coupon-description upsell-description">Shop for ₹401 more to get 10% off on your cart. Applicable on products</div>
+                              </div>
+                              <div class="coupon-action shop-btn">Shop</div>
+                          </div>
+                      </div>
+          
+                      <!-- Have a coupon code link -->
+                      <div class="have-a-coupon-btn" data-link="haveacouponcode">Have a coupon code?</div>
+                  </div>
+              </div>
+               </div>
+               <div class="total-section">
+                <p class="price-details-title">PRICE DETAILS</p>
+                <div class="d-flex flex-column ">
+                    <span class=" d-flex justify-content-between"> <span>Total M.R.P:</span>   <span id="total-mrp">₹1695</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Savings on M.R.P:</span>  <span id="savings">(-) ₹847</span></span>
+                    <span class=" d-flex justify-content-between"> <span> Saving %:</span> <span id="saving-percentage">49.9% OFF</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Sub-total:</span>  <span id="sub-total">₹848</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Shipping:</span>  <span id="shipping">FREE</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Convenience charges:</span>  <span id="convenience-charge">₹2</span></span>
+                   
+                </div>
+            </div>
+             
+
+
+              <div class="cartFooter position-fixed ">
+                  
+                <div class="bg-white text-dark">
+                  <span class="d-flex justify-content-between"> <span>Order total:</span>  <span id="order-total">₹850</span></span>
+                  <span class="d-flex justify-content-between"><span> Net Payable:</span> <span id="net-payable">₹850</span></span>
+                </div>
+
+                <button class="btn btn-primary w-100 cartBtm"> Continue To CheckOut</button>
+              </div>
             </div>
           </div>
           <!-- cart end  -->
@@ -287,8 +365,29 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        ...
+        <div class="container mt-4">
+          <!-- Bootstrap 5 Tabs -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link active" id="basic-tab" data-bs-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Basic</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="occasion-tab" data-bs-toggle="tab" href="#occasion" role="tab" aria-controls="occasion" aria-selected="false">Occasion</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="addresses-tab" data-bs-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false">Addresses</a>
+              </li>
+          </ul>
+      
+          <div class="tab-content mt-3" id="myTabContent">
+              <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">Basic Info Content</div>
+              <div class="tab-pane fade" id="occasion" role="tabpanel" aria-labelledby="occasion-tab">Occasion Content</div>
+              <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">Addresses Content</div>
+          </div>
       </div>
+      
+      <!-- Bootstrap 5 JS (No jQuery needed) -->
+       </div>
     </div>
 <!-- about data end  -->
 
@@ -3090,31 +3189,7 @@
     });
   });
 </script>
-<script>
-  // JavaScript for Plus-Minus Button Functionality
-  const decrementButton = document.getElementById('decrementButton');
-  const incrementButton = document.getElementById('incrementButton');
-  const itemCount = document.getElementById('itemCount');
-  const totalPrice = document.getElementById('totalPrice');
 
-  const unitPrice = 600; // Unit price for calculation
-
-  // Increment functionality
-  incrementButton.addEventListener('click', () => {
-    let currentValue = parseInt(itemCount.textContent);
-    itemCount.textContent = currentValue + 1;
-    totalPrice.textContent = (currentValue + 1) * unitPrice;
-  });
-
-  // Decrement functionality
-  decrementButton.addEventListener('click', () => {
-    let currentValue = parseInt(itemCount.textContent);
-    if (currentValue > 1) {
-      itemCount.textContent = currentValue - 1;
-      totalPrice.textContent = (currentValue - 1) * unitPrice;
-    }
-  });
-</script>
 
 <!-- modal login -->
 <!-- <script>
@@ -3127,6 +3202,62 @@
     myModal.show(); // Show the modal when the page loads
 }); -->
 
+</script>
+<script>
+  // Function to update the prices dynamically when quantity is changed
+  function updatePriceDetails() {
+      const unitPrice = parseFloat(document.getElementById('unit-price').innerText.replace('₹', '').trim());
+      const quantity = parseInt(document.getElementById('quantity').innerText.trim());
+      const convenienceCharge = 2; // As per the provided example
+      const totalMrp = 1695; // The original price for the item (unit price before any discount)
+
+      // Calculate the subtotal (actual price after discount)
+      const subTotal = unitPrice * quantity;
+      
+      // Update the Total M.R.P. and Savings on M.R.P.
+      const totalMrpPrice = totalMrp * quantity;
+      const savingsOnMrp = totalMrpPrice - subTotal;
+
+      // Update the displayed values
+      document.getElementById('total-mrp').innerText = "₹" + totalMrpPrice.toFixed(2);
+      document.getElementById('savings').innerText = "(-) ₹" + savingsOnMrp.toFixed(2);
+
+      // Update the subtotal, total price, and net payable on the page
+      document.getElementById('sub-total').innerText = "₹" + subTotal.toFixed(2);
+
+      // Update the total price and net payable
+      const orderTotal = subTotal + convenienceCharge;
+      document.getElementById('order-total').innerText = "₹" + orderTotal.toFixed(2);
+      document.getElementById('net-payable').innerText = "₹" + orderTotal.toFixed(2);
+  }
+
+  // Function to handle quantity increment and decrement
+  function handleQuantityChange() {
+      const incrementButton = document.getElementById('increment');
+      const decrementButton = document.getElementById('decrement');
+      const quantityElement = document.getElementById('quantity');
+   
+      incrementButton.addEventListener('click', () => {
+          let currentQuantity = parseInt(quantityElement.innerText.trim());
+          quantityElement.innerText = currentQuantity + 1;
+          // alert(decrementButton)
+          updatePriceDetails();
+      });
+
+      decrementButton.addEventListener('click', () => {
+          let currentQuantity = parseInt(quantityElement.innerText.trim());
+          if (currentQuantity > 1) {
+              quantityElement.innerText = currentQuantity - 1;
+              updatePriceDetails();
+          }
+      });
+  }
+
+  // Initialize all functionalities when the page loads
+  window.onload = function () {
+      updatePriceDetails(); // Initialize price calculations
+      handleQuantityChange(); // Handle quantity change
+  };
 </script>
 
 </html>
