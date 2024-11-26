@@ -3512,3 +3512,102 @@ button.btn.btn-primary.w-100.cartBtm{
   color: #333;
 }
 
+.profs{
+  font-size: 12px;
+}
+i#save {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+}
+
+input#name-input,input#phone-input {
+  display: inline;
+  height: 22px;
+  width: 90%;
+  font-size: 12px;
+}
+.occasion-box {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.occasion-box:hover {
+  background-color: #f0f0f0;
+}
+
+.occasion-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.occasion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pink {
+  color: #e91e63;
+}
+
+.occasion-add-btn {
+  font-size: 24px;
+  color: #e91e63;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.flatpickr-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.calendar-container {
+  margin-top: 10px;
+  display: none;
+}
+
+#save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#close-btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.occasion-date {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #6c757d;
+}

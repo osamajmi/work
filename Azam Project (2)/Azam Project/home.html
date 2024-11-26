@@ -380,8 +380,92 @@
           </ul>
       
           <div class="tab-content mt-3" id="myTabContent">
-              <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">Basic Info Content</div>
-              <div class="tab-pane fade" id="occasion" role="tabpanel" aria-labelledby="occasion-tab">Occasion Content</div>
+              <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+  <div class="d-flex justify-content-between">
+            
+                  <img src="../Azam Project/img/profile.webp" class="profilepic" alt="">
+            
+            
+
+       <div class="ms-2">
+        <span class="profs" id="name">Osama Khan</span><br>
+        <span class="profs" id="email">Osama.jmi95@gmail.com</span>
+        <a href="" class="text-decoration-none profs">
+            <span class="profs" id="verify-email">Verify Email</span>
+        </a>
+        <span class="profs" id="phone">9582342386</span>
+        <i class="bi bi-patch-check-fill"></i>
+       </div>
+          <!-- Editable content elements -->
+         
+
+
+  
+          <!-- Three dots button for options -->
+          <span id="edit" style="cursor: pointer;"><i class="bi bi-three-dots-vertical"></i></span>
+          
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+              <button id="edit-name" class="dropdown-item">Edit Name</button>
+              <button id="edit-number" class="dropdown-item">Edit Number</button>
+              <button id="delete" class="dropdown-item">Delete</button>
+          </div>
+
+
+  <!-- Save Button (Initially Hidden) -->
+  <div id="save-btn" style="display: none;">
+     
+          <i class="bi bi-check"  id="save" ></i>
+      
+ 
+</div>
+
+               </div>
+              </div>
+              <div class="tab-pane fade" id="occasion" role="tabpanel" aria-labelledby="occasion-tab">
+                <div class="container mt-5">
+                  <div class="row justify-content-center">
+                      <div class="d-flex justify-content-between w-100 mb-4">
+                          <h5>Occasion</h5>
+                          <button class="occasion-add-btn" id="add-occasion-calendar">+</button>
+                      </div>
+              
+                      <!-- Birthday Box -->
+                      <div class="col-12 col-md-6 occasion-box">
+                          <div class="occasion-header">
+                              <div class="occasion-title">Birthday</div>
+                              <button class="occasion-add-btn" id="add-birthday-calendar">+</button>
+                          </div>
+              
+                          <!-- Calendar Container for Birthday -->
+                          <div class="calendar-container" id="calendar-birthday-container">
+                              <input type="text" id="birthday-calendar-input" class="flatpickr-input" placeholder="Select a date">
+                              <button id="save-birthday-btn" class="btn btn-success mt-2">Save</button>
+                              <button id="close-birthday-btn" class="btn btn-danger mt-2">Close</button>
+                          </div>
+                          <!-- Display selected date for Birthday -->
+                          <div class="occasion-date" id="birthday-date"></div>
+                      </div>
+              
+                      <!-- Anniversary Box -->
+                      <div class="col-12 col-md-6 occasion-box">
+                          <div class="occasion-header">
+                              <div class="occasion-title">Anniversary</div>
+                              <button class="occasion-add-btn" id="add-anniversary-calendar">+</button>
+                          </div>
+              
+                          <!-- Calendar Container for Anniversary -->
+                          <div class="calendar-container" id="calendar-anniversary-container">
+                              <input type="text" id="anniversary-calendar-input" class="flatpickr-input" placeholder="Select a date">
+                              <button id="save-anniversary-btn" class="btn btn-success mt-2">Save</button>
+                              <button id="close-anniversary-btn" class="btn btn-danger mt-2">Close</button>
+                          </div>
+                          <!-- Display selected date for Anniversary -->
+                          <div class="occasion-date" id="anniversary-date"></div>
+                      </div>
+                  </div>
+              </div>
+              </div>
               <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">Addresses Content</div>
           </div>
       </div>
@@ -2752,10 +2836,11 @@
         </ul>
       </footer> -->
 
-
+      <div class="cursor" id="custom-cursor"></div>
 
 </body>
-<div class="cursor" id="custom-cursor"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -3258,6 +3343,111 @@
       updatePriceDetails(); // Initialize price calculations
       handleQuantityChange(); // Handle quantity change
   };
+
+
+  document.getElementById('edit').addEventListener('click', function() {
+    let dropdownMenu = document.getElementById('dropdown-menu');
+    if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block";
+    } else {
+        dropdownMenu.style.display = "none";
+    }
+});
+
+document.getElementById('edit-name').addEventListener('click', function() {
+    document.getElementById('dropdown-menu').style.display = "none";
+    let name = document.getElementById('name');
+    name.innerHTML = `<input type="text" id="name-input" value="${name.innerHTML}" class="form-control">`;
+    document.getElementById('save-btn').style.display = "block";
+    document.getElementById('name-input').focus();
+});
+
+document.getElementById('edit-number').addEventListener('click', function() {
+    document.getElementById('dropdown-menu').style.display = "none";
+    let phone = document.getElementById('phone');
+    phone.innerHTML = `<input type="text" id="phone-input" value="${phone.innerHTML}" class="form-control">`;
+    document.getElementById('save-btn').style.display = "block";
+    document.getElementById('phone-input').focus();
+});
+
+document.getElementById('delete').addEventListener('click', function() {
+    if (confirm("Are you sure you want to delete this information?")) {
+        document.getElementById('name').innerHTML = "";
+        document.getElementById('email').innerHTML = "";
+        document.getElementById('phone').innerHTML = "";
+        document.getElementById('verify-email').innerHTML = "";
+    }
+    document.getElementById('dropdown-menu').style.display = "none";
+    document.getElementById('save-btn').style.display = "none";
+});
+
+document.getElementById('save').addEventListener('click', function() {
+    let nameInput = document.getElementById('name-input');
+    let phoneInput = document.getElementById('phone-input');
+    
+    if (nameInput) {
+        document.getElementById('name').innerHTML = nameInput.value;
+    }
+    if (phoneInput) {
+        document.getElementById('phone').innerHTML = phoneInput.value;
+    }
+    
+    document.getElementById('save-btn').style.display = "none";
+    document.getElementById('name').style.display = 'inline-block';
+    document.getElementById('phone').style.display = 'inline-block';
+});
+
 </script>
+
+<script>
+  flatpickr("#birthday-calendar-input", {
+      dateFormat: "Y-m-d"
+  });
+
+  flatpickr("#anniversary-calendar-input", {
+      dateFormat: "Y-m-d"
+  });
+
+  document.getElementById('add-birthday-calendar').addEventListener('click', function() {
+      document.getElementById('calendar-birthday-container').style.display = 'block';
+  });
+
+  document.getElementById('add-anniversary-calendar').addEventListener('click', function() {
+      document.getElementById('calendar-anniversary-container').style.display = 'block';
+  });
+
+  document.getElementById('save-birthday-btn').addEventListener('click', function() {
+      const selectedDate = document.getElementById('birthday-calendar-input').value;
+      if (selectedDate) {
+          document.getElementById('birthday-date').innerHTML = "Selected Date: " + selectedDate;
+          document.getElementById('calendar-birthday-container').style.display = 'none';
+      } else {
+          alert("Please select a date.");
+      }
+  });
+
+  document.getElementById('save-anniversary-btn').addEventListener('click', function() {
+      const selectedDate = document.getElementById('anniversary-calendar-input').value;
+      if (selectedDate) {
+          document.getElementById('anniversary-date').innerHTML = "Selected Date: " + selectedDate;
+          document.getElementById('calendar-anniversary-container').style.display = 'none';
+      } else {
+          alert("Please select a date.");
+      }
+  });
+
+  document.getElementById('close-birthday-btn').addEventListener('click', function() {
+      document.getElementById('calendar-birthday-container').style.display = 'none';
+  });
+
+  document.getElementById('close-anniversary-btn').addEventListener('click', function() {
+      document.getElementById('calendar-anniversary-container').style.display = 'none';
+  });
+
+  document.getElementById('add-occasion-calendar').addEventListener('click', function() {
+      alert('You clicked the Occasion button');
+  });
+</script>
+
 
 </html>
