@@ -3,150 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Item Example</title>
+    <title>Checkout Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-        }
-        .item-container {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-        }
-        .product-details {
-            display: flex;
-            align-items: center;
-        }
-        .product-details img {
-            width: 100px;
-            height: 150px;
-            border-radius: 8px;
-        }
-        .product-details .item-desc {
-            margin-left: 15px;
-        }
-        .price-details-title {
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .plum {
-            color: #ff6347;
-        }
-        .flex {
-            display: flex;
-        }
-        .flex-end {
-            justify-content: flex-end;
-        }
-        .text-right {
-            text-align: right;
-        }
-        .quantity-change {
-            cursor: pointer;
-            padding: 5px;
-            background-color: #f1f1f1;
-            border-radius: 4px;
-            margin: 0 10px;
-        }
-        .total-section {
-            margin-top: 20px;
             background-color: #f9f9f9;
-            padding: 10px;
+        }
+
+        .card {
+            border: none;
             border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 8px;
+        }
+
+        .accordion-button {
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:hover,
+        .accordion-button:not(.collapsed) {
+            background-color: #f36f8f;
+            color: white;
+            box-shadow: 0 2px 6px rgba(243, 111, 143, 0.4);
+        }
+
+        .accordion-body {
+            background-color: #fdfdfd;
+            border: 1px solid #f1f1f1;
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .form-check-label {
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #f36f8f;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #e05876;
+        }
+
+        .order-summary img {
+            max-width: 70px;
+            margin-right: 10px;
+        }
+
+        .order-summary .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .order-summary .item-price {
+            font-size: 1rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Left Section -->
+            <div class="col-lg-8">
+                <!-- Address Section -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="section-title">Delivery Address</h5>
+                        <p><strong>Delivering To:</strong></p>
+                        <p>9999999999, Delhi, DELHI, New Delhi - 110025</p>
+                        <a href="#" class="btn btn-link">Change</a>
+                    </div>
+                </div>
+                
+                <!-- Payment Section -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="section-title">Payments</h5>
+                        <div class="accordion" id="paymentAccordion">
+                            <!-- UPI -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#upiCollapse" aria-expanded="true" aria-controls="upiCollapse">
+                                        UPI
+                                    </button>
+                                </h2>
+                                <div id="upiCollapse" class="accordion-collapse collapse show" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        <p>Pay easily with UPI. Enter your UPI ID to proceed.</p>
+                                        <input type="text" class="form-control mb-2" placeholder="Enter your UPI ID">
+                                        <button class="btn btn-primary btn-sm">Pay with UPI</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Credit/Debit Card -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cardCollapse" aria-expanded="false" aria-controls="cardCollapse">
+                                        Credit/Debit Card
+                                    </button>
+                                </h2>
+                                <div id="cardCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        <p>Enter your card details to proceed with payment.</p>
+                                        <input type="text" class="form-control mb-2" placeholder="Card Number">
+                                        <input type="text" class="form-control mb-2" placeholder="Name on Card">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control mb-2" placeholder="Expiry Date">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control mb-2" placeholder="CVV">
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm">Pay with Card</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Net Banking -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#netBankingCollapse" aria-expanded="false" aria-controls="netBankingCollapse">
+                                        Net Banking
+                                    </button>
+                                </h2>
+                                <div id="netBankingCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        <h6 class="mb-3">Popular Banks</h6>
+                                        <div class="row g-3">
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="icici" value="ICICI">
+                                                    <label class="form-check-label" for="icici">
+                                                        <img src="https://via.placeholder.com/100x30?text=ICICI+Bank" alt="ICICI Bank">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="hdfc" value="HDFC">
+                                                    <label class="form-check-label" for="hdfc">
+                                                        <img src="https://via.placeholder.com/100x30?text=HDFC+Bank" alt="HDFC Bank">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="sbi" value="SBI">
+                                                    <label class="form-check-label" for="sbi">
+                                                        <img src="https://via.placeholder.com/100x30?text=SBI+Bank" alt="State Bank of India">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="citi" value="Citi">
+                                                    <label class="form-check-label" for="citi">
+                                                        <img src="https://via.placeholder.com/100x30?text=Citi+Bank" alt="Citi Bank">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="axis" value="Axis">
+                                                    <label class="form-check-label" for="axis">
+                                                        <img src="https://via.placeholder.com/100x30?text=Axis+Bank" alt="Axis Bank">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="netBank" id="kotak" value="Kotak">
+                                                    <label class="form-check-label" for="kotak">
+                                                        <img src="https://via.placeholder.com/100x30?text=Kotak+Bank" alt="Kotak Bank">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <h6 class="mt-4 mb-2">Other Banks</h6>
+                                        <select class="form-select">
+                                            <option selected>Select your bank</option>
+                                            <option value="PNB">Punjab National Bank</option>
+                                            <option value="BOB">Bank of Baroda</option>
+                                            <option value="Canara">Canara Bank</option>
+                                            <option value="Yes">Yes Bank</option>
+                                            <option value="Other">Other Bank</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cash on Delivery -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#codCollapse" aria-expanded="false" aria-controls="codCollapse">
+                                        Cash on Delivery (COD)
+                                    </button>
+                                </h2>
+                                <div id="codCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        <p>Pay cash upon delivery of your order.</p>
+                                        <button class="btn btn-primary btn-sm">Confirm COD</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="item-container">
-    <div class="product-details">
-        <div>
-            <img src="https://cdn.zivame.com/media/zcmsimages/configimages/ZC40QA-Grey Melange/1_small.jpg?t=1720607610" alt="Product Image">
-        </div>
-        <div class="item-desc">
-            <p><strong>Product:</strong> Zelocity Quick Dry Gym Track pants - Grey Melange</p>
-            <p><strong>Size:</strong> Small</p>
-            <p><strong>Unit Price:</strong> <span class="old-price">₹1695</span> <span id="unit-price">₹848</span></p>
-            <div>
-                <span class="quantity-change" id="decrement">-</span>
-                <span id="quantity">1</span>
-                <span class="quantity-change" id="increment">+</span>
+            <!-- Right Section -->
+            <div class="col-lg-4">
+                <div class="card order-summary">
+                    <div class="card-body">
+                        <h5 class="section-title">Review Order</h5>
+                        <div class="d-flex mb-3">
+                            <img src="https://via.placeholder.com/70" alt="Item">
+                            <div>
+                                <p class="item-title">Zivame Quick Dry Gym Track Pants</p>
+                                <p class="item-price">₹848</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="https://via.placeholder.com/70" alt="Item">
+                            <div>
+                                <p class="item-title">Zivame Hide N Seek Pyjama Set</p>
+                                <p class="item-price">₹948</p>
+                            </div>
+                        </div>
+                        <h6>Total: ₹1798</h6>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="total-section">
-    <p class="price-details-title">PRICE DETAILS</p>
-    <div>
-        <p>Total M.R.P: <span id="total-mrp">₹1695</span></p>
-        <p>Savings on M.R.P: <span id="savings">(-) ₹847</span></p>
-        <p>Saving %: <span id="saving-percentage">49.9% OFF</span></p>
-        <p>Sub-total: <span id="sub-total">₹848</span></p>
-        <p>Shipping: <span id="shipping">FREE</span></p>
-        <p>Convenience charges: <span id="convenience-charge">₹2</span></p>
-        <p>Order total: <span id="order-total">₹850</span></p>
-        <p>Net Payable: <span id="net-payable">₹850</span></p>
-    </div>
-</div>
-
-<script>
-    // Function to update the prices dynamically when quantity is changed
-    function updatePriceDetails() {
-        const unitPrice = parseFloat(document.getElementById('unit-price').innerText.replace('₹', '').trim());
-        const quantity = parseInt(document.getElementById('quantity').innerText.trim());
-        const convenienceCharge = 2; // As per the provided example
-        const totalMrp = 1695; // The original price for the item (unit price before any discount)
-
-        // Calculate the subtotal (actual price after discount)
-        const subTotal = unitPrice * quantity;
-        
-        // Update the Total M.R.P. and Savings on M.R.P.
-        const totalMrpPrice = totalMrp * quantity;
-        const savingsOnMrp = totalMrpPrice - subTotal;
-
-        // Update the displayed values
-        document.getElementById('total-mrp').innerText = "₹" + totalMrpPrice.toFixed(2);
-        document.getElementById('savings').innerText = "(-) ₹" + savingsOnMrp.toFixed(2);
-
-        // Update the subtotal, total price, and net payable on the page
-        document.getElementById('sub-total').innerText = "₹" + subTotal.toFixed(2);
-
-        // Update the total price and net payable
-        const orderTotal = subTotal + convenienceCharge;
-        document.getElementById('order-total').innerText = "₹" + orderTotal.toFixed(2);
-        document.getElementById('net-payable').innerText = "₹" + orderTotal.toFixed(2);
-    }
-
-    // Function to handle quantity increment and decrement
-    function handleQuantityChange() {
-        const incrementButton = document.getElementById('increment');
-        const decrementButton = document.getElementById('decrement');
-        const quantityElement = document.getElementById('quantity');
-
-        incrementButton.addEventListener('click', () => {
-            let currentQuantity = parseInt(quantityElement.innerText.trim());
-            quantityElement.innerText = currentQuantity + 1;
-            updatePriceDetails();
-        });
-
-        decrementButton.addEventListener('click', () => {
-            let currentQuantity = parseInt(quantityElement.innerText.trim());
-            if (currentQuantity > 1) {
-                quantityElement.innerText = currentQuantity - 1;
-                updatePriceDetails();
-            }
-        });
-    }
-
-    // Initialize all functionalities when the page loads
-    window.onload = function () {
-        updatePriceDetails(); // Initialize price calculations
-        handleQuantityChange(); // Handle quantity change
-    };
-</script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
