@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Basic styling for form group and inputs */
+        .form-add{
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .form-control:focus{
+            box-shadow: none;
+        }
+        .form-control {
+            border: none;
+            border-bottom: 2px solid #ccc; /* Light gray border */
+            background: transparent;
+            font-size: 16px;
+            padding: 5px 0;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        /* Add the line under the input */
+        .form-group svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            pointer-events: none;
+        }
+
+        .form-group line {
+            stroke: #ff007f; /* Pink color */
+            stroke-width: 2;
+            stroke-dasharray: 1000; /* Create a long line (large value for full length) */
+            stroke-dashoffset: 1000; /* Hide the line initially */
+            transition: stroke-dashoffset 0.4s ease-out; /* Transition for drawing effect */
+        }
+
+      
+
+        /* Modal and form styling */
+        .modal-content {
+            padding: 20px;
+        }
+
+        /* Address Type Circle Animation */
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .circle.active {
+            background-color: #ff007f; /* Active circle color */
+        }
+
+        /* Add button */
+        #addAddress {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: pink;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .small-3.large-3.columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+        /* Error message styling */
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+        /* Custom Scrollbar Styling for Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: pink; /* Pink color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #ffffff; /* Optional: adds a white border around the thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Light grey color for the scrollbar track */
+    border-radius: 10px;
+}
+
+/* Custom Scrollbar Styling for Firefox */
+scrollbar {
+    width: 10px;
+}
+
+scrollbar-thumb {
+    background-color: pink;
+    border-radius: 10px;
+}
+
+scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 8px;
+        }
+
+        .accordion-button {
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:hover,
+        .accordion-button:not(.collapsed) {
+            background-color: #f36f8f;
+            color: white;
+            box-shadow: 0 2px 6px rgba(243, 111, 143, 0.4);
+        }
+
+        .accordion-body {
+            background-color: #fdfdfd;
+            border: 1px solid #f1f1f1;
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .form-check-label {
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #f36f8f;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #e05876;
+        }
+
+        .order-summary img {
+            max-width: 70px;
+            margin-right: 10px;
+        }
+
+        .order-summary .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .order-summary .item-price {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+/* Custom CSS to position modal on the right */
+.modal-dialog {
+  position: absolute;
+  top: 32px;
+  right: 45px ;
+  margin: 0;
+  width: 100%;
+}
+.addresData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.address-item {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .address-item.selected {
+      border-color: #0d6efd;
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+    .address-tag {
+      background: #e0e0e0;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .edit-icon {
+      cursor: pointer;
+      color: #0d6efd;
+    }
+
+    .edit-icon:hover {
+      color: #004085;
+    }
+
+@media (min-width:451px) {
+    .paymb{
+        display: none;
+    }
+    
+}
+ @media(max-width:450px){
+    .modal-dialog {
+        right: 0;
+        top: 10px;
+        padding: 10px;
+    }
+    .paylp{
+        display: none;
+    }
+ }
+
+    </style>
+</head>
+<body style="overflow: scroll !important;">
+    <div class="container mt-5">
+        <div class="container my-5">
+            <div class="row">
+                <!-- Left Section -->
+                <div class="col-lg-8">
+                    <!-- Address Section -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="section-title">Delivery Address</h5>
+                            <p><strong>Delivering To:</strong></p>
+                            <div class="addresData">
+                                <p><span id="userMobno"></span>, <span id="usrCity"> </span>, <span id="usrState"></span> - <span id="usrpin"></span></p>
+                                <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ChangeModal">Change</a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Section -->
+                    <div class="card mb-4 paylp ">
+                        <div class="card-body">
+                            <h5 class="section-title">Payments</h5>
+                            <div class="accordion" id="paymentAccordion">
+                                <!-- UPI -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#upiCollapse" aria-expanded="true" aria-controls="upiCollapse">
+                                            UPI
+                                        </button>
+                                    </h2>
+                                    <div id="upiCollapse" class="accordion-collapse collapse show" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <p>Pay easily with UPI. Enter your UPI ID to proceed.</p>
+                                            <input type="text" class="form-control mb-2" placeholder="Enter your UPI ID">
+                                            <button class="btn btn-primary btn-sm">Pay with UPI</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Credit/Debit Card -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cardCollapse" aria-expanded="false" aria-controls="cardCollapse">
+                                            Credit/Debit Card
+                                        </button>
+                                    </h2>
+                                    <div id="cardCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <p>Enter your card details to proceed with payment.</p>
+                                            <input type="text" class="form-control mb-2" placeholder="Card Number">
+                                            <input type="text" class="form-control mb-2" placeholder="Name on Card">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <input type="text" class="form-control mb-2" placeholder="Expiry Date">
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" class="form-control mb-2" placeholder="CVV">
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm">Pay with Card</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Net Banking -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#netBankingCollapse" aria-expanded="false" aria-controls="netBankingCollapse">
+                                            Net Banking
+                                        </button>
+                                    </h2>
+                                    <div id="netBankingCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <h6 class="mb-3">Popular Banks</h6>
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="icici" value="ICICI">
+                                                        <label class="form-check-label" for="icici">
+                                                            <img src="https://via.placeholder.com/100x30?text=ICICI+Bank" alt="ICICI Bank">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="hdfc" value="HDFC">
+                                                        <label class="form-check-label" for="hdfc">
+                                                            <img src="https://via.placeholder.com/100x30?text=HDFC+Bank" alt="HDFC Bank">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="sbi" value="SBI">
+                                                        <label class="form-check-label" for="sbi">
+                                                            <img src="https://via.placeholder.com/100x30?text=SBI+Bank" alt="State Bank of India">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="citi" value="Citi">
+                                                        <label class="form-check-label" for="citi">
+                                                            <img src="https://via.placeholder.com/100x30?text=Citi+Bank" alt="Citi Bank">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="axis" value="Axis">
+                                                        <label class="form-check-label" for="axis">
+                                                            <img src="https://via.placeholder.com/100x30?text=Axis+Bank" alt="Axis Bank">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check d-flex align-items-center">
+                                                        <input class="form-check-input me-2" type="radio" name="netBank" id="kotak" value="Kotak">
+                                                        <label class="form-check-label" for="kotak">
+                                                            <img src="https://via.placeholder.com/100x30?text=Kotak+Bank" alt="Kotak Bank">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <h6 class="mt-4 mb-2">Other Banks</h6>
+                                            <select class="form-select">
+                                                <option selected>Select your bank</option>
+                                                <option value="PNB">Punjab National Bank</option>
+                                                <option value="BOB">Bank of Baroda</option>
+                                                <option value="Canara">Canara Bank</option>
+                                                <option value="Yes">Yes Bank</option>
+                                                <option value="Other">Other Bank</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cash on Delivery -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#codCollapse" aria-expanded="false" aria-controls="codCollapse">
+                                            Cash on Delivery (COD)
+                                        </button>
+                                    </h2>
+                                    <div id="codCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <p>Pay cash upon delivery of your order.</p>
+                                            <button class="btn btn-primary btn-sm">Confirm COD</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Right Section -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card order-summary">
+                        <div class="card-body">
+                            <h5 class="section-title">Review Order</h5>
+                            <div class="d-flex mb-3">
+                                <img src="https://via.placeholder.com/70" alt="Item">
+                                <div>
+                                    <p class="item-title">Zivame Quick Dry Gym Track Pants</p>
+                                    <p class="item-price">₹848</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="https://via.placeholder.com/70" alt="Item">
+                                <div>
+                                    <p class="item-title">Zivame Hide N Seek Pyjama Set</p>
+                                    <p class="item-price">₹948</p>
+                                </div>
+                            </div>
+                            <h6>Total: ₹1798</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card mb-4 paymb">
+                <div class="card-body">
+                    <h5 class="section-title">Payments</h5>
+                    <div class="accordion" id="paymentAccordion">
+                        <!-- UPI -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#upiCollapse" aria-expanded="true" aria-controls="upiCollapse">
+                                    UPI
+                                </button>
+                            </h2>
+                            <div id="upiCollapse" class="accordion-collapse collapse show" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body">
+                                    <p>Pay easily with UPI. Enter your UPI ID to proceed.</p>
+                                    <input type="text" class="form-control mb-2" placeholder="Enter your UPI ID">
+                                    <button class="btn btn-primary btn-sm">Pay with UPI</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Credit/Debit Card -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cardCollapse" aria-expanded="false" aria-controls="cardCollapse">
+                                    Credit/Debit Card
+                                </button>
+                            </h2>
+                            <div id="cardCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body">
+                                    <p>Enter your card details to proceed with payment.</p>
+                                    <input type="text" class="form-control mb-2" placeholder="Card Number">
+                                    <input type="text" class="form-control mb-2" placeholder="Name on Card">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="text" class="form-control mb-2" placeholder="Expiry Date">
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control mb-2" placeholder="CVV">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Pay with Card</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Net Banking -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#netBankingCollapse" aria-expanded="false" aria-controls="netBankingCollapse">
+                                    Net Banking
+                                </button>
+                            </h2>
+                            <div id="netBankingCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body">
+                                    <h6 class="mb-3">Popular Banks</h6>
+                                    <div class="row g-3">
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="icici" value="ICICI">
+                                                <label class="form-check-label" for="icici">
+                                                    <img src="https://via.placeholder.com/100x30?text=ICICI+Bank" alt="ICICI Bank">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="hdfc" value="HDFC">
+                                                <label class="form-check-label" for="hdfc">
+                                                    <img src="https://via.placeholder.com/100x30?text=HDFC+Bank" alt="HDFC Bank">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="sbi" value="SBI">
+                                                <label class="form-check-label" for="sbi">
+                                                    <img src="https://via.placeholder.com/100x30?text=SBI+Bank" alt="State Bank of India">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="citi" value="Citi">
+                                                <label class="form-check-label" for="citi">
+                                                    <img src="https://via.placeholder.com/100x30?text=Citi+Bank" alt="Citi Bank">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="axis" value="Axis">
+                                                <label class="form-check-label" for="axis">
+                                                    <img src="https://via.placeholder.com/100x30?text=Axis+Bank" alt="Axis Bank">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="radio" name="netBank" id="kotak" value="Kotak">
+                                                <label class="form-check-label" for="kotak">
+                                                    <img src="https://via.placeholder.com/100x30?text=Kotak+Bank" alt="Kotak Bank">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <h6 class="mt-4 mb-2">Other Banks</h6>
+                                    <select class="form-select">
+                                        <option selected>Select your bank</option>
+                                        <option value="PNB">Punjab National Bank</option>
+                                        <option value="BOB">Bank of Baroda</option>
+                                        <option value="Canara">Canara Bank</option>
+                                        <option value="Yes">Yes Bank</option>
+                                        <option value="Other">Other Bank</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cash on Delivery -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#codCollapse" aria-expanded="false" aria-controls="codCollapse">
+                                    Cash on Delivery (COD)
+                                </button>
+                            </h2>
+                            <div id="codCollapse" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body">
+                                    <p>Pay cash upon delivery of your order.</p>
+                                    <button class="btn btn-primary btn-sm">Confirm COD</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+  
+   
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalLabel">Fill the Form</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- Form Inside Modal -->
+                    <form id="address-form" action="" name="addressFormMobile" class="row mr-b20 custom-scrllbar" style="overflow-y:scroll;height:60vh" onsubmit="return validateForm()">
+                        <div class="form-group form-add">
+                            <input type="text" name="firstName" class="form-control" placeholder="First Name" id="fname" maxlength="30">
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                            <div class="error-message" id="firstNameError"></div>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="text" name="lastName" class="form-control" placeholder="Last Name" id="lname" maxlength="30">
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                            <div class="error-message" id="lastNameError"></div>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="tel" name="mobNumber" class="form-control" placeholder="Mobile Number" maxlength="10" id="mobname">
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                            <div class="error-message" id="mobNumberError"></div>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="text" name="address" class="form-control" placeholder="Address" id="street" maxlength="100">
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                            <div class="error-message" id="addressError"></div>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="tel" name="postalCode" class="form-control" maxlength="6" placeholder="Postal Code" id="postcode">
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                            <div class="error-message" id="postalCodeError"></div>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="text" name="city" class="form-control" placeholder="City" id="city" disabled>
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                        </div>
+                        <div class="form-group form-add">
+                            <input type="text" name="state" class="form-control" placeholder="State" id="state" disabled>
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                        </div>
+                        <div class="form-group from-add">
+                            <input type="text" name="country" class="form-control" placeholder="Country" id="country" disabled>
+                            <svg><line x1="0" y1="1" x2="100%" y2="1" /></svg>
+                        </div>
+                        <div class="large-12 columns adTypHold pd-b20 pd-l0">
+                            <h4 class="pd-b10">Address Type</h4>
+                            <div class="text-center d-flex align-content-center gap-4">
+                                <div class="small-3 large-3 columns">
+                                    <span class="circle mr-b5" data-active="OFFICE"></span> <span class="adTitle fs-14">Office</span>
+                                </div>
+                                <div class="small-3 large-3 columns">
+                                    <span class="circle mr-b5 active" data-active="HOME"></span> <span class="adTitle fs-14">Home</span>
+                                </div>
+                                <div class="small-3 large-3 columns end">
+                                    <span class="circle mr-b5" data-active="OTHER"></span> <span class="adTitle fs-14">Others</span>
+                                </div>
+                            </div>
+                            <span class="error-message" id="addressTypeError"></span>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary w-100 fixed-btn fs-16" id="submitButton" id="addAddress">Add Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- change adress form data  -->
+ <!-- Address Selector Modal -->
+ <div class="modal fade" id="ChangeModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Select Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="address-list">
+            <!-- Address 1 -->
+            <div class="address-item" data-details='{"firstName": "Asa", "lastName": "Sfdsf", "mobile": "9668528285", "address": "Street 1", "postalCode": "110025"}'>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="mb-1">Asa Sfdsf</p>
+                  <p class="mb-1">Street 1</p>
+                  <p class="mb-1">DELHI</p>
+                  <p class="mb-1">New Delhi</p>
+                  <p class="mb-1">Postal code: 110025</p>
+                  <p class="mb-0">Ph: 9668528285</p>
+                </div>
+                <div>
+                  <span class="address-tag">HOME</span>
+                  <i class="bi bi-pencil-square edit-icon" data-bs-toggle="modal" data-bs-target="#frmModal"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address 2 -->
+            <div class="address-item" data-details='{"firstName": "Hii", "lastName": "Iii", "mobile": "9699999999", "address": "Street 2", "postalCode": "220001"}'>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="mb-1">Hii Iii</p>
+                  <p class="mb-1">Street 2</p>
+                  <p class="mb-1">DELHI</p>
+                  <p class="mb-1">New Delhi</p>
+                  <p class="mb-1">Postal code: 220001</p>
+                  <p class="mb-0">Ph: 9699999999</p>
+                </div>
+                <div>
+                  <span class="address-tag">HOME</span>
+                  <i class="bi bi-pencil-square edit-icon" data-bs-toggle="modal" data-bs-target="#frmModal"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button class="btn btn-warning w-100 fw-bold" id="selectAddress">Select Address</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Form Modal -->
+  <div class="modal fade" id="frmModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Edit Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Edit Form -->
+          <form id="address-form" class="row">
+            <div class="mb-3">
+              <label for="fname" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="fname" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+              <label for="lname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lname" placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+              <label for="mobname" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobname" placeholder="Mobile Number">
+            </div>
+            <div class="mb-3">
+              <label for="street" class="form-label">Address</label>
+              <input type="text" class="form-control" id="street" placeholder="Street">
+            </div>
+            <div class="mb-3">
+              <label for="postcode" class="form-label">Postal Code</label>
+              <input type="tel" class="form-control" id="postcode" placeholder="Postal Code">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100" id="saveChangesButton" data-bs-toggle="modal" data-bs-target="#ChangeModal">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="selected-address" class="mt-4 p-3 border bg-white">
+    <h5>Selected Address</h5>
+    <p id="selected-address-details">No address selected</p>
+  </div>
+
+
+
+<!-- chnage adress form data -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentEditItem = null; // To keep track of the address item being edited
+        let selectedAddressDetails = null; // To store the selected address details
+    
+        // JavaScript to populate edit form
+        document.querySelectorAll('.edit-icon').forEach(icon => {
+          icon.addEventListener('click', function () {
+            const addressItem = this.closest('.address-item'); // Get the parent address item
+            const details = JSON.parse(addressItem.getAttribute('data-details')); // Parse data-details attribute
+            currentEditItem = addressItem; // Store the current address item being edited
+    
+            // Populate the form with the details
+            document.getElementById('fname').value = details.firstName;
+            document.getElementById('lname').value = details.lastName;
+            document.getElementById('mobname').value = details.mobile;
+            document.getElementById('street').value = details.address;
+            document.getElementById('postcode').value = details.postalCode;
+          });
+        });
+    
+        // Save Changes Button
+        document.getElementById('saveChangesButton').addEventListener('click', function () {
+          if (currentEditItem) {
+            // Get the updated details from the form
+            const updatedDetails = {
+              firstName: document.getElementById('fname').value,
+              lastName: document.getElementById('lname').value,
+              mobile: document.getElementById('mobname').value,
+              address: document.getElementById('street').value,
+              postalCode: document.getElementById('postcode').value
+            };
+    
+            // Update the data-details attribute with the new details
+            currentEditItem.setAttribute('data-details', JSON.stringify(updatedDetails));
+    
+            // Update the displayed address information
+            currentEditItem.querySelector('p:nth-child(1)').innerText = updatedDetails.firstName + ' ' + updatedDetails.lastName;
+            currentEditItem.querySelector('p:nth-child(2)').innerText = updatedDetails.address;
+            currentEditItem.querySelector('p:nth-child(3)').innerText = updatedDetails.postalCode;
+            currentEditItem.querySelector('p:nth-child(4)').innerText = updatedDetails.mobile;
+    
+            // Close the modal
+            const frmModal = bootstrap.Modal.getInstance(document.getElementById('frmModal'));
+            frmModal.hide();
+          }
+        });
+    
+        // Select Address Button (Display in div)
+        document.getElementById('selectAddress').addEventListener('click', function () {
+          const selectedItem = document.querySelector('.address-item.selected'); // Get the selected address
+          if (selectedItem) {
+            const details = JSON.parse(selectedItem.getAttribute('data-details')); // Get the details of selected address
+            selectedAddressDetails = details;
+    
+            // Display the selected address in the div
+            document.getElementById('selected-address-details').innerHTML = `
+              <strong>${details.firstName} ${details.lastName}</strong><br>
+              ${details.address}<br>
+              Postal Code: ${details.postalCode}<br>
+              Phone: ${details.mobile}
+            `;
+          } else {
+            document.getElementById('selected-address-details').innerHTML = 'No address selected';
+          }
+        });
+    
+        // Add Click Event for Selecting Address
+        document.querySelectorAll('.address-item').forEach(item => {
+          item.addEventListener('click', function () {
+            // Toggle the selected class for the clicked address item
+            document.querySelectorAll('.address-item').forEach(i => i.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+        });
+    </script>
+    <script>
+        // Automatically show modal on page load and prevent closing until form is valid
+        window.onload = function () {
+            const modal = new bootstrap.Modal(document.getElementById('formModal'));
+            modal.show();
+        };
+
+        document.querySelectorAll('.circle').forEach(function(circle) {
+            circle.addEventListener('click', function() {
+                document.querySelectorAll('.circle').forEach(function(c) {
+                    c.classList.remove('active');
+                });
+                circle.classList.add('active');
+            });
+        });
+
+        // Prevent Modal Close on clicking outside (Backdrop or Escape Key)
+       
+        // Validate form fields before submission
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(function (error) {
+                error.innerHTML = '';
+            });
+
+            // Validate first name
+            const firstName = document.getElementById('fname').value;
+            if (firstName === '') {
+                document.getElementById('firstNameError').innerText = 'First Name is required';
+                isValid = false;
+            }
+
+            // Validate last name
+            const lastName = document.getElementById('lname').value;
+            if (lastName === '') {
+                document.getElementById('lastNameError').innerText = 'Last Name is required';
+                isValid = false;
+            }
+
+            // Validate mobile number
+            const mobNumber = document.getElementById('mobname').value;
+            if (mobNumber === '' || mobNumber.length < 10) {
+                document.getElementById('mobNumberError').innerText = 'Please enter a valid mobile number';
+                isValid = false;
+            }
+
+            // Validate address
+            const address = document.getElementById('street').value;
+            if (address === '') {
+                document.getElementById('addressError').innerText = 'Address is required';
+                isValid = false;
+            }
+
+            // Validate postal code
+            const postalCode = document.getElementById('postcode').value;
+            const postalCodePattern = /^\d{6}$/;
+            if (!postalCodePattern.test(postalCode)) {
+                document.getElementById('postalCodeError').innerText = 'Please enter a valid 6-digit postal code';
+                isValid = false;
+            }
+
+            // Validate address type selection
+            const addressTypeSelected = document.querySelector('.circle.active');
+            if (!addressTypeSelected) {
+                document.getElementById('addressTypeError').innerText = 'Please select an address type';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Function to enable city, state, and country fields when postal code is entered
+        document.getElementById('postcode').addEventListener('input', function() {
+            const postcode = document.getElementById('postcode').value;
+            const cityField = document.getElementById('city');
+            const stateField = document.getElementById('state');
+            const countryField = document.getElementById('country');
+            
+            if (postcode.length >= 6) {
+                cityField.disabled = false;
+                stateField.disabled = false;
+                countryField.disabled = false;
+            } else {
+                cityField.disabled = true;
+                stateField.disabled = true;
+                countryField.disabled = true;
+            }
+        });
+        const submitButton = document.getElementById('submitButton');
+
+submitButton.addEventListener('click', function (e) {
+    if (!validateForm()) {
+        e.preventDefault(); // Prevent form submission if invalid
+    } else {
+        // If form is valid, display the address
+        displayAddress();
+        
+    }
+});
+
+        // Function to display entered address and hide the modal
+        function displayAddress() {
+            const modal = document.getElementById('formModal');
+            modal.style.display = 'none' ;
+            const modalBackdrop = document.querySelector('.modal-backdrop');
+            if (modalBackdrop) {
+                modalBackdrop.style.display = 'none';  // Set the opacity to 0
+            }
+            const body = document.querySelector('body');
+            body.style.overflow='scroll'
+            // Get form data
+            const firstName = document.getElementById('fname').value;
+            const lastName = document.getElementById('lname').value;
+            const mobNumber = document.getElementById('mobname').value;
+            const address = document.getElementById('street').value;
+            const postalCode = document.getElementById('postcode').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const country = document.getElementById('country').value;
+            const addressType = document.querySelector('.circle.active').dataset.active;
+            document.querySelector("#userMobno").innerText = mobNumber;
+            document.querySelector("#usrCity").innerText = city;
+            document.querySelector("#usrState").innerText = state;
+            document.querySelector("#usrpin").innerText = postalCode;
+         
+
+            // Create a display string with entered data
+            // const addressDetails = `
+            //     <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+            //     <p><strong>Mobile:</strong> ${mobNumber}</p>
+            //     <p><strong>Address:</strong> ${address}</p>
+            //     <p><strong>Postal Code:</strong> ${postalCode}</p>
+            //     <p><strong>City:</strong> ${city}</p>
+            //     <p><strong>State:</strong> ${state}</p>
+            //     <p><strong>Country:</strong> ${country}</p>
+            //     <p><strong>Address Type:</strong> ${addressType}</p>
+            // `;
+
+            // Display the entered address
+            // document.getElementById('addressDetails').innerHTML = addressDetails;
+
+            // Show the address display container
+            // document.getElementById('addressDisplayContainer').style.display = 'block';
+        }
+    </script>
+    <script>
+        let currentEditItem = null; // To keep track of the address item being edited
+    
+        // JavaScript to populate edit form
+        document.querySelectorAll('.edit-icon').forEach(icon => {
+          icon.addEventListener('click', function () {
+            const addressItem = this.closest('.address-item'); // Get the parent address item
+            const details = JSON.parse(addressItem.getAttribute('data-details')); // Parse data-details attribute
+            currentEditItem = addressItem; // Store the current address item being edited
+    
+            // Populate the form with the details
+            document.getElementById('fname').value = details.firstName;
+            document.getElementById('lname').value = details.lastName;
+            document.getElementById('mobname').value = details.mobile;
+            document.getElementById('street').value = details.address;
+            document.getElementById('postcode').value = details.postalCode;
+          });
+        });
+    
+        // Save Changes Button
+        document.getElementById('saveChangesButton').addEventListener('click', function () {
+          if (currentEditItem) {
+            // Get the updated details from the form
+            const updatedDetails = {
+              firstName: document.getElementById('fname').value,
+              lastName: document.getElementById('lname').value,
+              mobile: document.getElementById('mobname').value,
+              address: document.getElementById('street').value,
+              postalCode: document.getElementById('postcode').value
+            };
+    
+            // Update the data-details attribute with the new details
+            currentEditItem.setAttribute('data-details', JSON.stringify(updatedDetails));
+    
+            // Update the displayed address information
+            currentEditItem.querySelector('p:nth-child(1)').innerText = updatedDetails.firstName + ' ' + updatedDetails.lastName;
+            currentEditItem.querySelector('p:nth-child(2)').innerText = updatedDetails.address;
+            currentEditItem.querySelector('p:nth-child(5)').innerText = 'Postal code: ' + updatedDetails.postalCode;
+            currentEditItem.querySelector('p:nth-child(6)').innerText = 'Ph: ' + updatedDetails.mobile;
+    
+            // Close the modal
+            const frmModal = bootstrap.Modal.getInstance(document.getElementById('frmModal'));
+            frmModal.hide();
+          }
+        });
+    
+        const addressItems = document.querySelectorAll('.address-item');
+    
+        addressItems.forEach(item => {
+          item.addEventListener('click', () => {
+            addressItems.forEach(i => i.classList.remove('selected')); // Remove "selected" class from all items
+            item.classList.add('selected'); // Add "selected" class to clicked item
+          });
+        });
+    
+        // Handle "Select Address" button
+        document.getElementById('selectAddress').addEventListener('click', () => {
+          const selectedAddress = document.querySelector('.address-item.selected');
+          if (selectedAddress) {
+            alert('Address selected: ' + selectedAddress.innerText.trim());
+          } else {
+            alert('No address selected!');
+          }
+        });
+    </script>
+      
+</body>
+
+</html>

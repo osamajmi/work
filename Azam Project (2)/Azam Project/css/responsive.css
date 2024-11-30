@@ -771,6 +771,7 @@ button.btn-size {
     .owl-carousel.owl-theme.owl-loaded.owl-drag {
         /* display: block !important; */
     }
+
   }
    /* mobile nav css end */
    @media (min-width:770px){
@@ -886,6 +887,7 @@ button.btn-size {
    .product-card {
     width: 100%;
     }
+   
 }
    @media (max-width:450px) {
     
@@ -1076,3 +1078,14 @@ span.bi{
         margin-left: 6px;
     }
   }
+  @media(min-width:650px){
+    .cartBtm{
+        width: 50% !important;
+    }
+  }
+  @media(min-width:950px){
+    .cartBtm{
+        width: 25% !important;
+    }
+  }
+

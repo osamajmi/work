@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Selector with Edit</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .address-item {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .address-item.selected {
+      border-color: #0d6efd;
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+    .address-tag {
+      background: #e0e0e0;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .edit-icon {
+      cursor: pointer;
+      color: #0d6efd;
+    }
+
+    .edit-icon:hover {
+      color: #004085;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Button to Trigger Modal -->
+  <button class="btn btn-primary mt-5 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#ChangeModal">
+    Open Address Selector
+  </button>
+
+  <!-- Address Selector Modal -->
+  <div class="modal fade" id="ChangeModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Select Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="address-list">
+            <!-- Address 1 -->
+            <div class="address-item" data-details='{"firstName": "Asa", "lastName": "Sfdsf", "mobile": "9668528285", "address": "Street 1", "postalCode": "110025"}'>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="mb-1">Asa Sfdsf</p>
+                  <p class="mb-1">Street 1</p>
+                  <p class="mb-1">DELHI</p>
+                  <p class="mb-1">New Delhi</p>
+                  <p class="mb-1">Postal code: 110025</p>
+                  <p class="mb-0">Ph: 9668528285</p>
+                </div>
+                <div>
+                  <span class="address-tag">HOME</span>
+                  <i class="bi bi-pencil-square edit-icon" data-bs-toggle="modal" data-bs-target="#frmModal"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address 2 -->
+            <div class="address-item" data-details='{"firstName": "Hii", "lastName": "Iii", "mobile": "9699999999", "address": "Street 2", "postalCode": "220001"}'>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="mb-1">Hii Iii</p>
+                  <p class="mb-1">Street 2</p>
+                  <p class="mb-1">DELHI</p>
+                  <p class="mb-1">New Delhi</p>
+                  <p class="mb-1">Postal code: 220001</p>
+                  <p class="mb-0">Ph: 9699999999</p>
+                </div>
+                <div>
+                  <span class="address-tag">HOME</span>
+                  <i class="bi bi-pencil-square edit-icon" data-bs-toggle="modal" data-bs-target="#frmModal"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button class="btn btn-warning w-100 fw-bold" id="selectAddress">Select Address</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Form Modal -->
+  <div class="modal fade" id="frmModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Edit Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Edit Form -->
+          <form id="address-form" class="row">
+            <div class="mb-3">
+              <label for="fname" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="fname" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+              <label for="lname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lname" placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+              <label for="mobname" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobname" placeholder="Mobile Number">
+            </div>
+            <div class="mb-3">
+              <label for="street" class="form-label">Address</label>
+              <input type="text" class="form-control" id="street" placeholder="Street">
+            </div>
+            <div class="mb-3">
+              <label for="postcode" class="form-label">Postal Code</label>
+              <input type="tel" class="form-control" id="postcode" placeholder="Postal Code">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100" id="saveChangesButton" data-bs-toggle="modal" data-bs-target="#ChangeModal">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let currentEditItem = null; // To keep track of the address item being edited
+
+    // JavaScript to populate edit form
+    document.querySelectorAll('.edit-icon').forEach(icon => {
+      icon.addEventListener('click', function () {
+        const addressItem = this.closest('.address-item'); // Get the parent address item
+        const details = JSON.parse(addressItem.getAttribute('data-details')); // Parse data-details attribute
+        currentEditItem = addressItem; // Store the current address item being edited
+
+        // Populate the form with the details
+        document.getElementById('fname').value = details.firstName;
+        document.getElementById('lname').value = details.lastName;
+        document.getElementById('mobname').value = details.mobile;
+        document.getElementById('street').value = details.address;
+        document.getElementById('postcode').value = details.postalCode;
+      });
+    });
+
+    // Save Changes Button
+    document.getElementById('saveChangesButton').addEventListener('click', function () {
+      if (currentEditItem) {
+        // Get the updated details from the form
+        const updatedDetails = {
+          firstName: document.getElementById('fname').value,
+          lastName: document.getElementById('lname').value,
+          mobile: document.getElementById('mobname').value,
+          address: document.getElementById('street').value,
+          postalCode: document.getElementById('postcode').value
+        };
+
+        // Update the data-details attribute with the new details
+        currentEditItem.setAttribute('data-details', JSON.stringify(updatedDetails));
+
+        // Update the displayed address information
+        currentEditItem.querySelector('p:nth-child(1)').innerText = updatedDetails.firstName + ' ' + updatedDetails.lastName;
+        currentEditItem.querySelector('p:nth-child(2)').innerText = updatedDetails.address;
+        currentEditItem.querySelector('p:nth-child(5)').innerText = 'Postal code: ' + updatedDetails.postalCode;
+        currentEditItem.querySelector('p:nth-child(6)').innerText = 'Ph: ' + updatedDetails.mobile;
+
+        // Close the modal
+        const frmModal = bootstrap.Modal.getInstance(document.getElementById('frmModal'));
+        frmModal.hide();
+      }
+    });
+
+    const addressItems = document.querySelectorAll('.address-item');
+
+    addressItems.forEach(item => {
+      item.addEventListener('click', () => {
+        addressItems.forEach(i => i.classList.remove('selected')); // Remove "selected" class from all items
+        item.classList.add('selected'); // Add "selected" class to clicked item
+      });
+    });
+
+    // Handle "Select Address" button
+    document.getElementById('selectAddress').addEventListener('click', () => {
+      const selectedAddress = document.querySelector('.address-item.selected');
+      if (selectedAddress) {
+        alert('Address selected: ' + selectedAddress.innerText.trim());
+      } else {
+        alert('No address selected!');
+      }
+    });
+  </script>
+  
+</body>
+</html>
