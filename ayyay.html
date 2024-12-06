@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        <img src="" alt="" id="Img" width="100" height="100">
+
+        <button onclick="nextClik()">Next </button>
+        <button onclick="prevClik()">Previous</button>
+    </div>
+
+
+    <script>
+        var img = ["https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"]
+    
+       function nextClik(){
+        var current = document.getElementById("Img").src;
+        var index = img.indexOf(current);
+        if(index == img.length-1){
+            alert("you are at the last image")
+        }
+        else{
+            document.getElementById("Img").src = img[index+1];
+        }
+       }
+       function prevClik(){
+        var current = document.getElementById("img").src;
+        alert()
+        var index = img.indexOf(current);
+        if(index==img.length-1){
+            alert("you are at the last image") 
+        }
+        else{
+            document.getElementById("Img").src = img[index-1];
+        }
+       }
+    </script>
+</body>
+</html>

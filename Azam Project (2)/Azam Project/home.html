@@ -143,7 +143,7 @@
                 <div class="container mt-5 d-flex justify-content-center w-100">
                   <div class="menu-container w-100">
                       <ul class="list-group">
-                          <li class="list-group-item">
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#faQ">
                             <a href=""> FAQS</a> 
                           </li>
                           <li class="list-group-item">
@@ -530,8 +530,70 @@
   </div>
 </div>
 
- <!-- fit history end --> 
+ <!-- fit history end  -->
 
+
+ <!--  faQ Container start  -->
+ 
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="faQ" aria-labelledby="faQ ">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel"> faQ</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+       <div class="accordion" id="accordionExample">
+  <!-- Accordion Item 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Get Started
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is HTML? <br>
+        <strong>Answer:</strong> HTML stands for HyperText Markup Language. It is the standard language for creating web pages and web applications. It structures the content on the web.
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion Item 2 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Order Related 
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is CSS? <br>
+        <strong>Answer:</strong> CSS stands for Cascading Style Sheets. It is used to style the layout and design of web pages, including fonts, colors, and spacing.
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion Item 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Delivery
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is JavaScript? <br>
+        <strong>Answer:</strong> JavaScript is a programming language used to create dynamic and interactive effects within web browsers.
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+ <!-- faQ Container end  -->
+  <!-- -->
 <!-- ---------------------------------------------------------------------------------------------------------- -->
 
 
@@ -554,7 +616,7 @@
         <i class="bi bi-house-door-fill"></i>
         Home
       </a>
-      <a class="nav-mb-link" href="#">
+      <a class="nav-mb-link" href="#"data-bs-toggle="offcanvas" data-bs-target="#category" aria-controls="category"  >
         <i class="bi bi-grid-fill"></i>
         Category
       </a>
@@ -574,7 +636,20 @@
     <!-- login popup  -->
 
 
-
+<!-- category container -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="category" aria-labelledby="category">
+  <div class="offcanvas-header">
+    <!-- <span class="bi bi-chevron-left" ></span> -->
+    <h5 id="offcanvasRightLabel"> category</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+    cTEDFKAL
+   
+  </div>
+</div>
+ <!-- category conatiner end  -->
 
     <div class="modal" id="myModal">
       <div class="modal-dialog">
