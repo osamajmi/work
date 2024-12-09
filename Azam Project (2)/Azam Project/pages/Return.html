@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion with Nested Accordions</title>
+    <title>Return</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
           
         .category-button {
@@ -36,25 +37,47 @@
         .accordion-button {
             font-weight: bold;
         }
-        @media(min-width:425px){
-            .privacyData{
+        @media(min-width:424px){
+            .lpnone{
                 display: none;
             }
+            
         }
+        @media (max-width:426px) {
+            .mbnone{
+                display: none;
+            }
+            
+            
+        }
+        .gobacktoHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background: gainsboro;
+}
+
+
+
+.gobacktoHome a {
+    text-decoration: none;
+    color: black;
+}
     </style>
 </head>
 <body>
-    <div class="container my-5">
+    <div class="container lpnone my-5">
     
 
         <!-- Main Accordion -->
-        <div class="accordion privacyData" id="mainAccordion">
-            
+        <div class="accordion" id="mainAccordion">
+            <h5 class="mb-3">HELP BY CATEGORIES</h5>
             <!-- First Main Accordion Item -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        Order and Payment
+                        <i class="bi bi-box me-2"></i> ORDER AND PAYMENT
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#mainAccordion">
@@ -95,7 +118,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                        Order Tracking
+                        <i class="bi bi-truck me-2"></i> ORDER TRACKING
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
@@ -124,7 +147,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                        Refunds, Returns & Exchange
+                        <i class="bi bi-arrow-repeat me-2"></i> REFUNDS, RETURNS & EXCHANGE
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
@@ -153,7 +176,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                        Miscellaneous
+                        <i class="bi bi-gift me-2"></i> MISCELLANEOUS
                     </button>
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
@@ -182,7 +205,7 @@
     </div>
 
   
-        <div class="container my-5">
+        <div class="container my-5 mbnone">
             <div class="row">
                 <!-- Categories Section -->
                 <div class="col-md-4">
@@ -209,24 +232,24 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneOne">
-                                            How do I know my order is confirmed?
+                                            How do I  confirmed?
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneOne" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            Your order will be confirmed via email or SMS.
+                                            Your order will be email or SMS.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneTwo">
-                                            How to check the current status of my order?
+                                            How to check of my order?
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneTwo" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            You can check the status on the order tracking page.
+                                            You can check ton the order tracking page.
                                         </div>
                                     </div>
                                 </div>
@@ -241,24 +264,24 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneOne">
-                                            How do I know my order is confirmed?
+                                            How do 
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneOne" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            Your order will be confirmed via email or SMS.
+                                            Your order will be 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneTwo">
-                                            How to check the current status of my order?
+                                           the current status of my order?
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneTwo" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            You can check the status on the order tracking page.
+                                            You can check the status on the order 
                                         </div>
                                     </div>
                                 </div>
@@ -272,24 +295,24 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneOne">
-                                            How do I know my order is confirmed?
+                                            How do I know
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneOne" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            Your order will be confirmed via email or SMS.
+                                            Your order will be
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="nestedHeadingOneTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOneTwo">
-                                            How to check the current status of my order?
+                                            How to of my order?
                                         </button>
                                     </h2>
                                     <div id="nestedCollapseOneTwo" class="accordion-collapse collapse">
                                         <div class="accordion-body">
-                                            You can check the status on the order tracking page.
+                                            You can cage.
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +353,11 @@
                 </div>
             </div>
         </div>
-    
+    <div class="gobacktoHome">
+        <a href="../home.html">
+            <span>Go back To Home</span>
+        </a>
+    </div>
         <script>
             function showFAQs(sectionId) {
                 // Remove active class from all buttons
