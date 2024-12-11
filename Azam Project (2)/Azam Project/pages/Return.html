@@ -47,13 +47,16 @@
             .mbnone{
                 display: none;
             }
-            
+            .accordion-button:not(.collapsed) {
+                color: white;
+                background-color: #d4a400;
+            }
             
         }
         .gobacktoHome {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     padding: 5px;
     background: gainsboro;
 }
@@ -67,6 +70,11 @@
     </style>
 </head>
 <body>
+    <div class="gobacktoHome">
+        <a href="../home.html">
+            <span>Go back To Home</span>
+        </a>
+    </div>
     <div class="container lpnone my-5">
     
 
@@ -353,11 +361,7 @@
                 </div>
             </div>
         </div>
-    <div class="gobacktoHome">
-        <a href="../home.html">
-            <span>Go back To Home</span>
-        </a>
-    </div>
+    
         <script>
             function showFAQs(sectionId) {
                 // Remove active class from all buttons

@@ -12,18 +12,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
+<style>
+  .mar-top{
+    margin-top: 200px;
+    margin-bottom: 100px;
+    
+  }
+  .text-th{
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .bdrth{
+    
+    border-bottom: 2px solid pink;
+  }
+  .ordtext{
+    font-size: 13px;
+  }
+  .shopData {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 30px;
+}
+span.shippingTO {
+    font-size: 18px;
+    font-weight: 600;
+}
+span.textShipping {
+    font-size: 12px;
+    font-weight: 400;
+} .progress-bar {
+      height: 5px;
+      border-radius: 5px;
+      background-color: #ccc;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .progress-fill {
+      width: 33%; /* Adjust this to change progress percentage */
+      height: 100%;
+      background-color: #28a745; /* Green */
+      border-radius: 5px;
+    }
+   
+header#header,.footer-section{
+  background-color: rgb(255, 241, 242) !important;
+}
+body{
+  background-color: white !important;
+}
 
+</style>
 
-<body >
+<body>
   <!-- Header section -->
   <header class="fixed-top  text-dark" id="header">
     <div class="container-fluid fixed-top bg_desk">
@@ -44,154 +96,146 @@
         </div>
         <div class=" mt-3 d-flex gap-2">
           <span class="bi bi-person " data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile">
-
-
-
+            
+            
+            
           </span>
           <div class="profileData" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile">
             <span class="admin">Hey</span><br>
             <span class="admin adminProfile">Admin</span>
-          </div>
+           </div>
           <!-- profile -->
           <div class="offcanvas offcanvas-end" tabindex="-1" id="profile" aria-labelledby="profile">
             <div class="offcanvas-header">
               <h5 id="offcanvasRightLabel">Profile</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <div class="profileImg">
-                <img src="../Azam Project/img/profile.webp" class="profilepic" alt="">
-                <span>Md Osama Khan</span>
-              </div>
-              <div class="profileabout">
+               <div class="profileImg">
+                  <img src="../Azam Project/img/profile.webp" class="profilepic" alt="">
+                  <span>Md Osama Khan</span>
+               </div>
+               <div class="profileabout">
                 <div class="container mt-5 d-flex justify-content-center w-100">
                   <div class="menu-container w-100">
-                    <ul class="list-group">
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#About"
-                        aria-controls="About">
-                        <div class="item-label">
-                          <i class="bi bi-person-circle icon"></i>
-                          About Myself
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
+                      <ul class="list-group">
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#About" aria-controls="About">
+                              <div class="item-label">
+                                  <i class="bi bi-person-circle icon"></i>
+                                  About Myself
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
 
+                         
 
-
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Order"
-                        aria-controls="Order">
-                        <div class="item-label">
-                          <i class="bi bi-card-list icon"></i>
-                          Order History
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#wish"
-                        aria-controls="wish">
-                        <div class="item-label">
-                          <i class="bi bi-heart icon"></i>
-                          Wishlist
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Savedcards"
-                        aria-controls="Savedcards">
-                        <div class="item-label">
-                          <i class="bi bi-credit-card icon"></i>
-                          Saved cards
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Fitcode"
-                        aria-controls="Fitcode">
-                        <div class="item-label">
-                          <i class="bi bi-person-bounding-box icon"></i>
-                          Fitcode
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-                    </ul>
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Order" aria-controls="Order">
+                              <div class="item-label">
+                                  <i class="bi bi-card-list icon"></i>
+                                  Order History
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#wish" aria-controls="wish">
+                              <div class="item-label">
+                                  <i class="bi bi-heart icon"></i>
+                                  Wishlist
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Savedcards" aria-controls="Savedcards">
+                              <div class="item-label">
+                                  <i class="bi bi-credit-card icon"></i>
+                                  Saved cards
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#Fitcode"  aria-controls="Fitcode">
+                              <div class="item-label">
+                                  <i class="bi bi-person-bounding-box icon"></i>
+                                  Fitcode
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
+                      </ul>
                   </div>
-                </div>
               </div>
-              <div class="profileabout">
+               </div>
+               <div class="profileabout">
                 <div class="container mt-5 d-flex justify-content-center w-100">
                   <div class="menu-container w-100">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <div class="item-label">
-                          <i class="fa-solid fa-award icon"></i>
-                          Loyalty
-                        </div>
-
-                      </li>
-                      <li class="list-group-item">
-                        <div class="item-label">
-                          <i class="bi bi-stars icon"></i>
-                          My Reviews
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="item-label">
-                          <i class="bi bi-card-list icon"></i>
-                          Refrals
-                        </div>
-                        <i class="bi bi-chevron-right"></i>
-                      </li>
-
-                    </ul>
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                              <div class="item-label">
+                                  <i class="fa-solid fa-award icon"></i>
+                                 Loyalty
+                              </div>
+                              
+                          </li>
+                          <li class="list-group-item">
+                              <div class="item-label">
+                                  <i class="bi bi-stars icon"></i>
+                                  My Reviews
+                              </div>
+                              <i class="bi bi-chevron-right"></i>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="item-label">
+                                <i class="bi bi-card-list icon"></i>
+                                Refrals
+                            </div>
+                            <i class="bi bi-chevron-right"></i>
+                        </li>
+                     
+                      </ul>
                   </div>
-                </div>
               </div>
-              <div class="profileabout">
+               </div>
+               <div class="profileabout">
                 <div class="container mt-5 d-flex justify-content-center w-100">
                   <div class="menu-container w-100">
-                    <ul class="list-group">
-                      <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#faQ">
-                        <a href=""> FAQS</a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> CONTACT US </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> LOCATE ZIVAME STUDIOS </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> ABOUT US </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href="./pages/Return.html"> RETURN POLICY </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> PRIVACY POLICY </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> TERMS OF USE </a>
-                      </li>
-                      <li class="list-group-item">
-                        <a href=""> NOTIFICATION </a>
-                      </li>
-                    </ul>
+                      <ul class="list-group">
+                          <li class="list-group-item" data-bs-toggle="offcanvas" data-bs-target="#faQ">
+                            <a href=""> FAQS</a> 
+                          </li>
+                          <li class="list-group-item">
+                              <a href="">  CONTACT US </a> 
+                          </li>
+                          <li class="list-group-item">
+                            <a href="">   LOCATE ZIVAME STUDIOS </a> 
+                          </li> 
+                          <li class="list-group-item">
+                           <a href="">   ABOUT US  </a> 
+                          </li>
+                          <li class="list-group-item">
+                           <a href="./pages/Return.html">   RETURN POLICY  </a> 
+                          </li>
+                          <li class="list-group-item">
+                           <a href="">   PRIVACY POLICY  </a> 
+                          </li>  
+                          <li class="list-group-item">
+                          <a href="">    TERMS OF USE  </a> 
+                          </li> 
+                          <li class="list-group-item">
+                          <a href="">   NOTIFICATION </a> 
+                          </li> 
+                      </ul>
                   </div>
-                </div>
               </div>
-              <div class="logout mt-2">
+               </div>
+               <div class="logout mt-2">
                 <span class="h4">Logout</span>
                 <span class="bi bi-box-arrow-in-right"></span>
-              </div>
+               </div>
             </div>
           </div>
           <!-- profile -->
-          <span class="bi bi-heart" data-bs-toggle="offcanvas" data-bs-target="#wishList" aria-controls="wishList">
-          </span>
-
+          <span class="bi bi-heart" data-bs-toggle="offcanvas" data-bs-target="#wishList" aria-controls="wishList"> </span>
+          
           <div class="offcanvas offcanvas-end" tabindex="-1" id="wishList" aria-labelledby="wishList">
             <div class="offcanvas-header">
               <h5 id="offcanvasRightLabel">wishlist</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               ...
@@ -199,52 +243,48 @@
           </div>
 
 
-          <span class="bi bi-cart me-4 position-relative" data-bs-toggle="offcanvas" data-bs-target="#Cart"
-            aria-controls="Cart">
-            <div class="cartCircl">1</div>
-          </span>
-
+          <span class="bi bi-cart me-4 position-relative" data-bs-toggle="offcanvas" data-bs-target="#Cart"  aria-controls="Cart"><div class="cartCircl">1</div></span>
+       
           <!-- cart  -->
           <div class="offcanvas offcanvas-end" tabindex="-1" id="Cart" aria-labelledby="Cart">
             <div class="offcanvas-header">
               <h5 id="offcanvasRightLabel">Cart</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <div class="input-group bottom-brd">
-                <input type="text" name="" id="" class="form-control">
-                <a href="" class="text-decoration-none"> <span class="input-group-text">Check</span> </a>
-              </div>
-              <div class="mt-2 border border-1 rounded rounded-1">
-                <div class="d-flex justify-content-between p-2  border-bottom-1">
-                  <span class="h6">available Offers</span>
-                  <a href="" class="text-decoration-none"><span class="text-clr">View All</span></a>
+                <div class="input-group bottom-brd"  >
+                  <input type="text" name="" id="" class="form-control">
+                  <a href="" class="text-decoration-none">  <span class="input-group-text">Check</span>   </a>  
                 </div>
-                <div class="d-flex justify-content-between p-2  border-bottom-1">
-                  <span class="h6">Buy 3 @ 999</span>
-                  <a href="" class="text-decoration-none"><span class="text-clr">Shop</span></a>
+                <div class="mt-2 border border-1 rounded rounded-1">
+                    <div class="d-flex justify-content-between p-2  border-bottom-1">
+                      <span class="h6">available Offers</span>
+                      <a href="" class="text-decoration-none"><span class="text-clr">View All</span></a>
+                    </div>
+                    <div class="d-flex justify-content-between p-2  border-bottom-1">
+                      <span class="h6">Buy 3 @ 999</span>
+                      <a href="" class="text-decoration-none"><span class="text-clr">Shop</span></a>
+                    </div>
+                      
+                    
                 </div>
-
-
-              </div>
               <div class="bg-Clr">
 
                 <div class="form-check mt-2  text-white">
                   <input class="form-check-input ms" type="checkbox" checked value="" id="flexCheckDefault">
                   <label class="form-check-label ms-1" for="flexCheckDefault">
-                    <span>1</span> Item select
+                   <span>1</span> Item select 
                   </label>
-
+                 
                 </div>
                 <div class="iconD">
                   <span class="bi bi-heart "></span>
                   <span class="bi bi-trash "></span>
                 </div>
-
+               
               </div>
 
-
+                
               <div class="border border-1 rounded rounded-1 mt-3 ">
                 <div class="d-flex justify-content-between p-2">
                   <div class="form-check mt-2">
@@ -257,120 +297,110 @@
                     <span class="bi bi-trash"></span>
                   </div>
                 </div>
-
+              
                 <div class="d-flex gap-2">
                   <img src="../Azam Project/img/proImg.webp" class="ms-2 mb-2" width="100px" height="150px" alt="">
-
+              
                   <div class="position-relative">
                     <a href="" class="text-decoration-none">
                       <span class="fw-light fsp">Zivame Hide N Seek Knit Cotton Pyjama Set - Candy Pink</span>
                     </a>
                     <span class="fsp">size : <span>Small</span></span>
-                    <span class="fsp">UnitPrice :
+                    <span class="fsp">UnitPrice : 
                       <span>
                         <del class="fsdel">1800</del>&nbsp;600
                       </span>
                     </span>
-
+              
                     <!-- Plus-Minus Buttons -->
                     <div class="d-flex align-items-center gap-2 mt-2 position-absolute">
                       <div>
                         <span class="quantity-change rounded-circle p-1" id="decrement">-</span>
                         <span id="quantity">1</span>
                         <span class="quantity-change rounded-circle p-1" id="increment">+</span>
-                      </div>
-                      <!-- <button class="btn btn-outline-secondary rounded-circle p-1" id="decrementButton" style="width: 20px; height: 20px;">-</button>
+                    </div>
+                     <!-- <button class="btn btn-outline-secondary rounded-circle p-1" id="decrementButton" style="width: 20px; height: 20px;">-</button>
                       <span id="itemCount" class="fs-6">1</span>
                       <button class="btn btn-outline-secondary rounded-circle p-1" id="incrementButton" style="width: 20px; height: 20px;">+</button> -->
                       <span class=" ms-3 fw-bold">₹<span class="totalPrice" id="unit-price">848</span></span>
                     </div>
-
+                    
                   </div>
                 </div>
               </div>
-
+              
               <div class="bottom-brd"></div>
-              <div class="coupons ">
+               <div class="coupons ">
                 <div class="container">
                   <div class="coupon-container">
-                    <!-- Coupon List Header -->
-                    <div class="coupon-list-header">
-                      <div class="coupon-header-content">
-                        <!-- Font Awesome Icon for Coupons -->
-                        <i class="fas fa-gift coupon-header-icon"></i>
-                        <div class="coupon-header-title">COUPONS</div>
+                      <!-- Coupon List Header -->
+                      <div class="coupon-list-header">
+                          <div class="coupon-header-content">
+                              <!-- Font Awesome Icon for Coupons -->
+                              <i class="fas fa-gift coupon-header-icon"></i>
+                              <div class="coupon-header-title">COUPONS</div>
+                          </div>
+                          <div class="view-all-btn" data-link="viewall">View All</div>
                       </div>
-                      <div class="view-all-btn" data-link="viewall">View All</div>
-                    </div>
-
-                    <!-- Coupons Applied/Not Applied Section -->
-                    <div class="coupon-slider-coupons">
-                      <!-- Not Applied Coupon -->
-                      <div class="coupon-item not-applied" data-ruleid="643506" data-discountvalue="50">
-                        <div class="coupon-content">
-                          <div class="coupon-code">ZEXTRA50</div>
-                          <div class="coupon-description">Apply to save ₹50</div>
-                        </div>
-                        <div class="coupon-action apply-btn" data-coupon="ZEXTRA50">Apply&nbsp;</div>
+          
+                      <!-- Coupons Applied/Not Applied Section -->
+                      <div class="coupon-slider-coupons">
+                          <!-- Not Applied Coupon -->
+                          <div class="coupon-item not-applied" data-ruleid="643506" data-discountvalue="50">
+                              <div class="coupon-content">
+                                  <div class="coupon-code">ZEXTRA50</div>
+                                  <div class="coupon-description">Apply to save ₹50</div>
+                              </div>
+                              <div class="coupon-action apply-btn" data-coupon="ZEXTRA50">Apply&nbsp;</div>
+                          </div>
+          
+                          <!-- Applied Coupon (Initially hidden) -->
+                          <div class="coupon-item applied hide">
+                              <div class="coupon-content">
+                                  <div class="coupon-code applied-coupon">ZEXTRA50</div>
+                                  <div class="coupon-description applied-description">Coupon Applied!</div>
+                              </div>
+                              <div class="coupon-action remove-btn" data-coupon="ZEXTRA50">Remove</div>
+                          </div>
+          
+                          <!-- Upsell Coupon -->
+                          <div class="coupon-item upsell" data-ruleid="639159" data-discountvalue="10">
+                              <div class="coupon-content">
+                                  <div class="coupon-code upsell-code">ZIVAME10</div>
+                                  <div class="coupon-description upsell-description">Shop for ₹401 more to get 10% off on your cart. Applicable on products</div>
+                              </div>
+                              <div class="coupon-action shop-btn">Shop</div>
+                          </div>
                       </div>
-
-                      <!-- Applied Coupon (Initially hidden) -->
-                      <div class="coupon-item applied hide">
-                        <div class="coupon-content">
-                          <div class="coupon-code applied-coupon">ZEXTRA50</div>
-                          <div class="coupon-description applied-description">Coupon Applied!</div>
-                        </div>
-                        <div class="coupon-action remove-btn" data-coupon="ZEXTRA50">Remove</div>
-                      </div>
-
-                      <!-- Upsell Coupon -->
-                      <div class="coupon-item upsell" data-ruleid="639159" data-discountvalue="10">
-                        <div class="coupon-content">
-                          <div class="coupon-code upsell-code">ZIVAME10</div>
-                          <div class="coupon-description upsell-description">Shop for ₹401 more to get 10% off on your
-                            cart. Applicable on products</div>
-                        </div>
-                        <div class="coupon-action shop-btn">Shop</div>
-                      </div>
-                    </div>
-
-                    <!-- Have a coupon code link -->
-                    <div class="have-a-coupon-btn" data-link="haveacouponcode">Have a coupon code?</div>
+          
+                      <!-- Have a coupon code link -->
+                      <div class="have-a-coupon-btn" data-link="haveacouponcode">Have a coupon code?</div>
                   </div>
-                </div>
               </div>
-              <div class="total-section">
+               </div>
+               <div class="total-section">
                 <p class="price-details-title">PRICE DETAILS</p>
                 <div class="d-flex flex-column ">
-                  <span class=" d-flex justify-content-between"> <span>Total M.R.P:</span> <span
-                      id="total-mrp">₹1695</span></span>
-                  <span class=" d-flex justify-content-between"> <span>Savings on M.R.P:</span> <span id="savings">(-)
-                      ₹847</span></span>
-                  <span class=" d-flex justify-content-between"> <span> Saving %:</span> <span
-                      id="saving-percentage">49.9% OFF</span></span>
-                  <span class=" d-flex justify-content-between"> <span>Sub-total:</span> <span
-                      id="sub-total">₹848</span></span>
-                  <span class=" d-flex justify-content-between"> <span>Shipping:</span> <span
-                      id="shipping">FREE</span></span>
-                  <span class=" d-flex justify-content-between"> <span>Convenience charges:</span> <span
-                      id="convenience-charge">₹2</span></span>
-
+                    <span class=" d-flex justify-content-between"> <span>Total M.R.P:</span>   <span id="total-mrp">₹1695</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Savings on M.R.P:</span>  <span id="savings">(-) ₹847</span></span>
+                    <span class=" d-flex justify-content-between"> <span> Saving %:</span> <span id="saving-percentage">49.9% OFF</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Sub-total:</span>  <span id="sub-total">₹848</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Shipping:</span>  <span id="shipping">FREE</span></span>
+                    <span class=" d-flex justify-content-between"> <span>Convenience charges:</span>  <span id="convenience-charge">₹2</span></span>
+                   
                 </div>
-              </div>
-
+            </div>
+             
 
 
               <div class="cartFooter position-fixed ">
-
+                  
                 <div class="bg-white text-dark">
-                  <span class="d-flex justify-content-between"> <span>Order total:</span> <span
-                      id="order-total">₹850</span></span>
-                  <span class="d-flex justify-content-between"><span> Net Payable:</span> <span
-                      id="net-payable">₹850</span></span>
+                  <span class="d-flex justify-content-between"> <span>Order total:</span>  <span id="order-total">₹850</span></span>
+                  <span class="d-flex justify-content-between"><span> Net Payable:</span> <span id="net-payable">₹850</span></span>
                 </div>
 
-                <a href="./pages/cartPage.html"><button class="btn btn-primary w-100 cartBtm"> Continue To
-                    CheckOut</button></a>
+             <a href="./pages/cartPage.html"><button class="btn btn-primary w-100 cartBtm"> Continue To CheckOut</button></a>   
               </div>
             </div>
           </div>
@@ -378,12 +408,11 @@
         </div>
       </div>
     </div>
-    <!-- ---------------------------------------------------------------------------------------------------- -->
-    <!-- about data profile  -->
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- about data profile  -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="About" aria-labelledby="About">
       <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
+        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
         <h5 id="offcanvasRightLabel">About</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -391,313 +420,233 @@
         <div class="container mt-4">
           <!-- Bootstrap 5 Tabs -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="basic-tab" data-bs-toggle="tab" href="#basic" role="tab"
-                aria-controls="basic" aria-selected="true">Basic</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="occasion-tab" data-bs-toggle="tab" href="#occasion" role="tab"
-                aria-controls="occasion" aria-selected="false">Occasion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="addresses-tab" data-bs-toggle="tab" href="#addresses" role="tab"
-                aria-controls="addresses" aria-selected="false">Addresses</a>
-            </li>
+              <li class="nav-item">
+                  <a class="nav-link active" id="basic-tab" data-bs-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Basic</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="occasion-tab" data-bs-toggle="tab" href="#occasion" role="tab" aria-controls="occasion" aria-selected="false">Occasion</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="addresses-tab" data-bs-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false">Addresses</a>
+              </li>
           </ul>
-
+      
           <div class="tab-content mt-3" id="myTabContent">
-            <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
-              <div class="d-flex justify-content-between">
+              <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+  <div class="d-flex justify-content-between">
+            
+                  <img src="../Azam Project/img/profile.webp" class="profilepic" alt="">
+            
+            
 
-                <img src="../Azam Project/img/profile.webp" class="profilepic" alt="">
-
-
-
-                <div class="ms-2">
-                  <span class="profs" id="name">Osama Khan</span><br>
-                  <span class="profs" id="email">Osama.jmi95@gmail.com</span>
-                  <a href="" class="text-decoration-none profs">
-                    <span class="profs" id="verify-email">Verify Email</span>
-                  </a>
-                  <span class="profs" id="phone">9582342386</span>
-                  <i class="bi bi-patch-check-fill"></i>
-                </div>
-                <!-- Editable content elements -->
-
-
-
-
-                <!-- Three dots button for options -->
-                <span id="edit" style="cursor: pointer;"><i class="bi bi-three-dots-vertical"></i></span>
-
-                <!-- Dropdown Menu -->
-                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                  <button id="edit-name" class="dropdown-item">Edit Name</button>
-                  <button id="edit-number" class="dropdown-item">Edit Number</button>
-                  <button id="delete" class="dropdown-item">Delete</button>
-                </div>
+       <div class="ms-2">
+        <span class="profs" id="name">Osama Khan</span><br>
+        <span class="profs" id="email">Osama.jmi95@gmail.com</span>
+        <a href="" class="text-decoration-none profs">
+            <span class="profs" id="verify-email">Verify Email</span>
+        </a>
+        <span class="profs" id="phone">9582342386</span>
+        <i class="bi bi-patch-check-fill"></i>
+       </div>
+          <!-- Editable content elements -->
+         
 
 
-                <!-- Save Button (Initially Hidden) -->
-                <div id="save-btn" style="display: none;">
-
-                  <i class="bi bi-check" id="save"></i>
-
-
-                </div>
-
-              </div>
-            </div>
-            <div class="tab-pane fade" id="occasion" role="tabpanel" aria-labelledby="occasion-tab">
-              <div class="container mt-5">
-                <div class="row justify-content-center">
-                  <div class="d-flex justify-content-between w-100 mb-4">
-                    <h5>Occasion</h5>
-                    <button class="occasion-add-btn" id="add-occasion-calendar">+</button>
-                  </div>
-
-                  <!-- Birthday Box -->
-                  <div class="col-12 col-md-6 occasion-box">
-                    <div class="occasion-header">
-                      <div class="occasion-title">Birthday</div>
-                      <button class="occasion-add-btn" id="add-birthday-calendar">+</button>
-                    </div>
-
-                    <!-- Calendar Container for Birthday -->
-                    <div class="calendar-container" id="calendar-birthday-container">
-                      <input type="text" id="birthday-calendar-input" class="flatpickr-input"
-                        placeholder="Select a date">
-                      <button id="save-birthday-btn" class="btn btn-success mt-2">Save</button>
-                      <button id="close-birthday-btn" class="btn btn-danger mt-2">Close</button>
-                    </div>
-                    <!-- Display selected date for Birthday -->
-                    <div class="occasion-date" id="birthday-date"></div>
-                  </div>
-
-                  <!-- Anniversary Box -->
-                  <div class="col-12 col-md-6 occasion-box">
-                    <div class="occasion-header">
-                      <div class="occasion-title">Anniversary</div>
-                      <button class="occasion-add-btn" id="add-anniversary-calendar">+</button>
-                    </div>
-
-                    <!-- Calendar Container for Anniversary -->
-                    <div class="calendar-container" id="calendar-anniversary-container">
-                      <input type="text" id="anniversary-calendar-input" class="flatpickr-input"
-                        placeholder="Select a date">
-                      <button id="save-anniversary-btn" class="btn btn-success mt-2">Save</button>
-                      <button id="close-anniversary-btn" class="btn btn-danger mt-2">Close</button>
-                    </div>
-                    <!-- Display selected date for Anniversary -->
-                    <div class="occasion-date" id="anniversary-date"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">Addresses Content
-            </div>
+  
+          <!-- Three dots button for options -->
+          <span id="edit" style="cursor: pointer;"><i class="bi bi-three-dots-vertical"></i></span>
+          
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+              <button id="edit-name" class="dropdown-item">Edit Name</button>
+              <button id="edit-number" class="dropdown-item">Edit Number</button>
+              <button id="delete" class="dropdown-item">Delete</button>
           </div>
-        </div>
 
-        <!-- Bootstrap 5 JS (No jQuery needed) -->
-      </div>
-    </div>
-    <!-- about data end  -->
 
-    <!-- order History  -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="Order" aria-labelledby="Order">
-      <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
-        <h5 id="offcanvasRightLabel">Order</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="container mt-4">
-          <!-- Bootstrap 5 Tabs -->
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="basic-tab" data-bs-toggle="tab" href="#Inprogress" role="tab"
-                aria-controls="basic" aria-selected="true">Inprogress</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="occasion-tab" data-bs-toggle="tab" href="#Cancel" role="tab"
-                aria-controls="occasion" aria-selected="false">Cancel</a>
-            </li>
+  <!-- Save Button (Initially Hidden) -->
+  <div id="save-btn" style="display: none;">
+     
+          <i class="bi bi-check"  id="save" ></i>
+      
+ 
+</div>
 
-          </ul>
-
-          <div class="tab-content mt-3" id="myTabContent">
-            <div class="tab-pane fade show active" id="Inprogress" role="tabpanel" aria-labelledby="basic-tab">
-              <div class="d-flex justify-content-between ordeConf">
-                <div class="orderConf">
-                  <span class="text-p">ORDER CONFIRMED</span><br>
-                  <span class="textShipping">ORDER # <Span class="fw-bold">74747474</Span></span><br>
-                  <span class="textShipping">10 DEC</span><br>
-                  <div class="ordImg">
-                    <img src="./img/ordImg.webp" width="80" height="100" alt="">
-                   <div class="ordtxt">
-                    <span class="textShipping">Item: <span>1</span></span>
-                    <span class="textShipping"> <a href="" class="textShipping">View Details</a></span>
-                   </div>
-                  </div>
-                </div>
-                <div class="ordDil position-relative">
-                  <span class="h6">Expected Delivery</span><br>
-                  <span class="h4 fw-light float-end">12 Dec</span>
-               <a href="./pages/orderTrack.html"><button class="btn btn-primary trackBtn "> Track Order</button></a> 
-                </div>
+               </div>
               </div>
-            </div>
-            <div class="tab-pane fade" id="Cancel" role="tabpanel" aria-labelledby="occasion-tab">
-              <div class="container ">
-                <div class="row justify-content-center">
-                  <div class="d-flex justify-content-between ordeConf">
-                    <div class="orderConf">
-                      <span class="text-p">ORDER CONFIRMED</span><br>
-                      <span class="textShipping">ORDER # <Span class="fw-bold">74747474</Span></span><br>
-                      <span class="textShipping">10 DEC</span><br>
-                      <div class="ordImg">
-                        <img src="./img/ordImg.webp" width="80" height="100" alt="">
-                       <div class="ordtxt">
-                        <span class="textShipping">Item: <span>1</span></span>
-                        <span class="textShipping"> <a href="" class="textShipping">View Details</a></span>
-                       </div>
+              <div class="tab-pane fade" id="occasion" role="tabpanel" aria-labelledby="occasion-tab">
+                <div class="container mt-5">
+                  <div class="row justify-content-center">
+                      <div class="d-flex justify-content-between w-100 mb-4">
+                          <h5>Occasion</h5>
+                          <button class="occasion-add-btn" id="add-occasion-calendar">+</button>
                       </div>
-                    </div>
-                    <div class="ordDil">
-                      <span class="h6">Expected Delivery</span><br>
-                      <span class="h4 fw-light float-end">12 Dec</span>
-                    </div>
+              
+                      <!-- Birthday Box -->
+                      <div class="col-12 col-md-6 occasion-box">
+                          <div class="occasion-header">
+                              <div class="occasion-title">Birthday</div>
+                              <button class="occasion-add-btn" id="add-birthday-calendar">+</button>
+                          </div>
+              
+                          <!-- Calendar Container for Birthday -->
+                          <div class="calendar-container" id="calendar-birthday-container">
+                              <input type="text" id="birthday-calendar-input" class="flatpickr-input" placeholder="Select a date">
+                              <button id="save-birthday-btn" class="btn btn-success mt-2">Save</button>
+                              <button id="close-birthday-btn" class="btn btn-danger mt-2">Close</button>
+                          </div>
+                          <!-- Display selected date for Birthday -->
+                          <div class="occasion-date" id="birthday-date"></div>
+                      </div>
+              
+                      <!-- Anniversary Box -->
+                      <div class="col-12 col-md-6 occasion-box">
+                          <div class="occasion-header">
+                              <div class="occasion-title">Anniversary</div>
+                              <button class="occasion-add-btn" id="add-anniversary-calendar">+</button>
+                          </div>
+              
+                          <!-- Calendar Container for Anniversary -->
+                          <div class="calendar-container" id="calendar-anniversary-container">
+                              <input type="text" id="anniversary-calendar-input" class="flatpickr-input" placeholder="Select a date">
+                              <button id="save-anniversary-btn" class="btn btn-success mt-2">Save</button>
+                              <button id="close-anniversary-btn" class="btn btn-danger mt-2">Close</button>
+                          </div>
+                          <!-- Display selected date for Anniversary -->
+                          <div class="occasion-date" id="anniversary-date"></div>
+                      </div>
                   </div>
-               
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- order history end -->
-
-    <!-- wishlist History  -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="wish" aria-labelledby="wish">
-      <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
-        <h5 id="offcanvasRightLabel">Wishlist</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-      </div>
-    </div>
-
-    <!-- wishlist history end -->
-
-
-    <!-- Savedcards History  -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="Savedcards" aria-labelledby="Savedcards">
-      <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
-        <h5 id="offcanvasRightLabel">SaveCards</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-      </div>
-    </div>
-
-    <!-- Savedcards history end -->
-
-    <!-- fit History  -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="Fitcode" aria-labelledby="Fitcode ">
-      <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
-        <h5 id="offcanvasRightLabel"> Fitcode</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-      </div>
-    </div>
-
-    <!-- fit history end  -->
-
-
-    <!--  faQ Container start  -->
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="faQ" aria-labelledby="faQ ">
-      <div class="offcanvas-header">
-        <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile"
-          aria-controls="profile"></span>
-        <h5 id="offcanvasRightLabel"> faQ</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="accordion" id="accordionExample">
-          <!-- Accordion Item 1 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Get Started
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>Question:</strong> What is HTML? <br>
-                <strong>Answer:</strong> HTML stands for HyperText Markup Language. It is the standard language for
-                creating web pages and web applications. It structures the content on the web.
               </div>
-            </div>
+              <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">Addresses Content</div>
           </div>
+      </div>
+      
+      <!-- Bootstrap 5 JS (No jQuery needed) -->
+       </div>
+    </div>
+<!-- about data end  -->
 
-          <!-- Accordion Item 2 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Order Related
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>Question:</strong> What is CSS? <br>
-                <strong>Answer:</strong> CSS stands for Cascading Style Sheets. It is used to style the layout and
-                design of web pages, including fonts, colors, and spacing.
-              </div>
-            </div>
-          </div>
+<!-- order History  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="Order" aria-labelledby="Order">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel">Order</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
 
-          <!-- Accordion Item 3 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Delivery
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>Question:</strong> What is JavaScript? <br>
-                <strong>Answer:</strong> JavaScript is a programming language used to create dynamic and interactive
-                effects within web browsers.
-              </div>
-            </div>
-          </div>
-        </div>
+ <!-- order history end --> 
 
+ <!-- wishlist History  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="wish" aria-labelledby="wish">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel">Wishlist</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+  </div>
+</div>
+
+ <!-- wishlist history end --> 
+
+ 
+ <!-- Savedcards History  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="Savedcards" aria-labelledby="Savedcards">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel">SaveCards</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+  </div>
+</div>
+
+ <!-- Savedcards history end --> 
+
+  <!-- fit History  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="Fitcode" aria-labelledby="Fitcode ">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel"> Fitcode</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+  </div>
+</div>
+
+ <!-- fit history end  -->
+
+
+ <!--  faQ Container start  -->
+ 
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="faQ" aria-labelledby="faQ ">
+  <div class="offcanvas-header">
+    <span class="bi bi-chevron-left" data-bs-toggle="offcanvas" data-bs-target="#profile" aria-controls="profile" ></span>
+    <h5 id="offcanvasRightLabel"> faQ</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+       <div class="accordion" id="accordionExample">
+  <!-- Accordion Item 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Get Started
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is HTML? <br>
+        <strong>Answer:</strong> HTML stands for HyperText Markup Language. It is the standard language for creating web pages and web applications. It structures the content on the web.
       </div>
     </div>
+  </div>
 
-    <!-- faQ Container end  -->
-    <!-- -->
-    <!-- ---------------------------------------------------------------------------------------------------------- -->
+  <!-- Accordion Item 2 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Order Related 
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is CSS? <br>
+        <strong>Answer:</strong> CSS stands for Cascading Style Sheets. It is used to style the layout and design of web pages, including fonts, colors, and spacing.
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion Item 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="btn btn-primary w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Delivery
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Question:</strong> What is JavaScript? <br>
+        <strong>Answer:</strong> JavaScript is a programming language used to create dynamic and interactive effects within web browsers.
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+ <!-- faQ Container end  -->
+  <!-- -->
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 
 
     <div class="mobile-view " id="searchBox">
@@ -719,7 +668,7 @@
         <i class="bi bi-house-door-fill"></i>
         Home
       </a>
-      <a class="nav-mb-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#category" aria-controls="category">
+      <a class="nav-mb-link" href="#"data-bs-toggle="offcanvas" data-bs-target="#category" aria-controls="category"  >
         <i class="bi bi-grid-fill"></i>
         Category
       </a>
@@ -739,20 +688,20 @@
     <!-- login popup  -->
 
 
-    <!-- category container -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="category" aria-labelledby="category">
-      <div class="offcanvas-header">
-        <!-- <span class="bi bi-chevron-left" ></span> -->
-        <h5 id="offcanvasRightLabel"> category</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-        cTEDFKAL
-
-      </div>
-    </div>
-    <!-- category conatiner end  -->
+<!-- category container -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="category" aria-labelledby="category">
+  <div class="offcanvas-header">
+    <!-- <span class="bi bi-chevron-left" ></span> -->
+    <h5 id="offcanvasRightLabel"> category</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+    cTEDFKAL
+   
+  </div>
+</div>
+ <!-- category conatiner end  -->
 
     <div class="modal" id="myModal">
       <div class="modal-dialog">
@@ -2061,954 +2010,155 @@
 
   </header>
 
-  <main class="content-section slider_mar bg-white w-100">
-    <div class="container-space ">
-
-
-      <div class="container mt-4 cat_cardslid  ">
-        <div class="nav_Slide mt-4">
-          <ul class="nav-Data categories-sec d-flex">
-
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-            <li class="nav-img_data"><img src="../Azam Project/img/girl-1 (1).png" alt="">
-              <span>Bra</span>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- nav items section -->
-
-
-  <!-- ---------------------------------------------------------------------------------------------------- -->
-
-  <!-- banner section slider -->
-  <div class="main-slider ">
-
-    <div class="container-space  mt-5">
-
-      <!-- main slider crousel -->
-
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <div class="slider_inner">
-              <div class="slider_text">
-                <h1>Bra Collections</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, et ex eos sequi vero tempora fugiat
-                  fugit dolores eum quia nulla. Molestias ipsum placeat perferendis eaque dignissimos reiciendis
-                  corporis voluptate.</p>
-                <button class="btn btn-primary">
-                  <span class="bi bi-bag-check"></span>
-                  Explore More
-
-                </button>
-              </div>
-              <img src="../Azam Project/img/carousel-image1.png" alt="">
-
+  <div class="container mar-top">
+    <div class="container mt-4">
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-12 col-md-6 col-lg-6">
+          <span class="text-th">Thank You <span>Admin !</span></span>
+          <div class="bdrth mt-2"></div>
+          <span class="mt-5 ordtext">
+            Your order <span class="fw-bold">#12500</span> has been ordered successfully. 
+            We are on it and will notify you as soon as your order is shipped.
+          </span>
+          <div class="shopData mt-4">
+            <div class="toship">
+              <span class="shippingTO ">Shipping To</span><br>
+              <span class="textShipping">C-25 Delhi</span><br>
+              <span class="textShipping">Delhi</span><br>
+              <span class="textShipping">Delhi 110025</span>
             </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <div class="slider_inner">
-              <div class="slider_text">
-                <h1>Bra Collections</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, et ex eos sequi vero tempora fugiat
-                  fugit dolores eum quia nulla. Molestias ipsum placeat perferendis eaque dignissimos reiciendis
-                  corporis voluptate.</p>
-                <button class="btn btn-primary">
-                  <span class="bi bi-bag-check"></span>
-                  Explore More
-
-                </button>
-              </div>
-              <img src="../Azam Project/img/carousel-image1.png" alt="">
-
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slider_inner">
-              <div class="slider_text">
-                <h1>Bra Collections</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, et ex eos sequi vero tempora fugiat
-                  fugit dolores eum quia nulla. Molestias ipsum placeat perferendis eaque dignissimos reiciendis
-                  corporis voluptate.</p>
-                <button class="btn btn-primary">
-                  <span class="bi bi-bag-check"></span>
-                  Explore More
-
-                </button>
-              </div>
-              <img src="../Azam Project/img/carousel-image1.png" alt="">
-
+            <div class="toPayment">
+              <span class="shippingTO">Payment Details</span><br>
+              <span class="textShipping">Order Total: <span class="fw-bold">480</span></span><br>
+              <span class="textShipping">Total Saving: <span class="fw-bold">480</span></span><br>
+              <span class="textShipping">Paid using Cash on Delivery: <span class="fw-bold">480</span></span>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <!-- main crousel end  -->
-    </div>
-    <!-- slider end  -->
-    <!-- ---------------------------------------------------------------------------------------------------- -->
-    <!-- infocus -->
-    <div class="in_focus-slider-container">
-      <div class="section-heading mb-4 pt-3">
-        <span>In Focus</span>
-
-      </div>
-
-      <div class="mainInfo">
-        <div class="owl-carousel" id="sliderfocus">
-          <div class="in_focus-card"><img
-              src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
-              alt="Vanish Shaper Panty">
-            <div class="in_focus-card-content">
-              <span>Vanish Shaper Panty</span>
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
-          <div class="in_focus-card"><img
-              src="https://www.amantelingerie.in/cdn/shop/files/Desktop-02_95f65e63-2ab0-4a14-ac84-74f1d30cd879.jpg?v=1722863896"
-              alt="Vanish Shaper Panty">
-            <div class="in_focus-card-content">
-              <span>Vanish Shaper Panty</span>
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
-          <!-- Repeat additional cards here -->
-        </div>
-      </div>
-
-
-      <div class="nav-icons">
-        <i class="bi bi-chevron-left" id="prev"></i>
-        <i class="bi bi-chevron-right" id="next"></i>
-      </div>
-    </div>
-    <!-- in focus end  -->
-
-    <!-- ---------------------------------------------------------------------------------------------------- -->
-
-
-
-
-    <!-- -------------------------------------------------------------------------------------------------- -->
-    <!-- recommanded products  -->
-    <div class="container-space recommended-pros">
-      <div class="nav-ul mt-5">
-        <div class="home-demo">
-          <div class="section-heading mb-4 pt-3">
-            <span>Recommended Products</span>
-          </div>
-          <div class="main_rec">
-            <div class="owl-carousel owl-theme my-recommended-owl">
-
-              <div class="card-viewMore">
-                <i class="far fa-heart heart-icon"></i>
-                <img src="../Azam Project/img/pic1 1.png" class="card-viewMore-img-top" alt="Bra Item 1">
-                <div class="card-viewMore-body">
-                  <h5 class="card-viewMore-title">Bra Item 1</h5>
-                  <a href="#" class="bi bi-arrow-right"></a>
-                </div>
-              </div>
-              <div class="card-viewMore">
-                <i class="far fa-heart heart-icon"></i>
-                <img src="../Azam Project/img/pic1 1.png" class="card-viewMore-img-top" alt="Bra Item 2">
-                <div class="card-viewMore-body">
-                  <h5 class="card-viewMore-title">Bra Item d</h5>
-                  <a href="#" class="bi bi-arrow-right"></a>
-
-                </div>
+    
+        <!-- Second Column -->
+        <div class="col-12 col-md-6 col-lg-6 mt-5">
+          <div class="d-flex justify-content-between ordeConf">
+            <div class="orderConf">
+              <span class="text-p">ORDER CONFIRMED</span><br>
+              <span class="textShipping">ORDER # <Span class="fw-bold">74747474</Span></span><br>
+              <span class="textShipping">10 DEC</span><br>
+              <div class="ordImg">
+                <img src="../img/ordImg.webp" width="80" height="100" alt="">
+               <div class="ordtxt">
+                <span class="textShipping">Item: <span>1</span></span>
+                <span class="textShipping"> <a href="" class="textShipping">View Details</a></span>
+               </div>
               </div>
             </div>
-          </div>
-          <button class="rec_next">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <button class="rec_pre">
-            <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- recomanded products end -->
-
-    <!-- ---------------------------------------------------------------------------------------------------- -->
-    <!-- our feature section start -->
-    <div class="container-space mt-4">
-      <div class="section-heading mb-3 mt-5">
-        <span>Our Featured Store</span>
-      </div>
-
-
-
-      <div class="card_filter">
-        <span>Trending now</span>
-        <img src="../Azam Project/img/fire.webp" width="20px" alt="">
-        <!-- Filter Buttons -->
-        <div class="filter-buttons mb-3">
-          <button class="filter-btn active" data-carousel="all">All</button>
-          <button class="filter-btn" data-carousel="bra-carousel">Bra</button>
-          <button class="filter-btn" data-carousel="nightwear-carousel">Nightwear</button>
-          <button class="filter-btn" data-carousel="sleepwear-carousel">Sleepwear</button>
-        </div>
-
-        <!-- Carousel Container -->
-        <div class="card_filter-container">
-          <!-- Owl Carousels -->
-          <div class="owl-carousel owl-theme bra-carousel main">
-            <div class="item">
-              <div class="card-viewMore trending">
-                <i class="bi bi-heart heart-icon"></i>
-                <img src="img/product.webp" alt="Bra Item 1">
-                <div class="price">
-                  <p>₹8 <del>₹1495</del></p>
-                </div>
-                <div class="float-start ms-2">
-                  <h6 class="float-start ms-1">Silkluxuria</h6><br>
-                  <p>Jockey Medium Rise...</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="owl-carousel owl-theme nightwear-carousel main">
-            <div class="item">
-              <div class="card-viewMore trending">
-                <i class="bi bi-heart heart-icon"></i>
-                <img src="../Azam Project/img/product.webp" alt="Nightwear Item 1">
-                <div class="price">
-                  <p>₹8 <del>₹1495</del></p>
-                </div>
-                <div class="float-start ms-2">
-                  <h6 class="float-start ms-1">Silkluxuria</h6><br>
-                  <p>Jockey Medium Rise...</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="owl-carousel owl-theme sleepwear-carousel main">
-            <div class="item">
-              <div class="card-viewMore trending">
-                <i class="bi bi-heart heart-icon"></i>
-                <img src="../Azam Project/img/product.webp" alt="Sleepwear Item 1">
-                <div class="price">
-                  <p>₹8 <del>₹1495</del></p>
-                </div>
-                <div class="float-start ms-2">
-                  <h6 class="float-start ms-1">Silkluxuria</h6><br>
-                  <p>Jockey Medium Rise...</p>
-                </div>
-              </div>
+            <div class="ordDil">
+              <span class="h5">Expected Delivery</span><br>
+              <span class="h3 fw-light float-end">12 Dec</span>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-    <!-- our feature section end  -->
-    <!-- ------------------------------------------------------------------------------------------------------ -->
-    <!-- offer section start -->
-    <div class="get-off-main-sec">
-      <div class="container-space nav-ul get-off-sec">
-        <div class="row space-sec">
-          <div class="col-md-5 left-cloth-sec">
-            <img src="./img/left-cloth (1).png" alt="" width="100%">
-          </div>
-          <div class="col-md-2 mid-offer-sec">
-            <div class="content-mid-sec-off">
-              <p>Get 50% off</p>
-              <div>for all new product purchases
-                min. purchase Rp. 350.000</div>
-              <div class="off-sec-shop"> <a href="#">Shop Now</a></div>
-            </div>
-          </div>
-          <div class="col-md-5 left-cloth-sec">
-            <img src="./img/right-cloth.png" alt="" width="100%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- offer section end  -->
-    <!-- ------------------------------------------------------------------------------------------------------ -->
-
-    <!-- ---------------------=--------------------------------------------------------------------------------- -->
-    <!--  traditional wearing  section start -->
-
-    <div class="shopBy">
-      <div class="shopMain">
-        <img src="./img/pro.jpg" alt="">
-        <div class="textshop">
-          <h3>traditional wearing </h3>
-          <span>Lorem, ipsum dolor sit amet<br>
-            consectetur adipisicing elit. Ab officiis </span>
-        </div>
-      </div>
-      <div class="shopSab">
-        <div class="shopimgtxt">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <span>Hello Osama</span>
-        </div>
-        <div class="shopimgtxt">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <span>Hello Osama</span>
-        </div>
-        <div class="shopimgtxt">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <span>Hello Osama</span>
-        </div>
-        <div class="shopimgtxt">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <span>Hello Osama</span>
-        </div>
-        <!-- <div class="shopimgtxt">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <span>Hello Osama</span>
-        </div> -->
-
-      </div>
-    </div>
-    <!-- trasitional waering section edn  -->
-    <!-- --------------------------------------------------------------------------------------------------------- -->
-
-
-
-    <!-- video section start  -->
-    <div class="container-space mt-5">
-      <div class="nav-ul">
-        <video class="video-sec" controls>
-          <source src="mov_bbb.mp4" type="video/mp4">
-          <source src="mov_bbb.ogg" type="video/ogg">
-          Your browser does not support HTML video.
-        </video>
-      </div>
-    </div>
-
-    <!-- video section end  -->
-
-    <!-- ------------------------------------------------------------------------------------------------------- -->
-    <!-- progress section start  -->
-    <div class="container-space mt-5">
-      <div class="nav-ul">
-        <div class="section-heading">
-          <span>Progress</span>
-        </div>
-        <div class="row mt-4">
-          <div class="col-md-2 progress-cards text-center">
-            <img src="./img/aaaaa.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, cons sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-          <div class="col-md-2 progress-cards text-center">
-            <img src="./img/aaaaa.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, con etetur sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-          <div class="col-md-2 progress-cards text-center">
-            <img src="./img/a2.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, cons sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-          <div class="col-md-2 progress-cards text-center last-img">
-            <img src="./img/a3.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, cons sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-          <div class="col-md-2 progress-cards text-center last-img">
-            <img src="./img/a4.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, cons sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-          <div class="col-md-2 progress-cards text-center last-img">
-            <img src="./img/a5.svg" alt="" width="100%">
-            <h6>First Purchase</h6>
-            <p>Lorem ipsum dolor sit amet, cons sadip elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- progresss end  -->
-
-    <!-- -------------------------------------------------------------------------------------------------------- -->
-    <!-- model section start  -->
-    <div class="section-heading mb-4 mt-5">
-      <span>Our Comfort</span>
-    </div>
-
-
-    <div class="containerRec">
-      <!-- <h1>New <span class="in_focus-underline">Comfort</span></h1> -->
-      <div class="owl-carousel owl-theme Our-Comfort" id="">
-        <div class="item recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>hello </p>
-            <p>wordl</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="item recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>hello </p>
-            <p>wordl</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="item recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>hello </p>
-            <p>wordl</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="item recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>hello </p>
-            <p>wordl</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <!-- <div class="item recCard">
-              
-          </div>
-          <div class="item recCard">
-              
-          </div> -->
-      </div>
-      <div class="desktop-view">
-        <div class="recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>Hello </p>
-            <p>Wordl</p>
-            <h5>Data WareHouse </h5>
-          </div>
-        </div>
-        <div class="recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>Hello </p>
-            <p>Wordl</p>
-            <h5>Data WareHouse </h5>
-          </div>
-        </div>
-        <div class="recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>Hello </p>
-            <p>Wordl</p>
-            <h5>Data WareHouse </h5>
-
-          </div>
-        </div>
-        <div class="recCard">
-          <img src="./img/image 3.png" alt="">
-          <div class="recText">
-            <p>hello </p>
-            <p>wordl</p>
-            <h5>Data WareHouse </h5>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- <div class="ModelCard">
-      <div class="Subcard">
-          <img src="../Azam Project/img/model1.svg" alt="">
-          <p class="model-text">Hello</p>
-      </div>
-      <div class="Subcard">
-          <img src="../Azam Project/img/model2.svg" alt="">
-          <p class="model-text">Hello</p>
-      </div>
-      <div class="Subcard">
-          <img src="../Azam Project/img/model3.svg" alt="">
-          <p class="model-text">Hello</p>
-      </div>
-      <div class="Subcard">
-          <img src="../Azam Project/img/model1.svg" alt="">
-          <p class="model-text">Hello</p>
-      </div>
-  </div> -->
-    <!--model section end   -->
-
-
+    
   </div>
-  <!--
-    -------------------------------------------------------------------------------------------------- -->
-    <!-- Shop Athleisure -->
+  
 
-    <div class="AthleisureCarouselContainer">
-      <div class="section-heading">
-        <span class=""> Shop Athleisure</span>
-      </div>
-      <h1></h1>
-      <div class="owl-carousel owl-theme Athleisure my-recommended-owl ">
-        <div class="AthleisureItem AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>hello </p>
-            <p>world</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="AthleisureItem AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>hello </p>
-            <p>world</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="AthleisureItem AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>hello </p>
-            <p>world</p>
-            <h5>data</h5>
-          </div>
-        </div>
-        <div class="AthleisureItem AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>hello </p>
-            <p>world</p>
-            <h5>data</h5>
-          </div>
-        </div>
-      </div>
-      <div class="AthleisureDesktopLayout">
-        <div class="AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>Hello </p>
-            <p>World</p>
-            <h5>Data </h5>
-          </div>
-        </div>
-        <div class="AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>Hello </p>
-            <p>World</p>
-            <h5>Data </h5>
-          </div>
-        </div>
-        <div class="AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>Hello </p>
-            <p>World</p>
-            <h5>Data</h5>
-          </div>
-        </div>
-        <div class="AthleisureCarouselItem">
-          <img src="../Azam Project/img/pro.jpg" alt="">
-          <div class="AthleisureItemText">
-            <p>hello </p>
-            <p>world</p>
-            <h5>data</h5>
+
+  <!-- footer -->
+  <div class="container-fluid p-0">
+    <div class="footer-section">
+      <div class="container-space nav-ul">
+
+        <div class="footer-content pt-5 pb-5">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 mb-50">
+              <div class="footer-widget">
+                <div class="footer-logo">
+                  <a href="index.html"><img src="./img/logo.svg" class="img-fluid" alt="logo"></a>
+                </div>
+                <div class="footer-text">
+                  <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut
+                    consec tetur adipisicing
+                    elit,Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="footer-social-icon">
+                  <span>Follow us</span>
+                  <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                  <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                  <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+              <div class="footer-widget">
+                <div class="footer-widget-heading">
+                  <h3>Useful Links</h3>
+                </div>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">services</a></li>
+                  <li><a href="#">portfolio</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Our Services</a></li>
+                  <li><a href="#">Expert Team</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">Latest News</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+              <div class="footer-widget">
+                <div class="footer-widget-heading">
+                  <h3>Subscribe</h3>
+                </div>
+                <div class="footer-text mb-25">
+                  <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                </div>
+                <div class="subscribe-form">
+                  <form action="#">
+                    <input type="text" placeholder="Email Address">
+                    <button><i class="fab fa-telegram-plane"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Shop Athleisure end  -->
-    <!-- -------------------------------------------------------------------------------------------------- -->
-
-    <!-------------------------------------------------------------------------------------------------------->
-    <!-- category section start  -->
-    <div class="section-heading mb-4 mt-2">
-      <span>Our Category</span>
-    </div>
-    <div class="container-space model-background-sec">
-      <!-- Card 1 -->
-      <div class="modelCont">
-        <div class="custom-container">
-          <div class="custom-card" id="custom-card1" data-hover="BRAS">
-            <img src="https://via.placeholder.com/150x400/FFB6C1/FFFFFF?text=Bras" alt="Bras">
-            <h3 class="custom-card-title">BRAS</h3>
-          </div>
-          <div class="custom-card" id="custom-card1" data-hover="BRAS">
-            <img src="https://via.placeholder.com/150x400/FFB6C1/FFFFFF?text=Bras" alt="Bras">
-            <h3 class="custom-card-title">BRAS</h3>
-          </div>
-          <div class="custom-card" id="custom-card1" data-hover="BRAS">
-            <img src="https://via.placeholder.com/150x400/FFB6C1/FFFFFF?text=Bras" alt="Bras">
-            <h3 class="custom-card-title">BRAS</h3>
-          </div>
-          <div class="custom-card" id="custom-card2" data-hover="NIGHTWEAR">
-            <img src="https://via.placeholder.com/150x400/87CEFA/FFFFFF?text=Nightwear" alt="Nightwear">
-            <h3 class="custom-card-title">NIGHTWEAR</h3>
-          </div>
-          <div class="custom-card" id="custom-card3" data-hover="ACTIVEWEAR">
-            <img src="https://via.placeholder.com/150x400/FFDEAD/FFFFFF?text=Activewear" alt="Activewear">
-            <h3 class="custom-card-title">ACTIVEWEAR</h3>
-          </div>
-          <div class="custom-card" id="custom-card4" data-hover="LINGERIE SETS">
-            <img src="https://via.placeholder.com/150x400/98FB98/FFFFFF?text=Lingerie+Sets" alt="Lingerie Sets">
-            <h3 class="custom-card-title">LINGERIE SETS</h3>
-          </div>
-          <div class="custom-card" id="custom-card5" data-hover="PANTIES">
-            <img src="https://via.placeholder.com/150x400/DDA0DD/FFFFFF?text=Panties" alt="Panties">
-            <h3 class="custom-card-title">PANTIES</h3>
-          </div>
-          <div class="custom-card" id="custom-card6" data-hover="SHAPEWEAR">
-            <img src="https://via.placeholder.com/150x400/B0C4DE/FFFFFF?text=Shapewear" alt="Shapewear">
-            <h3 class="custom-card-title">SHAPEWEAR</h3>
-          </div>
-        </div>
-
-       
-
-        <!-- category section end  -->
-        <!----------------------------------------------------------------------------------------------------  -->
-
-      </div>
-    </div>
-
-    <!-- category section end  -->
-    <!--------------------------------------------------------------------------------------------------------->
-
-
- <div class="container-space mt-5">
-      <div class="section-heading mb-3">
-        <span>Our Demo</span>
-      </div>
-      <div class="nav-ul models-row-sec row p-0">
-        <div class="owl-carousel owl-theme blog-carousel">
-          =======
-          <!-- our Demo  -->
-
-
-          <div class="container-space mt-5">
-            <div class="section-heading mb-3">
-              <span>Our Demo</span>
-            </div>
-            <div class="nav-ul models-row-sec row p-0">
-              <div class="owl-carousel owl-theme blog-carousel">
-              </div>
-              <div class="col-md-4 model-img-cards blog-sec-cards ">
-                <div class='video-wrap'>
-                  <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                    height="100%">
-                    <source type="video/mp4" src="./img/video1.mp4">
-                  </video>
-                </div>
-
-
-              </div>
-              <div class="col-md-4 model-img-cards blog-sec-cards models-row-sec">
-                <div class='video-wrap'>
-                  <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                    height="100%">
-                    <source type="video/mp4" src="./img/video2.mp4">
-                  </video>
-                </div>
-
-
-
-              </div>
-              <div class="col-md-4 model-img-cards blog-sec-cards models-row-sec">
-                <div class='video-wrap'>
-                  <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                    height="100%">
-                    <source type="video/mp4" src="./img/video1.mp4">
-                  </video>
-                </div>
-
-
-
-              </div>
-
-
-            </div>
-          </div>
-
-          <!-- our demo end  -->
-          <!-- --------------------------------------------------------------------------------------------------- -->
-
-          <!--  -->
-
-          <div class="container-space">
-            <div class="section-heading mt-5 mb-3">
-              <span>Our Blog Section</span>
-              >>>>>>> Stashed changes
-            </div>
-            <div class="col-md-4 model-img-cards blog-sec-cards ">
-              <div class='video-wrap'>
-                <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                  height="100%">
-                  <source type="video/mp4" src="./img/video1.mp4">
-                </video>
-              </div>
-
-
-            </div>
-            <div class="col-md-4 model-img-cards blog-sec-cards models-row-sec">
-              <div class='video-wrap'>
-                <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                  height="100%">
-                  <source type="video/mp4" src="./img/video2.mp4">
-                </video>
-              </div>
-
-
-
-            </div>
-            <div class="col-md-4 model-img-cards blog-sec-cards models-row-sec">
-              <div class='video-wrap'>
-                <video autoplay muted playsinline loop poster autoplay="" loop="" controls="" width="100%"
-                  height="100%">
-                  <source type="video/mp4" src="./img/video1.mp4">
-                </video>
-              </div>
-
-
-
-            </div>
-
-
-          </div>
-        </div>
-
-        <div class="container-space">
-          <div class="section-heading mt-5 mb-3">
-            <span>Our Blog Section</span>
-          </div>
-          <div class="homeBlog">
-            <!-- Custom Carousel for Tablet and Mobile View -->
-            <div class="custom-carousel owl-carousel owl-theme">
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" class="zoom-effect" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
+      <div class="copyright-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+              <div class="copyright-text">
+                <p>Copyright &copy; 2018, All Right Reserved </p>
               </div>
             </div>
-
-            <!-- Desktop Grid Layout -->
-            <div class="homeBlogDesktop">
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="card_blog">
-                <img src="./img/pro.jpg" alt="">
-                <div class="card_blog_title">
-                  <span>Oct 30, 24</span>
-                  <span>To Wear Bra or Not: Explained Disadvantages & Advantages</span>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
-
-
-      <!-- footer -->
-      <div class="container-fluid p-0">
-        <div class="footer-section">
-          <div class="container-space nav-ul">
-
-            <div class="footer-content pt-5 pb-5">
-              <div class="row">
-                <div class="col-xl-4 col-lg-4 mb-50">
-                  <div class="footer-widget">
-                    <div class="footer-logo">
-                      <a href="index.html"><img src="./img/logo.svg" class="img-fluid" alt="logo"></a>
-                    </div>
-                    <div class="footer-text">
-                      <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut
-                        consec tetur adipisicing
-                        elit,Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="footer-social-icon">
-                      <span>Follow us</span>
-                      <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                      <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                      <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                  <div class="footer-widget">
-                    <div class="footer-widget-heading">
-                      <h3>Useful Links</h3>
-                    </div>
-                    <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">about</a></li>
-                      <li><a href="#">services</a></li>
-                      <li><a href="#">portfolio</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">About us</a></li>
-                      <li><a href="#">Our Services</a></li>
-                      <li><a href="#">Expert Team</a></li>
-                      <li><a href="#">Contact us</a></li>
-                      <li><a href="#">Latest News</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                  <div class="footer-widget">
-                    <div class="footer-widget-heading">
-                      <h3>Subscribe</h3>
-                    </div>
-                    <div class="footer-text mb-25">
-                      <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                    </div>
-                    <div class="subscribe-form">
-                      <form action="#">
-                        <input type="text" placeholder="Email Address">
-                        <button><i class="fab fa-telegram-plane"></i></button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="copyright-area">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                  <div class="copyright-text">
-                    <p>Copyright &copy; 2018, All Right Reserved </p>
-                  </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                  <div class="footer-menu">
-                    <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Terms</a></li>
-                      <li><a href="#">Privacy</a></li>
-                      <li><a href="#">Policy</a></li>
-                      <li><a href="#">Contact</a></li>
-                    </ul>
-                  </div>
-                </div>
+            <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+              <div class="footer-menu">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Policy</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
 
 
 
-      <div ></div>
+      
+
+  <div class="cursor" id="custom-cursor"></div>
 
 </body>
 
@@ -3018,59 +2168,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- all slider js  -->
-<script src="./script/slider.js"></script>
+<script src="../script/slider.js"></script>
 <!-- main js all  -->
-<script src="./script/main.js"></script>
+<script src="../script/main.js"></script>
 <!-- date js incart  -->
-<script>
-  flatpickr("#birthday-calendar-input", {
-    dateFormat: "Y-m-d"
-});
-
-flatpickr("#anniversary-calendar-input", {
-    dateFormat: "Y-m-d"
-});
-
-document.getElementById('add-birthday-calendar').addEventListener('click', function() {
-    document.getElementById('calendar-birthday-container').style.display = 'block';
-});
-
-document.getElementById('add-anniversary-calendar').addEventListener('click', function() {
-    document.getElementById('calendar-anniversary-container').style.display = 'block';
-});
-
-document.getElementById('save-birthday-btn').addEventListener('click', function() {
-    const selectedDate = document.getElementById('birthday-calendar-input').value;
-    if (selectedDate) {
-        document.getElementById('birthday-date').innerHTML = "Selected Date: " + selectedDate;
-        document.getElementById('calendar-birthday-container').style.display = 'none';
-    } else {
-        alert("Please select a date.");
-    }
-});
-
-document.getElementById('save-anniversary-btn').addEventListener('click', function() {
-    const selectedDate = document.getElementById('anniversary-calendar-input').value;
-    if (selectedDate) {
-        document.getElementById('anniversary-date').innerHTML = "Selected Date: " + selectedDate;
-        document.getElementById('calendar-anniversary-container').style.display = 'none';
-    } else {
-        alert("Please select a date.");
-    }
-});
-
-document.getElementById('close-birthday-btn').addEventListener('click', function() {
-    document.getElementById('calendar-birthday-container').style.display = 'none';
-});
-
-document.getElementById('close-anniversary-btn').addEventListener('click', function() {
-    document.getElementById('calendar-anniversary-container').style.display = 'none';
-});
-
-document.getElementById('add-occasion-calendar').addEventListener('click', function() {
-    alert('You clicked the Occasion button');
-});
-</script>
+<script src="../script/addBirth.js"></script>
 
 
 </html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Card</title>
+    <style>
+      
+     
+
+        /* Tracking Section */
+        .tracking-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        /* Step Progress Bar Base */
+        .StepProgress {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .StepProgress::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 17px;
+            left: 14px;
+            width: 7px;
+            background: #e0e0e0; /* Default color for the line */
+        }
+
+        /* Step Progress Items */
+        .StepProgress-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #757575;
+        }
+
+        .StepProgress-item::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .StepProgress-item.is-done::before {
+            border-color: #d0799e;
+            background-color: #d0799e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            content: '\2713'; /* Unicode for checkmark */
+        }
+
+        .StepProgress-item.is-done {
+            color: #000;
+        }
+
+        .StepProgress-item.highlight {
+            font-weight: bold;
+        }
+
+   
+
+      
+    </style>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <div class="card ">
+        <div class="card-header">
+           <span class="float-start">Sold by: <span class="fw-bold">Silkluxuria</span></span>
+           <span class="float-end">Shipped</span>
+        </div>
+        <div class="card-body">
+            <div class="d-flex m-2">
+                <img src="../Azam Project (2)/Azam Project/img/ordImg.webp" width="70" height="100" alt="">
+                <div class="text-start ms-3">
+                    <span>
+                        Zivame Joyful Jingles Knit Cotton Short Leng</span>
+                        <br>
+                        <span>Size: <span>S</span></span> <span>Price:<del>499</del> <span class="fw-bold">299</span></span>
+                </div>
+
+            </div>
+         
+          <div class="row mr-auto">
+            
+            <div class="columns small-12 pd-lr0 block-center false">
+                <div class="columns small-12 medium-12 large-12 text-center">
+                    <p class="ff-rb fs-14 mr-t20 mr-b30">Your order will be delivered to you by December 12, Thursday!<br></p>
+                </div>
+                <div class="columns small-12">
+                    <div class="tracking-wrapper block-center pd-b10 false">
+                        <ul class="StepProgress w-80">
+                            <li class="StepProgress-item is-done highlight">
+                                <span></span>
+                                <span class="fs-14">Order Placed on December 10</span>
+                            </li>
+                            <li class="StepProgress-item is-done highlight">
+                                <span></span>
+                                <span class="fs-14">Order Confirmed on December 10</span>
+                            </li>
+                            <li class="StepProgress-item is-done highlight">
+                                <span></span>
+                                <span class="fs-14"><b>Order Shipped</b> on December 10</span>
+                            </li>
+                            <li class="StepProgress-item">
+                                <span></span>
+                                <span class="fs-14">In Transit</span>
+                            </li>
+                            <li class="StepProgress-item">
+                                <span></span>
+                                <span class="fs-14">Out for Delivery</span>
+                            </li>
+                            <li class="StepProgress-item">
+                                <span></span>
+                                <span class="fs-14">Delivered on December 12</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+          2 days ago
+        </div>
+      </div>
+  
+      
+      
+      
+
+</body>
+</html>

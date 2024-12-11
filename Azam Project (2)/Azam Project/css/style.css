@@ -15,6 +15,9 @@ body,span,div,p,h1,h2,h3,h4,h5,h6 {
   font-family: Poppins, sans-serif !important;
   text-transform: capitalize  !important;
 }
+.text-p{
+  color: pink;
+}
 
 .input-group .form-control {
   border-right: none;
@@ -3433,7 +3436,7 @@ button.btn.btn-primary.w-100.cartBtm{
 @media (min-width: 768px) and (max-width: 1024px) {
   /* For tablets (portrait/landscape) */
   .row {
-      gap: 15px;
+      /* gap: 15px; */
   }
 
   .user-details {
@@ -3453,7 +3456,7 @@ button.btn.btn-primary.w-100.cartBtm{
 @media (min-width: 1025px) {
   /* For large screens (desktop) */
   .row {
-      gap: 30px;
+      /* gap: 30px; */
   }
 
   .profileImage {
@@ -3475,7 +3478,7 @@ button.btn.btn-primary.w-100.cartBtm{
   display: none;
   position: absolute;
   top: 30px; /* Adjust based on layout */
-  right: 0;
+  /* right: 0; */
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -3654,4 +3657,56 @@ button.btn.btn-primary.w-100 {
 .accordion-item {
   border-top-right-radius: 30px !important;
   border-bottom-left-radius: 30px !important;
+}
+span.textShipping a {
+  color: pink;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+}
+.order-image img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+.ordeConf {
+border: 1px solid white;
+padding: 13px;
+box-shadow: 0 0 6px;
+border-radius: 8px;
+}
+.ordImg {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.ordtxt {
+display: flex;
+flex-direction: column;
+margin-left: 10px;
+}
+a#occasion-tab {
+  color: black;
+}
+
+a#basic-tab {
+  color: black;
+}
+.trackBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+}
+.mar-top{
+  margin-top: 200px;
+  margin-bottom: 100px;
+  
+}
+.flatpickr-calendar.animate {
+  display: none;
 }

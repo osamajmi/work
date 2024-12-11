@@ -1,176 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail Page</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .thumbnail {
-            position: relative;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        /* Add a vertical line to the left of each thumbnail */
-        .thumbnail::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -13px;
-            width: 5px;
-            height: 100%;
-            background-color: #000000e8; /* Initially transparent */
-        }
-
-        /* Style the main image */
-        .main-image img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        /* Active thumbnail has a pink vertical line */
-        .active-thumbnail::before {
-            background-color: pink;
-        }
-
-        /* Thumbnail image styles */
-        .thumbnail img {
-            width: 100%;
-            height: 60px; /* Thumbnail height */
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .product-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .product-price {
-            font-size: 20px;
-            color: #b12704;
-            margin-top: 10px;
-        }
-
-        .product-description {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .features, .reviews {
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .progress-bar {
+      height: 5px;
+      border-radius: 5px;
+      background-color: #ccc;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .progress-fill {
+      width: 33%; /* Adjust this to change progress percentage */
+      height: 100%;
+      background-color: #28a745; /* Green */
+      border-radius: 5px;
+    }
+    .order-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .order-image img {
+      width: 80px;
+      height: auto;
+      border-radius: 5px;
+    }
+  </style>
+  <title>Order Progress</title>
 </head>
 <body>
-
-<div class="container-fluid my-5">
-    <div class="row">
-        <!-- Thumbnails Section -->
-        <div class="col-md-3">
-            <div class="thumbnail active-thumbnail" id="thumb1" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+1', this)">
-                <img src="https://via.placeholder.com/150x100?text=Dummy+1" alt="Dummy 1">
-            </div>
-            <div class="thumbnail" id="thumb2" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+2', this)">
-                <img src="https://via.placeholder.com/150x100?text=Dummy+2" alt="Dummy 2">
-            </div>
-            <div class="thumbnail" id="thumb3" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+3', this)">
-                <img src="https://via.placeholder.com/150x100?text=Dummy+3" alt="Dummy 3">
-            </div>
-            <div class="thumbnail" id="thumb4" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+4', this)">
-                <img src="https://via.placeholder.com/150x100?text=Dummy+4" alt="Dummy 4">
-            </div>
-            <div class="thumbnail" id="thumb5" onclick="changeMainImage('https://via.placeholder.com/400?text=Main+Dummy+5', this)">
-                <img src="https://via.placeholder.com/150x100?text=Dummy+5" alt="Dummy 5">
-            </div>
+  <div class="container my-4">
+    <div class="row order-card">
+      <!-- Left Section -->
+      <div class="col-md-8">
+        <h6 class="text-uppercase text-purple fw-bold">Order Confirmed</h6>
+        <p class="mb-0">ORDER# 732480131</p>
+        <p>10 Dec</p>
+        
+        <!-- Product Details -->
+        <div class="d-flex align-items-center">
+          <div class="order-image me-3">
+            <img src="https://via.placeholder.com/80" alt="Product Image">
+          </div>
+          <div>
+            <p class="mb-0">Items: 1</p>
+            <a href="#" class="text-decoration-none text-orange fw-bold">View Details</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Main Image Section -->
-        <div class="col-md-3">
-            <div class="main-image mb-4">
-                <img id="mainProductImage" src="https://via.placeholder.com/400?text=Main+Dummy+1" alt="Main Product Image">
-            </div>
+      <!-- Right Section -->
+      <div class="col-md-4 text-end">
+        <p class="mb-0 fw-bold text-muted">Expected Delivery</p>
+        <h4 class="mb-0 fw-bold">12 Dec</h4>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="col-12 mt-3">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
         </div>
-
-        <!-- Product Description Section -->
-        <div class="col-md-6">
-            <h1 class="product-title">Product Title</h1>
-            <p class="product-price">₹ 349.99 <del class="">₹ 499.00</del> &nbsp;<span class="text-muted">(45% OFF)</span></p>
-
-            <!-- Features -->
-            <div class="features my-3">
-                <span class="badge badge-secondary">Cotton</span>
-                <span class="badge badge-secondary">Short-Length</span>
-                <span class="badge badge-secondary">Comfort Fit</span>
-            </div>
-
-            <!-- Colors -->
-            <div class="colors mb-3">
-                <label>Colors:</label>
-                <span class="badge badge-pill" style="background-color: #f0a1c1;">&nbsp;</span>
-                <span class="badge badge-pill" style="background-color: #6e8cd5;">&nbsp;</span>
-                <span class="badge badge-pill" style="background-color: #5fb98f;">&nbsp;</span>
-            </div>
-
-            <!-- Sizes -->
-            <div class="sizes mb-3">
-                <label>Sizes:</label>
-                <button class="btn btn-outline-secondary btn-sm">S</button>
-                <button class="btn btn-outline-secondary btn-sm">M</button>
-                <button class="btn btn-outline-secondary btn-sm">L</button>
-            </div>
-
-            <!-- Quantity Selector -->
-            <div class="quantity-selector mb-3">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" value="1" min="1">
-            </div>
-
-            <!-- Add to Cart Button -->
-            <button class="btn btn-primary btn-block">Add to Cart</button>
-
-            <!-- Product Description -->
-            <div class="product-description mt-4">
-                <h5>Description</h5>
-                <p>Enjoy a comfortable night's sleep with this short-length cotton nightdress. Lightweight and breathable fabric designed for ultimate comfort.</p>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- JavaScript for Image Change and Quantity Validation -->
-<script>
-    // Function to change main product image and highlight the active thumbnail
-    function changeMainImage(imageSrc, clickedThumbnail) {
-        // Change the main product image
-        document.getElementById('mainProductImage').src = imageSrc;
-
-        // Remove 'active-thumbnail' class from all thumbnails
-        let thumbnails = document.querySelectorAll('.thumbnail');
-        thumbnails.forEach(function(thumbnail) {
-            thumbnail.classList.remove('active-thumbnail');
-        });
-
-        // Add 'active-thumbnail' class to the clicked thumbnail
-        clickedThumbnail.classList.add('active-thumbnail');
-    }
-
-    // Ensure quantity is at least 1
-    document.getElementById('quantity').addEventListener('input', function() {
-        if (this.value < 1) {
-            this.value = 1;
-        }
-    });
-</script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
