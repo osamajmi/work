@@ -3499,7 +3499,7 @@ button.btn.btn-primary.w-100.cartBtm{
 }
 
 .dropdown-menu li:hover {
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
 }
 
 /* Show the dropdown when the class "show" is added */
@@ -3685,11 +3685,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
-.ordtxt {
-display: flex;
-flex-direction: column;
-margin-left: 10px;
-}
+.ordtxt {display: flex;flex-direction: column;margin-left: 10px;gap: 7px;}
 a#occasion-tab {
   color: black;
 }
@@ -3709,4 +3705,45 @@ a#basic-tab {
 }
 .flatpickr-calendar.animate {
   display: none;
+}
+
+.allCatMagaMenu{
+  display: flex;
+}
+
+
+.catDataMenu ul a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+li.h6:hover {
+  text-decoration: underline;
+  text-decoration-color: pink;
+}
+.catDataMenu ul li:hover {
+  color: pink;
+}
+.brd {
+  border-left: 1px solid #e1d9d9e0;
+}
+.catDataMenu {
+  width: 200px;
+}
+.ordIm {
+  display: flex;
+  align-items: center;
+}
+.orderBtn {
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* right: 0; */
+  width: 135px;
+}.fs-18{
+  font-size: 14px;
+}span.textShipping.fs-18 {
+  font-weight: 600;
+}
+del.text-secondary {
+  font-size: 13px;
 }
