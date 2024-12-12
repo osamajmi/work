@@ -26,7 +26,7 @@
     .trackord {
         box-shadow: 0 0 10px #7e7a7ac4;
         border-radius: 5px;
-        height: 665px;
+        padding: 20px;
     }
 
     header#header,
@@ -116,10 +116,12 @@
 
     .brder {
         border-bottom: 1px solid pink;
+
     }
 
     .card.ms-2 {
         box-shadow: 0 0 10px;
+        height: 540px !important;
         margin-left: 35px !important;
     }
 
@@ -128,6 +130,97 @@
         FONT-WEIGHT: 400;
         margin-top: 7px;
     }
+    .brdhr{
+        border-right: 1px solid gray;
+        height: 540px !important;
+    }
+    .ordedetails {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.price-detail {
+    display: none;  
+    opacity: 0;  
+    height: 0; 
+    overflow: hidden; 
+    transition: opacity 0.3s ease, height 0.3s ease;  
+}
+
+
+.price-detail.open {
+    display: block;  
+    opacity: 1;  
+    height: auto; 
+}
+
+.fs-13{
+    font-size: 12px;
+}
+.fs-18{
+    font-size: 14px;
+}
+.pymentDetails {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    gap: 20px;
+}
+
+
+
+
+.mar-top {
+    margin-top: 145px;
+    margin-bottom: 100px;
+}
+
+@media (max-width:800px) {
+    .brdhr{
+        display: none;
+    }
+    .ordedetails{
+        /* justify-content: flex-start; */
+        width: 100%;
+    }
+    .trackord {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    width: 100%;
+}
+.card.ms-2{
+    margin-left: 1px !important;
+    max-width: 100%;
+}
+.pymentDetails{
+    margin-top: 20px;
+    width: 100%;
+}
+.card.border.border-1{
+    box-shadow: 0 0 10px;
+    max-width: 100%;
+}
+.mar-top {
+    margin-top: 145px;
+    margin-bottom: 100px;
+}
+.ordertxt {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+p.h6.text-center.pb-2 {
+    padding-bottom: 0px !important;
+    margin-top: 20px;
+}
+.card.border.border-1{
+    display: block;
+}
+}
+
 </style>
 
 <body>
@@ -2136,9 +2229,13 @@
     <div class="container mar-top">
 
         <div class="trackord">
-            <p class="h6 text-center pt-4 "> OrderNo : <span class="fw-bold">747474</span></p>
-            <p class="h6 text-center pb-2"> Order On <span class="dateDel">Dec 10, 2024</span></p>
-
+            <div class="ordertxt">
+                <p class="h6 text-center pt-4 "> OrderNo : <span class="fw-bold">747474</span></p>
+                <p class="h6 text-center pb-2"> Order On <span class="dateDel">Dec 10, 2024</span></p>
+    
+            </div>
+          
+          <div class="ordedetails">
             <div class="card ms-2 ">
                 <div class="card-header">
                     <span class="float-start">Sold by: <span class="fw-bold">Silkluxuria</span></span>
@@ -2148,7 +2245,7 @@
                     <div class="d-flex m-2">
                         <img src="../img/ordImg.webp" width="70" height="100" alt="">
                         <div class="text-start ms-3">
-                            <span>
+                            <span class="fs-18">
                                 Joyful Jingles Knit Cotton Short Leng</span>
                             <br>
                             <span>Size: <span>S</span></span> <span>Price:<del>499</del> <span
@@ -2199,6 +2296,49 @@
                     2 days ago
                 </div>
             </div>
+            <div class="brdhr">
+            </div>
+            <div class="pymentDetails">
+                <div class="card border border-1">
+                    <div class="card-header fw-bold">
+                        Payment Details
+                    </div>
+                    <div class="card-body fs-18">
+                     <span>Total M.R.P</span>  <span class="float-end">₹1295</span> <br>
+                     <span>Savings on M.R.P</span><span class="float-end text-p">- ₹583</span>  <br>
+                     <span>Payment Mode</span>  <span class="float-end">Cash on Delivery</span>
+                    </div>
+                    <div class="card-footer fs-18 ">
+                    <span class="fw-bold">Total Paid <span>(1 Item)</span></span> <span class="bi bi-plus" id="details"></span> <span class="float-end text-p fw-bold">₹743</span>
+                    <div id="pDetail" class="price-detail ">
+                        <span class="fw-light">Total M.R.P</span> <span class="float-end">₹1295</span><br>
+                        <span class="fw-light">Order total</span> <span class="float-end">₹712</span><br>
+                        <span class="fw-light">Total Savings</span> <span class="float-end text-p">(-) ₹583</span><br>
+                        <span class="fw-light">Saving %</span> <span class="float-end text-p">45.0% OFF</span><br>
+                        <span class="fw-light">Sub-total</span> <span class="float-end">₹712</span><br>
+                        <span class="fw-light">Shipping</span> <span class="float-end">FREE</span><br>
+                        <span class="fw-light">Convenience charges</span> <span class="float-end">₹2</span><br>
+                        <span class="fw-bold">COD charges</span> <span class="float-end fw-bold">₹29</span><br>
+                        <span class="fw-bold">Net Payable</span> <span class="float-end fw-bold">₹743</span><br>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="card border border-1">
+                    <div class="card-header">
+                        Shipping to
+                    </div>
+                    <div class="card-body">
+                        <span class="fs-18">asa sfdsf </span> <br>
+                        <span class="fs-18"> sdsd</span> <br>
+                        <span class="fs-18"> DELHI - 110025, New Delhi</span><br>
+                           <span class="fs-18"> Phone Number: +91 9668528285</span>
+                    </div>
+                   
+                  </div>
+            </div>
+          </div>
 
         </div>
 
@@ -2302,6 +2442,82 @@
 
     <div class="cursor" id="custom-cursor"></div>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
